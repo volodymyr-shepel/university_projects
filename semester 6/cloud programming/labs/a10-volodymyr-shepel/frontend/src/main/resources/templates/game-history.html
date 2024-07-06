@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Game History</title>
+    <link th:href="@{/css/game-history.css}" rel="stylesheet" />
+    <script th:src="@{/js/gameHistory.js}" defer></script>
+    <script th:inline="javascript">
+        var ipAddress = /*[[${ipAddress}]]*/ '127.0.0.1';
+    </script>
+    <script th:src="@{/js/hash.js}"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Game History</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Game Id</th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        <tbody id="gameHistoryTableBody">
+        <!-- Data will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

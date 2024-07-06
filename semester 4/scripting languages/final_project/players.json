@@ -1,0 +1,890 @@
+{
+    "7322": {
+        "player_nickname": "apEX",
+        "player_realname": "Dan Madesclaire",
+        "player_nationality": "France",
+        "team_id": 9565
+    },
+    "7398": {
+        "player_nickname": "dupreeh",
+        "player_realname": "Peter Rasmussen",
+        "player_nationality": "Denmark",
+        "team_id": 9565
+    },
+    "9032": {
+        "player_nickname": "Magisk",
+        "player_realname": "Emil Reif",
+        "player_nationality": "Denmark",
+        "team_id": 9565
+    },
+    "11893": {
+        "player_nickname": "ZywOo",
+        "player_realname": "Mathieu Herbaut",
+        "player_nationality": "France",
+        "team_id": 9565
+    },
+    "18221": {
+        "player_nickname": "Spinx",
+        "player_realname": "Lotan Giladi",
+        "player_nationality": "Israel",
+        "team_id": 9565
+    },
+    "7964": {
+        "player_nickname": "cadiaN",
+        "player_realname": "Casper Møller",
+        "player_nationality": "Denmark",
+        "team_id": 7175
+    },
+    "10994": {
+        "player_nickname": "stavn",
+        "player_realname": "Martin Lund",
+        "player_nationality": "Denmark",
+        "team_id": 7175
+    },
+    "12018": {
+        "player_nickname": "TeSeS",
+        "player_realname": "René Madsen",
+        "player_nationality": "Denmark",
+        "team_id": 7175
+    },
+    "14148": {
+        "player_nickname": "sjuush",
+        "player_realname": "Rasmus Beck",
+        "player_nationality": "Denmark",
+        "team_id": 7175
+    },
+    "17956": {
+        "player_nickname": "jabbi",
+        "player_realname": "Jakob Nygaard",
+        "player_nationality": "Denmark",
+        "team_id": 7175
+    },
+    "429": {
+        "player_nickname": "karrigan",
+        "player_realname": "Finn Andersen",
+        "player_nationality": "Denmark",
+        "team_id": 6667
+    },
+    "8183": {
+        "player_nickname": "rain",
+        "player_realname": "Håvard Nygaard",
+        "player_nationality": "Norway",
+        "team_id": 6667
+    },
+    "10394": {
+        "player_nickname": "Twistzz",
+        "player_realname": "Russel Van Dulken",
+        "player_nationality": "Canada",
+        "team_id": 6667
+    },
+    "11816": {
+        "player_nickname": "ropz",
+        "player_realname": "Robin Kool",
+        "player_nationality": "Estonia",
+        "team_id": 6667
+    },
+    "18053": {
+        "player_nickname": "broky",
+        "player_realname": "Helvijs Saukants",
+        "player_nationality": "Latvia",
+        "team_id": 6667
+    },
+    "922": {
+        "player_nickname": "Snappi",
+        "player_realname": "Marco Pfeiffer",
+        "player_nationality": "Denmark",
+        "team_id": 4869
+    },
+    "9436": {
+        "player_nickname": "NertZ",
+        "player_realname": "Guy Iluz",
+        "player_nationality": "Israel",
+        "team_id": 4869
+    },
+    "11777": {
+        "player_nickname": "Maden",
+        "player_realname": "Pavle Bošković",
+        "player_nationality": "Montenegro",
+        "team_id": 4869
+    },
+    "16080": {
+        "player_nickname": "dycha",
+        "player_realname": "Paweł Dycha",
+        "player_nationality": "Poland",
+        "team_id": 4869
+    },
+    "19164": {
+        "player_nickname": "SunPayus",
+        "player_realname": "Alvaro Garcia",
+        "player_nationality": "Spain",
+        "team_id": 4869
+    },
+    "3741": {
+        "player_nickname": "NiKo",
+        "player_realname": "Nikola Kovač",
+        "player_nationality": "Bosnia and Herzegovina",
+        "team_id": 5995
+    },
+    "3972": {
+        "player_nickname": "huNter-",
+        "player_realname": "Nemanja Kovač",
+        "player_nationality": "Bosnia and Herzegovina",
+        "team_id": 5995
+    },
+    "4679": {
+        "player_nickname": "jks",
+        "player_realname": "Justin Savage",
+        "player_nationality": "Australia",
+        "team_id": 5995
+    },
+    "10096": {
+        "player_nickname": "HooXi",
+        "player_realname": "Rasmus Nielsen",
+        "player_nationality": "Denmark",
+        "team_id": 5995
+    },
+    "19230": {
+        "player_nickname": "m0NESY",
+        "player_realname": "Ilya Osipov",
+        "player_nationality": "Russia",
+        "team_id": 5995
+    },
+    "8528": {
+        "player_nickname": "HObbit",
+        "player_realname": "Abay Khassenov",
+        "player_nationality": "Kazakhstan",
+        "team_id": 5752
+    },
+    "11942": {
+        "player_nickname": "buster",
+        "player_realname": "Timur Tulepov",
+        "player_nationality": "Kazakhstan",
+        "team_id": 5752
+    },
+    "16555": {
+        "player_nickname": "Ax1Le",
+        "player_realname": "Sergey Rykhtorov",
+        "player_nationality": "Russia",
+        "team_id": 5752
+    },
+    "16920": {
+        "player_nickname": "sh1ro",
+        "player_realname": "Dmitry Sokolov",
+        "player_nationality": "Russia",
+        "team_id": 5752
+    },
+    "16921": {
+        "player_nickname": "nafany",
+        "player_realname": "Vladislav Gorshkov",
+        "player_nationality": "Russia",
+        "team_id": 5752
+    },
+    "7998": {
+        "player_nickname": "s1mple",
+        "player_realname": "Oleksandr Kostyliev",
+        "player_nationality": "Ukraine",
+        "team_id": 4608
+    },
+    "8918": {
+        "player_nickname": "electroNic",
+        "player_realname": "Denis Sharipov",
+        "player_nationality": "Russia",
+        "team_id": 4608
+    },
+    "16947": {
+        "player_nickname": "Perfecto",
+        "player_realname": "Ilya Zalutskiy",
+        "player_nationality": "Russia",
+        "team_id": 4608
+    },
+    "18987": {
+        "player_nickname": "b1t",
+        "player_realname": "Valeriy Vakhovskiy",
+        "player_nationality": "Ukraine",
+        "team_id": 4608
+    },
+    "21708": {
+        "player_nickname": "npl",
+        "player_realname": "Andrii Kukharskyi",
+        "player_nationality": "Ukraine",
+        "team_id": 4608
+    },
+    "10330": {
+        "player_nickname": "acoR",
+        "player_realname": "Frederik Gyldstrand",
+        "player_nationality": "Denmark",
+        "team_id": 9928
+    },
+    "14759": {
+        "player_nickname": "iM",
+        "player_realname": "Mihai Ivan",
+        "player_nationality": "Romania",
+        "team_id": 9928
+    },
+    "15117": {
+        "player_nickname": "Keoz",
+        "player_realname": "Nicolas Dgus",
+        "player_nationality": "Belgium",
+        "team_id": 9928
+    },
+    "16820": {
+        "player_nickname": "siuhy",
+        "player_realname": "Kamil Szkaradek",
+        "player_nationality": "Poland",
+        "team_id": 9928
+    },
+    "17937": {
+        "player_nickname": "isak",
+        "player_realname": "Isak Fahlén",
+        "player_nationality": "Sweden",
+        "team_id": 9928
+    },
+    "8520": {
+        "player_nickname": "NAF",
+        "player_realname": "Keith Markovic",
+        "player_nationality": "Canada",
+        "team_id": 5973
+    },
+    "8738": {
+        "player_nickname": "EliGE",
+        "player_realname": "Jonathan Jablonowski",
+        "player_nationality": "United States",
+        "team_id": 5973
+    },
+    "13249": {
+        "player_nickname": "oSee",
+        "player_realname": "Josh Ohm",
+        "player_nationality": "United States",
+        "team_id": 5973
+    },
+    "13915": {
+        "player_nickname": "YEKINDAR",
+        "player_realname": "Mareks Gaļinskis",
+        "player_nationality": "Latvia",
+        "team_id": 5973
+    },
+    "6904": {
+        "player_nickname": "STYKO",
+        "player_realname": "Martin Styk",
+        "player_nationality": "Slovakia",
+        "team_id": 9806
+    },
+    "8248": {
+        "player_nickname": "jkaem",
+        "player_realname": "Joakim Myrbostad",
+        "player_nationality": "Norway",
+        "team_id": 9806
+    },
+    "13670": {
+        "player_nickname": "nawwk",
+        "player_realname": "Tim Jonasson",
+        "player_nationality": "Sweden",
+        "team_id": 9806
+    },
+    "19206": {
+        "player_nickname": "jL",
+        "player_realname": "Justinas Lekavicius",
+        "player_nationality": "Lithuania",
+        "team_id": 9806
+    },
+    "19677": {
+        "player_nickname": "kyxsan",
+        "player_realname": "Damjan Stoilkovski",
+        "player_nationality": "North Macedonia",
+        "team_id": 9806
+    },
+    "9115": {
+        "player_nickname": "dexter",
+        "player_realname": "Christopher Nong",
+        "player_nationality": "Australia",
+        "team_id": 4494
+    },
+    "9960": {
+        "player_nickname": "frozen",
+        "player_realname": "David Čerňanský",
+        "player_nationality": "Slovakia",
+        "team_id": 4494
+    },
+    "14929": {
+        "player_nickname": "JDC",
+        "player_realname": "Jon de Castro",
+        "player_nationality": "Germany",
+        "team_id": 4494
+    },
+    "18072": {
+        "player_nickname": "torzsi",
+        "player_realname": "Ádám Torzsás",
+        "player_nationality": "Hungary",
+        "team_id": 4494
+    },
+    "20312": {
+        "player_nickname": "xertioN",
+        "player_realname": "Dorian Berman",
+        "player_nationality": "Israel",
+        "team_id": 4494
+    },
+    "12731": {
+        "player_nickname": "sdy",
+        "player_realname": "Viktor Orudzhev",
+        "player_nationality": "Ukraine",
+        "team_id": 11811
+    },
+    "16885": {
+        "player_nickname": "Woro2k",
+        "player_realname": "Volodymyr Veletniuk",
+        "player_nationality": "Ukraine",
+        "team_id": 11811
+    },
+    "19733": {
+        "player_nickname": "DemQQ",
+        "player_realname": "Sergiy Demchenko",
+        "player_nationality": "Ukraine",
+        "team_id": 11811
+    },
+    "19763": {
+        "player_nickname": "BOROS",
+        "player_realname": "Mohammad Malhas",
+        "player_nationality": "Jordan",
+        "team_id": 11811
+    },
+    "20282": {
+        "player_nickname": "kRaSnaL",
+        "player_realname": "Szymon Mrozek",
+        "player_nationality": "Poland",
+        "team_id": 11811
+    },
+    "12521": {
+        "player_nickname": "arT",
+        "player_realname": "Andrei Piovezan",
+        "player_nationality": "Brazil",
+        "team_id": 8297
+    },
+    "12553": {
+        "player_nickname": "yuurih",
+        "player_realname": "Yuri Santos",
+        "player_nationality": "Brazil",
+        "team_id": 8297
+    },
+    "15631": {
+        "player_nickname": "KSCERATO",
+        "player_realname": "Kaike Cerato",
+        "player_nationality": "Brazil",
+        "team_id": 8297
+    },
+    "18835": {
+        "player_nickname": "saffee",
+        "player_realname": "Rafael Costa",
+        "player_nationality": "Brazil",
+        "team_id": 8297
+    },
+    "19750": {
+        "player_nickname": "drop",
+        "player_realname": "André Abreu",
+        "player_nationality": "Brazil",
+        "team_id": 8297
+    },
+    "9078": {
+        "player_nickname": "k0nfig",
+        "player_realname": "Kristian Wienecke",
+        "player_nationality": "Denmark",
+        "team_id": 4411
+    },
+    "9278": {
+        "player_nickname": "REZ",
+        "player_realname": "Fredrik Sterner",
+        "player_nationality": "Sweden",
+        "team_id": 4411
+    },
+    "9816": {
+        "player_nickname": "Aleksib",
+        "player_realname": "Aleksi Virolainen",
+        "player_nationality": "Finland",
+        "team_id": 4411
+    },
+    "13666": {
+        "player_nickname": "Brollan",
+        "player_realname": "Ludvig Brolin",
+        "player_nationality": "Sweden",
+        "team_id": 4411
+    },
+    "19592": {
+        "player_nickname": "headtr1ck",
+        "player_realname": "Daniil Valitov",
+        "player_nationality": "Ukraine",
+        "team_id": 4411
+    },
+    "10264": {
+        "player_nickname": "niko",
+        "player_realname": "Nikolaj Kristensen",
+        "player_nationality": "Denmark",
+        "team_id": 10503
+    },
+    "15821": {
+        "player_nickname": "NEOFRAG",
+        "player_realname": "Adam Zouhar",
+        "player_nationality": "Czech Republic",
+        "team_id": 10503
+    },
+    "16693": {
+        "player_nickname": "flameZ",
+        "player_realname": "Shahar Shushan",
+        "player_nationality": "Israel",
+        "team_id": 10503
+    },
+    "17306": {
+        "player_nickname": "degster",
+        "player_realname": "Abdul Gasanov",
+        "player_nationality": "Russia",
+        "team_id": 10503
+    },
+    "19044": {
+        "player_nickname": "F1KU",
+        "player_realname": "Maciej Miklas",
+        "player_nationality": "Poland",
+        "team_id": 10503
+    },
+    "7528": {
+        "player_nickname": "KRIMZ",
+        "player_realname": "Freddy Johansson",
+        "player_nationality": "Sweden",
+        "team_id": 4991
+    },
+    "11954": {
+        "player_nickname": "FASHR",
+        "player_realname": "Dion Derksen",
+        "player_nationality": "Netherlands",
+        "team_id": 4991
+    },
+    "13602": {
+        "player_nickname": "nicoodoz",
+        "player_realname": "Nico Tamjidi",
+        "player_nationality": "Denmark",
+        "team_id": 4991
+    },
+    "14419": {
+        "player_nickname": "roeJ",
+        "player_realname": "Fredrik Jørgensen",
+        "player_nationality": "Denmark",
+        "team_id": 4991
+    },
+    "18462": {
+        "player_nickname": "mezii",
+        "player_realname": "William Merriman",
+        "player_nationality": "United Kingdom",
+        "team_id": 4991
+    },
+    "7412": {
+        "player_nickname": "gla1ve",
+        "player_realname": "Lukas Rossander",
+        "player_nationality": "Denmark",
+        "team_id": 6665
+    },
+    "7592": {
+        "player_nickname": "device",
+        "player_realname": "Nicolai Reedtz",
+        "player_nationality": "Denmark",
+        "team_id": 6665
+    },
+    "15165": {
+        "player_nickname": "blameF",
+        "player_realname": "Benjamin Bremer",
+        "player_nationality": "Denmark",
+        "team_id": 6665
+    },
+    "16705": {
+        "player_nickname": "Altekz",
+        "player_realname": "Alexander Givskov",
+        "player_nationality": "Denmark",
+        "team_id": 6665
+    },
+    "20941": {
+        "player_nickname": "Buzz",
+        "player_realname": "Christian Andersen",
+        "player_nationality": "Denmark",
+        "team_id": 6665
+    },
+    "5794": {
+        "player_nickname": "tabseN",
+        "player_realname": "Johannes Wodarz",
+        "player_nationality": "Germany",
+        "team_id": 7532
+    },
+    "12781": {
+        "player_nickname": "k1to",
+        "player_realname": "Nils Gruhne",
+        "player_nationality": "Germany",
+        "team_id": 7532
+    },
+    "14932": {
+        "player_nickname": "faveN",
+        "player_realname": "Josef Baumann",
+        "player_nationality": "Germany",
+        "team_id": 7532
+    },
+    "19899": {
+        "player_nickname": "Krimbo",
+        "player_realname": "Karim Moussa",
+        "player_nationality": "Germany",
+        "team_id": 7532
+    },
+    "21468": {
+        "player_nickname": "hyped",
+        "player_realname": "Marcel Köhn",
+        "player_nationality": "Germany",
+        "team_id": 7532
+    },
+    "5388": {
+        "player_nickname": "rallen",
+        "player_realname": "Karol Rodowicz",
+        "player_nationality": "Poland",
+        "team_id": 11164
+    },
+    "7996": {
+        "player_nickname": "CRUC1AL",
+        "player_realname": "Joey Steusel",
+        "player_nationality": "Netherlands",
+        "team_id": 11164
+    },
+    "13018": {
+        "player_nickname": "Thomas",
+        "player_realname": "Thomas Utting",
+        "player_nationality": "United Kingdom",
+        "team_id": 11164
+    },
+    "18571": {
+        "player_nickname": "CYPHER",
+        "player_realname": "Cai Watson",
+        "player_nationality": "United Kingdom",
+        "team_id": 11164
+    },
+    "20358": {
+        "player_nickname": "volt",
+        "player_realname": "Sebastian Malos",
+        "player_nationality": "United Kingdom",
+        "team_id": 11164
+    },
+    "12027": {
+        "player_nickname": "Krad",
+        "player_realname": "Vladislav Kravchenko",
+        "player_nationality": "Russia",
+        "team_id": 8135
+    },
+    "13157": {
+        "player_nickname": "Jerry",
+        "player_realname": "Andrey Mekhryakov",
+        "player_nationality": "Russia",
+        "team_id": 8135
+    },
+    "15662": {
+        "player_nickname": "zorte",
+        "player_realname": "Aleksandr Zagodyrenko",
+        "player_nationality": "Russia",
+        "team_id": 8135
+    },
+    "17011": {
+        "player_nickname": "shalfey",
+        "player_realname": "Aleksandr Marenov",
+        "player_nationality": "Russia",
+        "team_id": 8135
+    },
+    "20709": {
+        "player_nickname": "r3salt",
+        "player_realname": "Evgeny Frolov",
+        "player_nationality": "Russia",
+        "team_id": 8135
+    },
+    "4829": {
+        "player_nickname": "mynio",
+        "player_realname": "Wiktor Kruk",
+        "player_nationality": "Poland",
+        "team_id": 10278
+    },
+    "15428": {
+        "player_nickname": "Goofy",
+        "player_realname": "Krzysztof Górski",
+        "player_nationality": "Poland",
+        "team_id": 10278
+    },
+    "16848": {
+        "player_nickname": "hades",
+        "player_realname": "Olek Miskiewicz",
+        "player_nationality": "Poland",
+        "team_id": 10278
+    },
+    "17504": {
+        "player_nickname": "KEi",
+        "player_realname": "Kamil Pietkun",
+        "player_nationality": "Poland",
+        "team_id": 10278
+    },
+    "19114": {
+        "player_nickname": "Kylar",
+        "player_realname": "Kacper Walukiewicz",
+        "player_nationality": "Poland",
+        "team_id": 10278
+    },
+    "12732": {
+        "player_nickname": "FL1T",
+        "player_realname": "Evgenii Lebedev",
+        "player_nationality": "Russia",
+        "team_id": 5378
+    },
+    "13239": {
+        "player_nickname": "Qikert",
+        "player_realname": "Alexey Golubev",
+        "player_nationality": "Kazakhstan",
+        "team_id": 5378
+    },
+    "13776": {
+        "player_nickname": "Jame",
+        "player_realname": "Dzhami Ali",
+        "player_nationality": "Russia",
+        "team_id": 5378
+    },
+    "20101": {
+        "player_nickname": "fame",
+        "player_realname": "Petr Bolyshev",
+        "player_nationality": "Russia",
+        "team_id": 5378
+    },
+    "9482": {
+        "player_nickname": "NEKIZ",
+        "player_realname": "Gabriel Schenato",
+        "player_nationality": "Brazil",
+        "team_id": 4773
+    },
+    "16817": {
+        "player_nickname": "hardzao",
+        "player_realname": "Wesley Lopes",
+        "player_nationality": "Brazil",
+        "team_id": 4773
+    },
+    "18141": {
+        "player_nickname": "biguzera",
+        "player_realname": "Rodrigo Bittencourt",
+        "player_nationality": "Brazil",
+        "team_id": 4773
+    },
+    "18676": {
+        "player_nickname": "skullz",
+        "player_realname": "Felipe Medeiros",
+        "player_nationality": "Brazil",
+        "team_id": 4773
+    },
+    "19692": {
+        "player_nickname": "zevy",
+        "player_realname": "Romeu Rocco",
+        "player_nationality": "Brazil",
+        "team_id": 4773
+    },
+    "12708": {
+        "player_nickname": "rigoN",
+        "player_realname": "Rigon Gashi",
+        "player_nationality": "Switzerland",
+        "team_id": 11518
+    },
+    "15778": {
+        "player_nickname": "SENER1",
+        "player_realname": "Sener Mahmuti",
+        "player_nationality": "Kosovo",
+        "team_id": 11518
+    },
+    "17147": {
+        "player_nickname": "juanflatroo",
+        "player_realname": "Flatron Halimi",
+        "player_nationality": "Kosovo",
+        "team_id": 11518
+    },
+    "18120": {
+        "player_nickname": "sinnopsyy",
+        "player_realname": "Dionis Budeci",
+        "player_nationality": "Kosovo",
+        "team_id": 11518
+    },
+    "19725": {
+        "player_nickname": "gxx-",
+        "player_realname": "Genc Kolgeci",
+        "player_nationality": "Kosovo",
+        "team_id": 11518
+    },
+    "11630": {
+        "player_nickname": "JT",
+        "player_realname": "Johnny Theodosiou",
+        "player_nationality": "South Africa",
+        "team_id": 5005
+    },
+    "12713": {
+        "player_nickname": "floppy",
+        "player_realname": "Ricky Kemery",
+        "player_nationality": "United States",
+        "team_id": 5005
+    },
+    "12840": {
+        "player_nickname": "hallzerk",
+        "player_realname": "Håkon Fjærli",
+        "player_nationality": "Norway",
+        "team_id": 5005
+    },
+    "13578": {
+        "player_nickname": "Grim",
+        "player_realname": "Michael Wince",
+        "player_nationality": "United States",
+        "team_id": 5005
+    },
+    "17372": {
+        "player_nickname": "FaNg",
+        "player_realname": "Justin Coakley",
+        "player_nationality": "Canada",
+        "team_id": 5005
+    },
+    "9102": {
+        "player_nickname": "Sico",
+        "player_realname": "Simon Williams",
+        "player_nationality": "New Zealand",
+        "team_id": 8008
+    },
+    "10588": {
+        "player_nickname": "Liazz",
+        "player_realname": "Jay Tregillgas",
+        "player_nationality": "Australia",
+        "team_id": 8008
+    },
+    "11139": {
+        "player_nickname": "aliStair",
+        "player_realname": "Alistair Johnston",
+        "player_nationality": "Australia",
+        "team_id": 8008
+    },
+    "11140": {
+        "player_nickname": "INS",
+        "player_realname": "Joshua Potter",
+        "player_nationality": "Australia",
+        "team_id": 8008
+    },
+    "17384": {
+        "player_nickname": "Vexite",
+        "player_realname": "Declan Portelli",
+        "player_nationality": "Australia",
+        "team_id": 8008
+    },
+    "7716": {
+        "player_nickname": "chopper",
+        "player_realname": "Leonid Vishnyakov",
+        "player_nationality": "Russia",
+        "team_id": 7020
+    },
+    "18317": {
+        "player_nickname": "magixx",
+        "player_realname": "Boris Vorobiev",
+        "player_nationality": "Russia",
+        "team_id": 7020
+    },
+    "18506": {
+        "player_nickname": "s1ren",
+        "player_realname": "Pavel Ogloblin",
+        "player_nationality": "Russia",
+        "team_id": 7020
+    },
+    "19673": {
+        "player_nickname": "Patsi",
+        "player_realname": "Robert Isyanov",
+        "player_nationality": "Russia",
+        "team_id": 7020
+    },
+    "20127": {
+        "player_nickname": "w0nderful",
+        "player_realname": "Igor Zhdanov",
+        "player_nationality": "Ukraine",
+        "team_id": 7020
+    },
+    "8371": {
+        "player_nickname": "alex",
+        "player_realname": "Alejandro Masanet",
+        "player_nationality": "Spain",
+        "team_id": 7718
+    },
+    "9254": {
+        "player_nickname": "mopoz",
+        "player_realname": "Alejandro Fernández-Quejo Cano",
+        "player_nationality": "Spain",
+        "team_id": 7718
+    },
+    "18749": {
+        "player_nickname": "sausol",
+        "player_realname": "Pere Solsona Saumell",
+        "player_nationality": "Spain",
+        "team_id": 7718
+    },
+    "19509": {
+        "player_nickname": "dav1g",
+        "player_realname": "David Granado Bermudo",
+        "player_nationality": "Spain",
+        "team_id": 7718
+    },
+    "21239": {
+        "player_nickname": "Martinez",
+        "player_realname": "Antonio Martinez",
+        "player_nationality": "Spain",
+        "team_id": 7718
+    },
+    "12092": {
+        "player_nickname": "max",
+        "player_realname": "Maximiliano Gonzalez",
+        "player_nationality": "Uruguay",
+        "team_id": 9996
+    },
+    "14736": {
+        "player_nickname": "dgt",
+        "player_realname": "Franco Garcia",
+        "player_nationality": "Uruguay",
+        "team_id": 9996
+    },
+    "18865": {
+        "player_nickname": "dav1deuS",
+        "player_realname": "David Tapia Maldonado",
+        "player_nationality": "Chile",
+        "team_id": 9996
+    },
+    "19869": {
+        "player_nickname": "try",
+        "player_realname": "Santino Rigal",
+        "player_nationality": "Argentina",
+        "team_id": 9996
+    },
+    "20607": {
+        "player_nickname": "buda",
+        "player_realname": "Nicolás Kramer",
+        "player_nationality": "Argentina",
+        "team_id": 9996
+    },
+    "8891": {
+        "player_nickname": "Nodios",
+        "player_realname": "Magnus Olsen",
+        "player_nationality": "Denmark",
+        "team_id": 11419
+    },
+    "13749": {
+        "player_nickname": "Queenix",
+        "player_realname": "Jonas Dideriksen",
+        "player_nationality": "Denmark",
+        "team_id": 11419
+    },
+    "15349": {
+        "player_nickname": "maNkz",
+        "player_realname": "Marcus Kjeldsen",
+        "player_nationality": "Denmark",
+        "team_id": 11419
+    },
+    "20300": {
+        "player_nickname": "kraghen",
+        "player_realname": "Tobias Kragh Jensen",
+        "player_nationality": "Denmark",
+        "team_id": 11419
+    },
+    "21379": {
+        "player_nickname": "salazar",
+        "player_realname": "Jason Salazar",
+        "player_nationality": "Denmark",
+        "team_id": 11419
+    }
+}

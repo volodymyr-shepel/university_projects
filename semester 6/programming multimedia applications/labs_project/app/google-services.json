@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "166607751628",
+    "project_id": "travelguru-d1dda",
+    "storage_bucket": "travelguru-d1dda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166607751628:android:b77a3c27036e1bdb6df569",
+        "android_client_info": {
+          "package_name": "com.rogue.travelguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166607751628-kir7gob57cq0qea8fsiome5q8kcmajh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rogue.travelguru",
+            "certificate_hash": "3e312823bb62a4874c12734eb324b9f92886b1e3"
+          }
+        },
+        {
+          "client_id": "166607751628-vd82t04cqfrgcr3schqv3ej93n32igqg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7IASlowtOtz_maoKQNyFq6qWQKynx1AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166607751628-vd82t04cqfrgcr3schqv3ej93n32igqg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

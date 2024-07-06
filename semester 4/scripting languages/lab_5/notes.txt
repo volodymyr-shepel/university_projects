@@ -1,0 +1,36 @@
+This is a log entry in the Common Log Format (CLF) for an HTTP request made to a server.
+[26/Feb/2023:01:55:52 +0100]
+Here is a breakdown of the different components of the log entry:
+
+IP address: 45.83.64.107
+Date and time: 26/Feb/2023:00:20:26 +0100
+HTTP request method, URL and protocol version: "GET / HTTP/1.1"
+HTTP status code: 301
+Size of the response in bytes: 231
+Referrer: "-"
+User agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0"
+The log entry indicates that a client with the IP address 45.83.64.107 made a GET request for the root ("/") of a web server using the
+HTTP/1.1 protocol. The server responded with a 301 (Moved Permanently) status code, indicating that the requested resource has been 
+moved to a different location. The size of the response was 231 bytes. The referrer field is empty ("-"), indicating that the client did 
+not provide a referrer header in the request. The user agent field indicates that the client was using Firefox version 65.0 on Windows 10
+(Win64 architecture).
+
+In the log entry, the first hyphen "-" after the IP address and client identity fields represents the remote user's name. The remote user's
+name field is not used very often, and in most cases, it is not relevant or not available. Therefore, it is represented by a hyphen "-" in
+the log entry.
+
+The second hyphen "-" in the log entry represents the user identity field, which is also optional and not used very often. In many cases,
+the user identity field is not relevant or not available, and thus the hyphen "-" is used as a placeholder in the log entry.
+
+What is meant by referrer header?
+In an HTTP request, the referrer header (also known as the "referer header") provides information about the URL of the web page that the 
+client was on when it clicked a link or submitted a form to make the current request. The referrer header is sent by the client to the 
+server, and it is part of the HTTP request header.
+
+For example, if a user is on a web page "A" and clicks on a link to go to another web page "B", the referrer header in the request for
+ web page "B" would contain the URL of the previous web page "A". This information can be useful for the server to track the user's 
+navigation path on the website and to analyze traffic sources.
+
+It is important to note that the referrer header is optional, and some clients (such as privacy-focused browsers or security software) 
+may not send the referrer header to protect the user's privacy or to prevent information leakage. Additionally, some websites may choose
+to block or modify the referrer header for security or privacy reasons.

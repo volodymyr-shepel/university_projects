@@ -1,0 +1,2 @@
+us_accidents : https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents
+los_angeles_crimes : https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data

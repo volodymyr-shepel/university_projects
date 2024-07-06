@@ -1,0 +1,18 @@
+﻿  main.cpp
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\laboratory6\laboratory6\CTreeDynamic.h(12,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\laboratory6\laboratory6\CTreeDynamic.h(12): message : while compiling class template member function 'int CNodeDynamic<T>::iGetChildrenNumber(void)'
+          with
+          [
+              T=std::string
+          ]
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\laboratory6\laboratory6\CTreeDynamic.h(49): message : see reference to function template instantiation 'int CNodeDynamic<T>::iGetChildrenNumber(void)' being compiled
+          with
+          [
+              T=std::string
+          ]
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\laboratory6\laboratory6\main.cpp(36): message : see reference to class template instantiation 'CNodeDynamic<T>' being compiled
+          with
+          [
+              T=std::string
+          ]
+  laboratory6.vcxproj -> C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\laboratory6\x64\Debug\laboratory6.exe

@@ -1,0 +1,153 @@
+body {
+    background-color: #2c2f33;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #23272a;
+}
+
+.navbar a.navbar-button {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #7289da;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a.navbar-button:hover {
+    background-color: #99aab5;
+    color: white;
+}
+
+/* Logout button styling */
+.navbar a.logout-button {
+    background-color: #e74c3c;
+}
+
+.navbar a.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* New Game button styling */
+.navbar a.new-game-button {
+    background-color: #2ecc71;
+}
+
+.navbar a.new-game-button:hover {
+    background-color: #27ae60;
+}
+
+.game-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust height to account for navbar */
+}
+
+.card {
+    background-color: #23272a;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    max-width: 250px;
+    padding: 10px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.player-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 330px; /* Adjusted to account for margins */
+    height: 330px; /* Adjusted to account for margins */
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: antiquewhite; /* Reverted to original color */
+    margin: 5px; /* Add margin to create space around each cell */
+    transition: background-color 0.3s ease;
+}
+
+
+.cell button {
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    background-color: antiquewhite; /* Reverted to original color */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: black;
+    cursor: pointer;
+}
+
+.cell button:hover {
+    background-color: lightgrey; /* Reverted to original hover color */
+}
+
+.cell span {
+    font-size: 50px;
+    background-color: antiquewhite; /* Reverted to original color */
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.cell.winning-cell span {
+    color: #2ecc71; /* Green for the player who won */
+}
+
+.cell.winning-cell {
+    background-color: #2ecc71; /* Green background for the winning cells */
+}
+
+.text-blue {
+    color: #3498db;
+}
+
+.text-white {
+    color: white;
+}

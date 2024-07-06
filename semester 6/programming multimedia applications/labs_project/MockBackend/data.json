@@ -1,0 +1,226 @@
+{
+    
+    "1": {
+        "id" : 1,
+      "name": "Wrocław Market Square",
+      "description": "The Market Square is the heart of Wrocław, filled with historic buildings and vibrant energy.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/1_1.jpg",
+      "latitude": 51.1106,
+      "longitude": 17.0332,
+      "imageUrls": ["http://192.168.137.1:8080/images/1_1.jpg", "http://192.168.137.1:8080/images/1_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/1.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/1.mp3"
+    },
+    "2": {
+        "id" : 2,
+      "name": "Wrocław Cathedral",
+      "description": "The Cathedral of St. John the Baptist is an iconic landmark in Wrocław, known for its stunning Gothic architecture.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/2_1.jpg",
+      "latitude": 51.114167,
+      "longitude": 17.046111,
+      "imageUrls": ["http://192.168.137.1:8080/images/2_1.jpg", "http://192.168.137.1:8080/images/2_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/2.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/2.mp3"
+    },
+    "3": {
+        "id" : 3,
+      "name": "Ostrów Tumski",
+      "description": "Ostrów Tumski is the oldest part of Wrocław, featuring historic churches and charming cobblestone streets.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/3_1.jpg",
+      "latitude": 51.1145,
+      "longitude": 17.0467,
+      "imageUrls": ["http://192.168.137.1:8080/images/3_1.jpg", "http://192.168.137.1:8080/images/3_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/3.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/3.mp3"
+    },
+    "4": {
+        "id" : 4,
+      "name": "Centennial Hall",
+      "description": "A UNESCO World Heritage Site, Centennial Hall is an architectural marvel and a symbol of Wrocław's resilience.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/4_1.jpg",
+      "latitude": 51.1069,
+      "longitude": 17.0773,
+      "imageUrls": ["http://192.168.137.1:8080/images/4_1.jpg", "http://192.168.137.1:8080/images/4_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/4.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/4.mp3"
+    },
+    "5": {
+        "id" : 5,
+      "name": "Racławice Panorama",
+      "description": "Experience a piece of history at the Racławice Panorama, an enormous 19th-century painting depicting the Battle of Racławice.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/5_1.jpg",
+      "latitude": 51.1101,
+      "longitude": 17.044,
+      "imageUrls": ["http://192.168.137.1:8080/images/5_1.jpg", "http://192.168.137.1:8080/images/5_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/5.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/5.mp3"
+    },
+    "6": {
+        "id" : 6,
+      "name": "Wrocław University",
+      "description": "Wrocław University is one of Poland's oldest and most prestigious universities, located in the heart of the city.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/6_1.jpg",
+      "latitude": 51.1052,
+      "longitude": 17.055,
+      "imageUrls": ["http://192.168.137.1:8080/images/6_1.jpg", "http://192.168.137.1:8080/images/6_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/6.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/6.mp3"
+    },
+    "7": {
+        "id" : 7,
+      "name": "Japanese Garden",
+      "description": "Escape the hustle and bustle of the city at the serene Japanese Garden, a tranquil oasis of nature and beauty.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/7_1.jpg",
+      "latitude": 51.110,
+      "longitude": 17.079,
+      "imageUrls": ["http://192.168.137.1:8080/images/7_1.jpg", "http://192.168.137.1:8080/images/7_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/1.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/1.mp3"
+    },
+    "8": {
+        "id" : 8,
+      "name": "Wrocław Zoo",
+      "description": "Explore the wonders of the animal kingdom at Wrocław Zoo, home to a diverse array of species from around the world.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/8_1.jpg",
+      "latitude": 51.104,
+      "longitude": 17.074,
+      "imageUrls": ["http://192.168.137.1:8080/images/8_1.jpg", "http://192.168.137.1:8080/images/8_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/2.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/2.mp3"
+    },
+    "9": {
+        "id" : 9,
+      "name": "Wrocław Multimedia Fountain",
+      "description": "Marvel at the spectacular water and light displays at the Wrocław Multimedia Fountain, a must-see attraction for visitors of all ages.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/9_1.jpg",
+      "latitude": 51.108,
+      "longitude": 17.078,
+      "imageUrls": ["http://192.168.137.1:8080/images/9_1.jpg", "http://192.168.137.1:8080/images/9_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/3.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/3.mp3"
+    },
+    "10": {
+        "id" : 10,
+      "name": "Wrocław Aquapark",
+      "description": "Cool off and have fun at the Wrocław Aquapark, featuring thrilling water slides, relaxing pools, and more.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/10_1.jpg",
+      "latitude": 51.090,
+      "longitude": 17.032,
+      "imageUrls": ["http://192.168.137.1:8080/images/10_1.jpg", "http://192.168.137.1:8080/images/10_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/4.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/4.mp3"
+    },
+    "11": {
+        "id" : 11,
+      "name": "Museum of illusions Wroclaw",
+      "description": "The Museum of illusions Wroclaw is a fascinating attraction that plays with perception and reality. Visitors can explore various optical illusions, holograms, and interactive exhibits that challenge the mind and delight the senses.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/11_1.jpg",
+      "latitude": 51.1153,
+      "longitude": 17.0398,
+      "imageUrls": ["http://192.168.137.1:8080/images/11_1.jpg", "http://192.168.137.1:8080/images/11_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/5.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/5.mp3"
+    },
+    "12": {
+        "id" : 12,
+      "name": "Wrocław Opera",
+      "description": "Experience world-class opera and ballet performances at the Wrocław Opera, housed in a magnificent historic building.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/12_1.jpg",
+      "latitude": 51.1056,
+      "longitude": 17.0311,
+      "imageUrls": ["http://192.168.137.1:8080/images/12_1.jpg", "http://192.168.137.1:8080/images/12_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/6.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/6.mp3"
+    },
+    "13": {
+        "id" : 13,
+      "name": "Wrocław Old Town Hall",
+      "description": "Step back in time at the Wrocław Old Town Hall, a beautiful Gothic building with a rich history.",
+      "titleImageUrl": "http://192.168.137.1:8080/images/13_1.jpg",
+      "latitude": 51.1097,
+      "longitude": 17.0316,
+      "imageUrls": ["http://192.168.137.1:8080/images/13_1.jpg", "http://192.168.137.1:8080/images/13_2.jpg"],
+      "videoUrl": "http://192.168.137.1:8080/videos/1.mp4",
+      "audioUrl" : "http://192.168.137.1:8080/audios/1.mp3"
+    },
+    "14": {
+        "id" : 14,
+        "name": "Wrocław Botanical Garden",
+        "description": "Discover the beauty of nature at the Wrocław Botanical Garden.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/14_1.jpg",
+        "latitude": 51.1078,
+        "longitude": 17.0385,
+        "imageUrls": ["http://192.168.137.1:8080/images/14_1.jpg", "http://192.168.137.1:8080/images/14_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/2.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/2.mp3"
+      },
+      "15": {
+        "id" : 15,
+        "name": "Wrocław Szczytnicki Park",
+        "description": "Relax and unwind in the picturesque surroundings of Wrocław Szczytnicki Park.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/15_1.jpg",
+        "latitude": 51.1083,
+        "longitude": 17.0756,
+        "imageUrls": ["http://192.168.137.1:8080/images/15_1.jpg", "http://192.168.137.1:8080/images/15_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/3.mp4", 
+        "audioUrl" : "http://192.168.137.1:8080/audios/3.mp3"
+      },
+      "16": {
+        "id" : 16,
+        "name": "National Museum in Wrocław",
+        "description": "Immerse yourself in art and culture at the National Museum in Wrocław, home to a vast collection of works spanning centuries.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/16_1.jpg",
+        "latitude": 51.11,
+        "longitude": 17.0472,
+        "imageUrls": ["http://192.168.137.1:8080/images/16_1.jpg", "http://192.168.137.1:8080/images/16_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/4.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/4.mp3"
+      },
+      "17": {
+        "id" : 17,
+        "name": "Wrocław Contemporary Museum",
+        "description": "Experience cutting-edge contemporary art at the Wrocław Contemporary Museum, housed in a former air-raid shelter.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/17_1.jpg",
+        "latitude": 51.1132,
+        "longitude": 17.0050,
+        "imageUrls": ["http://192.168.137.1:8080/images/17_1.jpg", "http://192.168.137.1:8080/images/17_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/5.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/5.mp3"
+      },
+      "18": {
+        "id" : 18,
+        "name": "Wrocław Palace",
+        "description": "Admire the grandeur of Wrocław Palace, a magnificent Baroque residence surrounded by beautiful gardens.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/18_1.jpg",
+        "latitude": 51.1044,
+        "longitude": 17.0238,
+        "imageUrls": ["http://192.168.137.1:8080/images/18_1.jpg", "http://192.168.137.1:8080/images/18_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/6.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/6.mp3"
+        
+
+      },
+      "19": {
+        "id" : 19,
+        "name": "Wrocław Hydropolis",
+        "description": "Dive into the fascinating world of water at Wrocław Hydropolis, an interactive science center dedicated to the wonders of H2O.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/19_1.jpg",
+        "latitude": 51.1043,
+        "longitude": 17.0566,
+        "imageUrls": ["http://192.168.137.1:8080/images/19_1.jpg", "http://192.168.137.1:8080/images/19_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/5.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/5.mp3"
+      },
+      "20": {
+        "id" : 20,
+        "name": "Wrocław Puppet Theater",
+        "description": "Experience the magic of puppetry at the Wrocław Puppet Theater, where imaginative performances delight audiences of all ages.",
+        "titleImageUrl": "http://192.168.137.1:8080/images/20_1.jpg",
+        "latitude": 51.1051,
+        "longitude": 17.033,
+        "imageUrls": ["http://192.168.137.1:8080/images/20_1.jpg", "http://192.168.137.1:8080/images/20_2.jpg"],
+        "videoUrl": "http://192.168.137.1:8080/videos/6.mp4",
+        "audioUrl" : "http://192.168.137.1:8080/audios/6.mp3"
+      }
+
+}

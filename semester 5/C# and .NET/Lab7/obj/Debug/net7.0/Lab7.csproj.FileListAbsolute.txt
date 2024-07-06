@@ -1,0 +1,14 @@
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.GeneratedMSBuildEditorConfig.editorconfig
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.AssemblyInfoInputs.cache
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.AssemblyInfo.cs
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.csproj.CoreCompileInputs.cache
+D:\PWR\semester 5\C#\Lab7\bin\Debug\net7.0\Lab7.exe
+D:\PWR\semester 5\C#\Lab7\bin\Debug\net7.0\Lab7.deps.json
+D:\PWR\semester 5\C#\Lab7\bin\Debug\net7.0\Lab7.runtimeconfig.json
+D:\PWR\semester 5\C#\Lab7\bin\Debug\net7.0\Lab7.dll
+D:\PWR\semester 5\C#\Lab7\bin\Debug\net7.0\Lab7.pdb
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.dll
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\refint\Lab7.dll
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.pdb
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\Lab7.genruntimeconfig.cache
+D:\PWR\semester 5\C#\Lab7\obj\Debug\net7.0\ref\Lab7.dll

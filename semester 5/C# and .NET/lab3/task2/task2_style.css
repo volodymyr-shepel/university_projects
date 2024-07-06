@@ -1,0 +1,30 @@
+#task2 {
+    background-color: #f0f0f0; /* Set a background color for the #task2 container */
+    border: 2px solid #333; /* Adds a border with color #333 */
+    color: #555; /* Sets the text color to a shade of gray */
+    font-family: Arial, sans-serif; /* Changes the font to Arial or a sans-serif fallback */
+    padding: 20px; /* Adds some padding to the container */
+  }
+  
+  .em-text,
+  .px-text,
+  .pt-text,
+  .percent-text {
+    margin: 10px;
+  }
+  
+  .em-text {
+    font-size: 1.5em;
+  }
+  
+  .px-text {
+    font-size: 20px;
+  }
+  
+  .pt-text {
+    font-size: 16pt;
+  }
+  
+  .percent-text {
+    font-size: 120%;
+  }

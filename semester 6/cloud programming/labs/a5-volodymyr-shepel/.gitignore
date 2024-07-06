@@ -1,0 +1,7 @@
+# Remember to add any unnecessary folders and files here
+terraform.tfstate
+build/terraform.tfstate.backup
+build/.terraform.lock.hcl
+build/terraform.tfstate
+build/.terraform/
+.idea/

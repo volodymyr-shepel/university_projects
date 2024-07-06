@@ -1,0 +1,212 @@
+--TASK 17
+--modifed 
+SELECT c.nickname "Hunts in the field",c.mice_ration "Ration of mice",b.name "Band"
+FROM Cats c
+INNER JOIN Bands b
+ON  c.band_no = b.Band_no
+WHERE c.mice_ration > 40 
+AND (b.site = 'FIELD' OR b.site = 'WHOLE AREA')
+ORDER BY c.mice_ration DESC;
+
+
+--TASK 18
+--modify
+
+SELECT  C2.name "Name", C2.in_herd_since "Hunts since"
+FROM Cats C1, Cats C2
+WHERE C1.name = (
+    SELECT name 
+    FROM Cats 
+    ORDER BY name DESC 
+    FETCH FIRST 1 ROWS ONLY
+    ) AND C1.in_herd_since > C2.in_herd_since
+ORDER BY C2.in_herd_since DESC;
+
+--TASK 21
+--modified
+SELECT b.name "Band name",COUNT(DISTINCT i.enemy_name) "Cats with enemies ",COUNT(DISTINCT I.enemy_name) "Cats with DISTINCT enemies"
+FROM Incidents i
+INNER JOIN Enemies e
+ON i.enemy_name = e.enemy_name
+INNER JOIN Cats c
+ON i.nickname = c.nickname
+INNER JOIN Bands b
+ON c.band_no = b.band_no
+GROUP BY b.name;
+
+--TASK 24
+-- modified
+SELECT b.Band_no, b.name, b.site
+FROM Bands b
+WHERE b.site IN (
+    SELECT b.site
+    FROM Bands b
+    MINUS
+    SELECT b.site
+    FROM Bands b
+    INNER JOIN Cats c ON b.band_no = c.band_no
+)
+OR b.site = 'WHOLE AREA';
+
+-- because there is unique constraint on site column
+ALTER TABLE Bands 
+DROP CONSTRAINT SYS_C00141274373;
+
+INSERT INTO Bands 
+VALUES 
+(10,'KAISEN','FARM','TIGER');
+
+
+SELECT b.Band_no, b.name, b.site
+FROM Bands b
+WHERE b.site IN (
+    SELECT b.site
+    FROM Bands b
+    MINUS
+    SELECT b.site
+    FROM Bands b
+    INNER JOIN Cats c ON b.band_no = c.band_no
+)
+OR b.site = 'WHOLE AREA';
+
+ROLLBACK;
+
+--TASK 27
+-- modified
+
+SELECT
+    function "Function",
+    CEIL(average_mice) AS "Average min and max mice",
+    MIN_HERD
+    
+    
+FROM (
+    SELECT
+        c.function,
+        AVG(NVL(c.mice_ration, 0) + NVL(c.mice_extra, 0)) AS average_mice,
+   		MIN(in_herd_since) as MIN_HERD
+    FROM
+        Cats c
+    WHERE
+        c.function <> 'BOSS'
+    GROUP BY
+        c.function
+)
+WHERE
+    average_mice = (SELECT MAX(average_mice) FROM (SELECT AVG(NVL(c.mice_ration, 0) + NVL(c.mice_extra, 0)) AS average_mice FROM Cats c WHERE c.function <> 'BOSS' GROUP BY c.function))
+    OR
+    average_mice = (SELECT MIN(average_mice) FROM (SELECT AVG(NVL(c.mice_ration, 0) + NVL(c.mice_extra, 0)) AS average_mice FROM Cats c WHERE c.function <> 'BOSS' GROUP BY c.function));
+
+
+--TASK 28
+-- modified
+SELECT TO_CHAR(MONTH) "MONTH", SUM
+FROM
+(
+  SELECT MONTH, SUM, ABS(SUM-AVG) "DIFF"
+  FROM
+    (
+      SELECT EXTRACT(MONTH FROM in_herd_since) "MONTH", COUNT(EXTRACT(MONTH FROM in_herd_since)) "SUM"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) JOIN (
+      SELECT AVG(COUNT(EXTRACT(MONTH FROM in_herd_since))) "AVG"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) ON SUM < AVG
+)
+WHERE DIFF <= ALL
+(
+  SELECT ROUND(MAX(ABS(SUM-AVG))) "DIFF"
+  FROM
+    (
+      SELECT EXTRACT(MONTH FROM in_herd_since) "MONTH", COUNT(EXTRACT(MONTH FROM in_herd_since)) "SUM"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) JOIN (
+      SELECT AVG(COUNT(EXTRACT(MONTH FROM in_herd_since))) "AVG"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) ON SUM < AVG
+)
+
+UNION ALL
+
+SELECT 'Average', ROUND(AVG(COUNT(EXTRACT(MONTH FROM in_herd_since))), 7) "AVG"
+FROM Cats
+GROUP BY EXTRACT(MONTH FROM in_herd_since)
+
+UNION ALL
+
+SELECT TO_CHAR(MONTH), SUM
+FROM
+(
+  SELECT MONTH, SUM, ABS(SUM-AVG) "DIFF"
+  FROM
+    (
+      SELECT EXTRACT(MONTH FROM in_herd_since) "MONTH", COUNT(EXTRACT(MONTH FROM in_herd_since)) "SUM"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) JOIN (
+      SELECT AVG(COUNT(EXTRACT(MONTH FROM in_herd_since))) "AVG"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) ON SUM > AVG
+)
+WHERE DIFF < ALL
+(
+  SELECT MAX(ABS(SUM-AVG)) "DIFF"
+  FROM
+    (
+      SELECT EXTRACT(MONTH FROM in_herd_since) "MONTH", COUNT(EXTRACT(MONTH FROM in_herd_since)) "SUM"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) JOIN  (
+      SELECT AVG(COUNT(EXTRACT(MONTH FROM in_herd_since))) "AVG"
+      FROM Cats
+      GROUP BY EXTRACT(MONTH FROM in_herd_since)
+    ) ON SUM > AVG
+);
+
+--TASK 29
+--modified a 
+SELECT
+c1.name	 "NAME",
+MAX(NVL(c1.mice_ration,0) + NVL(c1.mice_extra, 0))	"EATS",
+MAX(c1.band_no)	 "BAND NO",
+TO_CHAR(AVG(NVL(c2.mice_ration, 0) + NVL(c2.mice_extra, 0)), '99.00') "AVG",
+DECODE(c1.in_herd_since, MAX(c2.in_herd_since), 1, 0) "IS YOUNGEST"
+FROM Cats c1
+INNER JOIN Cats c2 ON c1.band_no = c2.band_no
+WHERE c1.gender = 'M'
+GROUP BY c1.name, c1.in_herd_since
+HAVING MAX(NVL(c1.mice_ration,0) + NVL(c1.mice_extra,0)) < AVG(NVL(c2.mice_ration,0) + NVL(c2.mice_extra,0))
+ORDER BY "AVG";
+
+-- modified b
+
+SELECT c1.name,c1.mice_ration + NVL(c1.mice_extra,0) "EATS",c1.band_no "BAND NO",TO_CHAR(average,'99.99') "AVERAGE IN BAND",
+    CASE WHEN c1.in_herd_since = (SELECT MAX(in_herd_since) FROM Cats WHERE band_no = c1.band_no) THEN 1
+    ELSE 0
+    END "IS YOUNGEST"
+FROM Cats c1 INNER JOIN(SELECT band_no,COUNT(*) AS count,AVG(mice_ration + NVL(mice_extra,0)) AS average FROM Cats GROUP BY band_no) stats
+ON c1.band_no = stats.band_no
+WHERE c1.mice_ration + NVL(c1.mice_extra,0) < stats.average
+AND c1.gender = 'M'
+
+-- modified c
+SELECT name, mice_ration + NVL(mice_extra, 0) "EATS", band_no, 
+  TO_CHAR(
+    (SELECT AVG(mice_ration + NVL(mice_extra, 0)) AS average 
+    FROM Cats c 
+    WHERE Cats.band_no = c.band_no), '99.99') "AVERAGE IN BAND",
+    
+ 	CASE WHEN in_herd_since = (SELECT MAX(c1.in_herd_since) FROM Cats c1 WHERE c1.band_no = Cats.band_no) THEN 1
+    ELSE 0
+    END "IS YOUNGEST"
+FROM Cats
+WHERE gender = 'M'
+AND mice_ration + NVL(mice_extra, 0) < (
+    SELECT AVG(mice_ration + NVL(mice_extra, 0)) AS average 
+    FROM Cats c WHERE Cats.band_no= c.band_no);
+    

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leaderboard</title>
+    <link th:href="@{/css/leaderboard.css}" rel="stylesheet" />
+    <script th:src="@{/js/leaderboard.js}" defer></script>
+    <script th:inline="javascript">
+        var ipAddress = /*[[${ipAddress}]]*/ '127.0.0.1';
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>Leaderboard</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Player Id</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody id="leaderboardTableBody">
+        <!-- Data will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

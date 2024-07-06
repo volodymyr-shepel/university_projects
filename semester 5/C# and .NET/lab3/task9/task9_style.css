@@ -1,0 +1,23 @@
+/* TASK 9 */
+article p:first-child {
+    font-size: 120%;
+    font-weight: bold;
+  }
+
+  .ara::before {
+    content: "This should show before the other content. ";
+  }
+
+  .ara::after {
+    content: " ➥";
+  }
+
+  a:link,
+    a:visited {
+  color: rebeccapurple;
+  font-weight: bold;
+    }
+
+    a:hover {
+    color:hotpink;
+    }

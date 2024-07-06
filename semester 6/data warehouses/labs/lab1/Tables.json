@@ -1,0 +1,38 @@
+[
+  {
+    "TABLE_NAME": "Customer"
+  },
+  {
+    "TABLE_NAME": "ProductModel"
+  },
+  {
+    "TABLE_NAME": "ProductDescription"
+  },
+  {
+    "TABLE_NAME": "Product"
+  },
+  {
+    "TABLE_NAME": "ProductModelProductDescription"
+  },
+  {
+    "TABLE_NAME": "ProductCategory"
+  },
+  {
+    "TABLE_NAME": "BuildVersion"
+  },
+  {
+    "TABLE_NAME": "ErrorLog"
+  },
+  {
+    "TABLE_NAME": "Address"
+  },
+  {
+    "TABLE_NAME": "CustomerAddress"
+  },
+  {
+    "TABLE_NAME": "SalesOrderDetail"
+  },
+  {
+    "TABLE_NAME": "SalesOrderHeader"
+  }
+]

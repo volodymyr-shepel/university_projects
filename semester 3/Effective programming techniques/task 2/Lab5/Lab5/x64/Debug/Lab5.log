@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\Lab5\Lab5\CNodeStatic.cpp(36,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\Lab5\Lab5\CNodeDynamic.cpp(22,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  Lab5.vcxproj -> C:\Users\vshep\Desktop\PWR\Effective programming techniques\projects\Lab5\x64\Debug\Lab5.exe

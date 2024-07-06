@@ -1,0 +1,38 @@
+/* TASK 6 */
+
+/* Font Size */
+.text-example {
+    font-size: 24px; /* Font size set to 24 pixels */
+}
+
+/* Line Height */
+.line-height-example {
+    line-height: 2.5; /* Line height set to 1.5 times the font size */
+}
+
+/* Font Weight (Thickness) */
+.font-weight-normal {
+    font-weight: normal; /* Default font weight (usually regular) */
+}
+
+.font-weight-bold {
+    font-weight: bold; /* Bold font weight */
+}
+
+.font-weight-900 {
+    font-weight: 900; 
+}
+
+#task6 {
+    border-width: 1px;  
+    border-style: solid; 
+    border-color: #af0707; 
+    padding: 50px;
+}
+
+.task-option {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #a616bf;
+    margin: 10px;
+}

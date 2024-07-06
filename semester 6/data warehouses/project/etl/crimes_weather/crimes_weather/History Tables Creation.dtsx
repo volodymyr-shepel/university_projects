@@ -1,0 +1,227 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/12/2024 9:38:06 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{81BD46B3-60F8-4940-9CD3-D40126FA45A0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{02340D4B-7379-4C9B-A83C-33D0F08AD02C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create History Schema"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9AEEBF13-B947-417B-9823-B906E31D8BC8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create History Schema"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}"
+          SQLTask:SqlStatementSource="CREATE SCHEMA History_Crimes_Weather;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create history schema tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{305360C4-5F68-4939-B093-18DCB495EF64}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create history schema tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}"
+          SQLTask:SqlStatementSource="&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Weapon_Used (&#xA;    weapon_code SMALLINT,&#xA;    weapon_description VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (weapon_code, start_datetime)&#xA;);&#xA;&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Premise (&#xA;    premise_id SMALLINT,&#xA;    premise_description VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (premise_id, start_datetime)&#xA;);&#xA;&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Area (&#xA;    area_id SMALLINT,&#xA;    area_name VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (area_id, start_datetime)&#xA;);&#xA;&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Weather_Condition (&#xA;    weather_condition_id SMALLINT,&#xA;    weather_condition VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (weather_condition_id, start_datetime)&#xA;);&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Crime (&#xA;    crime_code SMALLINT,&#xA;    crime_description VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (crime_code, start_datetime)&#xA;);&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Descent (&#xA;    descent CHAR,&#xA;    descent_description VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (descent, start_datetime)&#xA;);&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Sex (&#xA;    sex CHAR,&#xA;    sex_description VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (sex, start_datetime)&#xA;);&#xA;&#xA;CREATE TABLE History_Crimes_Weather.HIST_DIM_Sunrise_Sunset (&#xA;    id CHAR,&#xA;    name VARCHAR(100),&#xA;    start_datetime DATETIME NOT NULL,&#xA;    end_datetime DATETIME,&#xA;    PRIMARY KEY (id, start_datetime)&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop history scheme"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{44096E56-CA5F-4714-B4E4-243A0CD7004F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop history scheme"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}"
+          SQLTask:SqlStatementSource="-- REMOVE ALREADY EXISTING SCHEMA&#xA;IF EXISTS (SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'History_Crimes_Weather')&#xA;BEGIN&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_FACT_Crimes')&#xA;  DROP TABLE History_Crimes_Weather.HIST_FACT_Crimes;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Time')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Time;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Descent')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Descent;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Sex')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Sex;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Sunrise_Sunset')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Sunrise_Sunset;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Weapon_Used')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Weapon_Used;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Premise')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Premise;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Crime')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Crime;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Area')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Area;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_DIM_Weather_Condition')&#xA;  DROP TABLE History_Crimes_Weather.HIST_DIM_Weather_Condition;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_Helper_Month')&#xA;  DROP TABLE History_Crimes_Weather.HIST_Helper_Month;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_Helper_Weekday')&#xA;  DROP TABLE History_Crimes_Weather.HIST_Helper_Weekday;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_Helper_Season')&#xA;  DROP TABLE History_Crimes_Weather.HIST_Helper_Season;&#xA;&#xA; IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'History_Crimes_Weather' AND TABLE_NAME = 'HIST_FACT_Crimes')&#xA;  DROP TABLE History_Crimes_Weather.HIST_FACT_Crimes;&#xA;&#xA; DROP SCHEMA History_Crimes_Weather;&#xA;&#xA;END&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Triggers"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3ce6281e-9681-43fc-ad94-b3bc34744d5b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Triggers"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E8AAB73E-5E7E-4ED3-A90C-3EE3D3BF6412}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Weapon_Used', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Weapon_Used;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Weapon_Used', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Weapon_Used;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Premise', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Premise;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Premise', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Premise;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Area', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Area;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Area', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Area;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Weather_Condition', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Weather_Condition;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Weather_Condition', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Weather_Condition;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Descent', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Descent;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Descent', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Descent;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Sex', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Sex;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Sex', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Sex;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Insert_DIM_Sunrise_Sunset', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Insert_DIM_Sunrise_Sunset;&#xA;END;&#xA;&#xA;IF OBJECT_ID('Crimes_Weather.trg_Update_DIM_Sunrise_Sunset', 'TR') IS NOT NULL&#xA;BEGIN&#xA;    DROP TRIGGER Crimes_Weather.trg_Update_DIM_Sunrise_Sunset;&#xA;END;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0470EBB4-2C62-4128-BEFE-13E27498504C}"
+      DTS:From="Package\Drop Triggers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Drop history scheme" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F78E586F-DC12-43F2-916E-47FB9CCBEB2B}"
+      DTS:From="Package\Create History Schema"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Create history schema tables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F5061924-6935-4F6F-AD97-E03734EBFCCE}"
+      DTS:From="Package\Drop history scheme"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Create History Schema" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Create History Schema"
+          TopLeft="232.142857637029,160.588235153356" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Create history schema tables"
+          TopLeft="250.714286247991,252.352940955273" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Drop history scheme"
+          TopLeft="237.857143363478,74.9411764048994" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Drop Triggers"
+          TopLeft="255.714286258635,1.42352949957298" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="326.385714811056,43.023529499573">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.9176469053264"
+              Start="0,0"
+              End="0,24.4176469053264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4176469053264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="328.42857194251,202.188235153356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.1647058019176"
+              Start="0,0"
+              End="0,42.6647058019176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.6647058019176" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="325.200000500253,116.541176404899">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0470587484562"
+              Start="0,0"
+              End="0,36.5470587484562">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5470587484562" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

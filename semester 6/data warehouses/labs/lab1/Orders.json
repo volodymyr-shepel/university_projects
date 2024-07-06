@@ -1,0 +1,23 @@
+[
+  {
+    "table_name": "WorkOrder"
+  },
+  {
+    "table_name": "WorkOrderRouting"
+  },
+  {
+    "table_name": "PurchaseOrderDetail"
+  },
+  {
+    "table_name": "PurchaseOrderHeader"
+  },
+  {
+    "table_name": "SalesOrderDetail"
+  },
+  {
+    "table_name": "SalesOrderHeader"
+  },
+  {
+    "table_name": "SalesOrderHeaderSalesReason"
+  }
+]

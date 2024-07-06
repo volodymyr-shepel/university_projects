@@ -1,0 +1,357 @@
+SET VERIFY OFF;
+SET SERVEROUTPUT ON;
+
+-- TASK 34
+ACCEPT cat_function CHAR PROMPT 'Enter the function name: '
+
+DECLARE
+   cat_function_input VARCHAR2(50) := UPPER('&cat_function');
+   cat_count NUMBER;
+BEGIN
+   SELECT COUNT(*) INTO cat_count -- select the count and store in cat_count variable
+   FROM Cats c
+   WHERE UPPER(c.function) = cat_function_input;
+
+   DBMS_OUTPUT.PUT_LINE('FUNCTION - ' || cat_function_input);
+
+   IF cat_count = 0 THEN
+      DBMS_OUTPUT.PUT_LINE(cat_function_input || ' - function not found');
+   ELSIF cat_count = 1 THEN
+      DBMS_OUTPUT.PUT_LINE(cat_function_input || ' - function found once');
+   ELSE
+      DBMS_OUTPUT.PUT_LINE(cat_function_input || ' - function found more than once');
+   END IF;
+END;
+
+-- TASK 35
+ACCEPT cat_nickname CHAR PROMPT 'Enter the nickname: '
+
+DECLARE 
+cat_nickname_input VARCHAR2(50) := UPPER('&cat_nickname');
+cat_row Cats%ROWTYPE;
+
+BEGIN
+    SELECT *
+       INTO cat_row
+       FROM Cats c
+       WHERE UPPER(c.nickname) = cat_nickname_input;
+    
+    DBMS_OUTPUT.PUT_LINE('NICKNAME - ' || cat_nickname_input);
+    
+    IF (cat_row.mice_ration + NVL(cat_row.mice_extra,0)) * 12 > 700 THEN
+        DBMS_OUTPUT.PUT_LINE(cat_row.name || ':  total annual mice ration > 700');
+    ELSIF cat_row.name LIKE '%A%' THEN
+        DBMS_OUTPUT.PUT_LINE(cat_row.name || ':  name contains the letter A');
+    ELSIF EXTRACT(MONTH FROM cat_row.in_herd_since) = 5 THEN
+        DBMS_OUTPUT.PUT_LINE(cat_row.name || ':  May is the month of joining the herd');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE(cat_row.name || ':   does not match the criteria');
+    END IF;
+END;
+
+-- TASK 36
+DECLARE
+    total NUMBER;
+    changes NUMBER := 0;
+    maxF NUMBER;
+    ration NUMBER;
+
+    CURSOR cat_cursor IS
+        SELECT *
+        FROM Cats c
+        ORDER BY c.mice_ration
+        FOR UPDATE;
+
+BEGIN
+    LOOP
+        EXIT WHEN total > 1050;
+
+        FOR cat_record IN cat_cursor
+        LOOP
+            SELECT SUM(c.mice_ration)
+            INTO total
+            FROM Cats c;
+
+            SELECT max_mice INTO maxF
+            FROM Functions f
+            WHERE cat_record.function = f.function;
+            -- this if is needed so when on the next iteration when the cat already has mice ration which is equal to max for this function
+            -- we do not need to update
+            IF(maxF > cat_record.mice_ration) THEN
+                ration := cat_record.mice_ration + (cat_record.mice_ration) * 0.1;
+                
+                IF ration > maxF THEN 
+                    ration := maxF;
+                END IF;
+            
+                
+                UPDATE Cats
+                SET mice_ration = ration
+                WHERE CURRENT OF cat_cursor;
+    
+                changes := changes + 1;
+            END IF;
+        END LOOP;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Total ration ' || total || ' Changes - ' || changes );
+
+    ROLLBACK;
+END;
+
+-- TASK 37
+DECLARE 
+iterator NUMBER := 1;
+
+CURSOR cat_cursor IS
+        SELECT c.nickname AS nickname, c.mice_ration + NVL(c.mice_extra,0) AS eats
+        FROM Cats c
+        ORDER BY c.mice_ration + NVL(c.mice_extra,0) DESC;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('No   Nickname   Eats');
+    DBMS_OUTPUT.PUT_LINE('----------------------');
+    
+    FOR cat_record IN cat_cursor
+        LOOP
+            EXIT WHEN iterator = 6;
+            DBMS_OUTPUT.PUT_LINE(TO_CHAR(iterator) ||'    '|| RPAD(cat_record.nickname, 8) || '    ' || LPAD(TO_CHAR(cat_record.eats), 5));
+            iterator := iterator + 1;
+    END LOOP;
+END;
+
+-- TASK 38
+ACCEPT deep_input CHAR PROMPT 'Enter the max number of superiors: '
+
+DECLARE
+  CURSOR cat_cursor IS SELECT * FROM Cats WHERE function = 'CAT' OR function = 'NICE';
+  cat cat_cursor%ROWTYPE;
+  chief_nickname Cats.NICKNAME%TYPE;
+  singleRow VARCHAR2(500);
+  deep VARCHAR2(50) := UPPER('&deep_input');
+  i NUMBER:=0;
+BEGIN
+  OPEN cat_cursor;
+  singlerow := RPAD('IMIE', 8);
+  FOR k IN 1..deep
+  LOOP
+    singlerow := singlerow || ' | ' || RPAD('Chief ' || TO_CHAR(k), 8);
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE(singlerow || '|');
+  singlerow := '';
+
+  singlerow := RPAD('-', 8, '-');
+  FOR k IN 1..deep
+  LOOP
+    singlerow := singlerow || '-|-' || RPAD('-', 8, '-');
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE(singlerow || '|');
+  singlerow := '';
+
+  LOOP
+    FETCH cat_cursor INTO cat;
+    EXIT WHEN cat_cursor%NOTFOUND;
+
+    singlerow := singlerow || RPAD(cat.name, 8);
+
+    LOOP
+      EXIT WHEN NOT i < deep;
+      BEGIN
+        SELECT * INTO cat FROM Cats WHERE NICKNAME = cat.chief;
+        singlerow := singlerow || ' | ' || RPAD(cat.name, 8);
+        EXCEPTION
+        WHEN OTHERS THEN
+        singlerow := singlerow || ' | ' || RPAD(' ', 8);
+      END;
+      i := i + 1;
+
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(singlerow || '|');
+    i := 0;
+    singlerow := '';
+  END LOOP;
+END;
+
+
+
+
+-- TASK 39 (so the question is do we really need to collect all the duplicate values(since in that way we can not use exceptions too much
+/*
+
+    instead we will use STRING arrary(we we would store the duplicate values and then iterate through it and then print it in the end 
+    because when we throw an exception it will go directly to the exception block.
+
+
+    TYPE StringArray IS TABLE OF VARCHAR2(50) INDEX BY PLS_INTEGER;
+    my_strings StringArray;
+    
+    OR INSTEAD we can just iterate over the band entries and check each condition for each entry 
+    but in that way we will not use exception too much
+
+*/
+
+ACCEPT band_no CHAR PROMPT 'Enter the band_no: '
+ACCEPT band_name CHAR PROMPT 'Enter the band_name: '
+ACCEPT band_site CHAR PROMPT 'Enter the band_site: '
+DECLARE
+    band_no_input NUMBER := &band_no;
+    band_name_input VARCHAR2 (50) := UPPER('&band_name');
+    band_site_input VARCHAR2 (50) := UPPER ('&band_site');
+    
+    ex_invalid_band_no EXCEPTION;
+    ex_duplicate_band_no EXCEPTION;
+    ex_duplicate_band_name EXCEPTION;
+    ex_duplicate_band_site EXCEPTION;
+    
+    band_no_count NUMBER;
+    band_name_count NUMBER;
+    band_site_count NUMBER;
+    
+    
+BEGIN
+    IF band_no_input <= 0 THEN
+        RAISE ex_invalid_band_no;
+    END IF;
+
+    
+    SELECT COUNT(*) INTO band_no_count FROM Bands WHERE band_no = band_no_input;
+    IF band_no_count > 0 THEN 
+        RAISE ex_duplicate_band_no;
+    END IF;
+
+    -- Check for duplicate band_name
+    SELECT COUNT(*) INTO band_name_count FROM Bands WHERE name = band_name_input;
+    IF band_name_count > 0 THEN
+        RAISE ex_duplicate_band_name;
+    END IF;
+
+    -- Check for duplicate band_site
+    SELECT COUNT(*) INTO band_site_count FROM Bands WHERE site = band_site_input;
+    IF band_site_count > 0  THEN
+        RAISE ex_duplicate_band_site;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('BAND_NO ' || band_no_input);
+    DBMS_OUTPUT.PUT_LINE('BAND_NAME ' || band_name_input);
+    DBMS_OUTPUT.PUT_LINE('BAND_SITE ' || band_site_input);
+    
+    INSERT INTO Bands VALUES(band_no_input,band_name_input,band_site_input,NULL);
+    DBMS_OUTPUT.PUT_LINE('Band NEW created');
+    
+    -- display all bands
+    DBMS_OUTPUT.PUT_LINE('-------------------------------------');
+    FOR band_rec IN (SELECT * FROM Bands) LOOP
+        DBMS_OUTPUT.PUT_LINE('Selected Record: ' || band_rec.band_no || ', ' || band_rec.name || ', ' || band_rec.site);
+    END LOOP;
+    
+    ROLLBACK;
+    
+EXCEPTION
+    WHEN ex_invalid_band_no THEN
+        DBMS_OUTPUT.PUT_LINE('Band No <=0 !');
+    WHEN ex_duplicate_band_no THEN
+        DBMS_OUTPUT.PUT_LINE('Band no ' || band_no_input || ' already exists');
+    WHEN ex_duplicate_band_name THEN
+        DBMS_OUTPUT.PUT_LINE('Band name '  || band_name_input || ' : already exists');
+    WHEN ex_duplicate_band_site THEN
+        DBMS_OUTPUT.PUT_LINE('Band site ' || band_site_input || ' already exists');
+END;
+
+
+-- TASK 40
+CREATE OR REPLACE PROCEDURE new_band (
+    p_band_no      IN NUMBER,
+    p_band_name    IN VARCHAR2,
+    p_band_site    IN VARCHAR2
+) IS
+    ex_invalid_band_no EXCEPTION;
+    ex_duplicate_band_no EXCEPTION;
+    ex_duplicate_band_name EXCEPTION;
+    ex_duplicate_band_site EXCEPTION;
+
+    band_no_count NUMBER;
+    band_name_count NUMBER;
+    band_site_count NUMBER;
+BEGIN
+    IF p_band_no <= 0 THEN
+        RAISE ex_invalid_band_no;
+    END IF;
+
+    SELECT COUNT(*) INTO band_no_count FROM Bands WHERE band_no = p_band_no;
+    IF band_no_count > 0 THEN 
+        RAISE ex_duplicate_band_no;
+    END IF;
+
+    -- Check for duplicate band_name
+    SELECT COUNT(*) INTO band_name_count FROM Bands WHERE name = UPPER(p_band_name);
+    IF band_name_count > 0 THEN
+        RAISE ex_duplicate_band_name;
+    END IF;
+
+    -- Check for duplicate band_site
+    SELECT COUNT(*) INTO band_site_count FROM Bands WHERE site = UPPER(p_band_site);
+    IF band_site_count > 0 THEN
+        RAISE ex_duplicate_band_site;
+    END IF;
+
+    DBMS_OUTPUT.PUT_LINE('BAND_NO ' || p_band_no);
+    DBMS_OUTPUT.PUT_LINE('BAND_NAME ' || p_band_name);
+    DBMS_OUTPUT.PUT_LINE('BAND_SITE ' || p_band_site);
+
+    INSERT INTO Bands VALUES(p_band_no, UPPER(p_band_name), UPPER(p_band_site), NULL);
+    DBMS_OUTPUT.PUT_LINE('Band NEW created');
+    
+    FOR band_rec IN (SELECT * FROM Bands) LOOP
+        DBMS_OUTPUT.PUT_LINE('Selected Record: ' || band_rec.band_no || ', ' || band_rec.name || ', ' || band_rec.site);
+    END LOOP;
+    ROLLBACK;
+    
+EXCEPTION
+    WHEN ex_invalid_band_no THEN
+        DBMS_OUTPUT.PUT_LINE('Band No <=0 !');
+    WHEN ex_duplicate_band_no THEN
+        DBMS_OUTPUT.PUT_LINE('Band no ' || p_band_no || ' already exists');
+    WHEN ex_duplicate_band_name THEN
+        DBMS_OUTPUT.PUT_LINE('Band name '  || p_band_name || ' : already exists');
+    WHEN ex_duplicate_band_site THEN
+        DBMS_OUTPUT.PUT_LINE('Band site ' || p_band_site || ' already exists');
+    
+END new_band;
+
+
+
+-- created
+DECLARE
+    band_no_input NUMBER := 6;
+    band_name_input VARCHAR2(50) := 'NEW';
+    band_site_input VARCHAR2(50) := 'CELLAR';
+BEGIN
+    new_band(p_band_no => band_no_input, p_band_name => band_name_input, p_band_site => band_site_input);
+   
+END;
+
+-- exception
+DECLARE
+    band_no_input NUMBER := 2;
+    band_name_input VARCHAR2(50) := 'SUPERIORS';
+    band_site_input VARCHAR2(50) := 'FIELD';
+BEGIN
+    new_band(p_band_no => band_no_input, p_band_name => band_name_input, p_band_site => band_site_input);
+   
+END;
+
+-- TASK 41
+CREATE OR REPLACE TRIGGER one_more_number
+BEFORE INSERT ON Bands
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Trigger executed');
+    -- Ensure the Bands table is not empty
+    SELECT COALESCE(MAX(band_no), 0) + 1 INTO :NEW.band_no FROM Bands;
+END;
+
+-- TEST
+BEGIN
+  new_band(9, 'SAYONARA', 'BANKAI'); -- inserted with id 6
+END;
+
+

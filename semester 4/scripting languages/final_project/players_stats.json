@@ -1,0 +1,1186 @@
+{
+    "7322": {
+        "Rating": 0.93,
+        "kills_per_round": 0.57,
+        "headshots": 40.8,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 67.6
+    },
+    "7398": {
+        "Rating": 1.02,
+        "kills_per_round": 0.62,
+        "headshots": 49.0,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 71.7
+    },
+    "9032": {
+        "Rating": 1.12,
+        "kills_per_round": 0.68,
+        "headshots": 51.6,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 74.9
+    },
+    "11893": {
+        "Rating": 1.3,
+        "kills_per_round": 0.81,
+        "headshots": 37.8,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.57,
+        "rounds_contributed": 76.6
+    },
+    "18221": {
+        "Rating": 1.19,
+        "kills_per_round": 0.76,
+        "headshots": 54.3,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 74.4
+    },
+    "7964": {
+        "Rating": 1.1,
+        "kills_per_round": 0.66,
+        "headshots": 30.1,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.56,
+        "rounds_contributed": 71.5
+    },
+    "10994": {
+        "Rating": 1.18,
+        "kills_per_round": 0.75,
+        "headshots": 43.1,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 75.1
+    },
+    "12018": {
+        "Rating": 1.05,
+        "kills_per_round": 0.65,
+        "headshots": 52.8,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 73.6
+    },
+    "14148": {
+        "Rating": 1.09,
+        "kills_per_round": 0.67,
+        "headshots": 47.7,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 73.0
+    },
+    "17956": {
+        "Rating": 1.12,
+        "kills_per_round": 0.69,
+        "headshots": 56.6,
+        "maps_played": 48.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 73.3
+    },
+    "429": {
+        "Rating": 0.82,
+        "kills_per_round": 0.51,
+        "headshots": 44.2,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 63.0
+    },
+    "8183": {
+        "Rating": 1.05,
+        "kills_per_round": 0.67,
+        "headshots": 57.2,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 69.0
+    },
+    "10394": {
+        "Rating": 1.05,
+        "kills_per_round": 0.65,
+        "headshots": 56.4,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 72.0
+    },
+    "11816": {
+        "Rating": 1.15,
+        "kills_per_round": 0.75,
+        "headshots": 55.5,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 71.7
+    },
+    "18053": {
+        "Rating": 1.13,
+        "kills_per_round": 0.73,
+        "headshots": 33.4,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 73.8
+    },
+    "922": {
+        "Rating": 0.97,
+        "kills_per_round": 0.61,
+        "headshots": 49.7,
+        "maps_played": 46.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 68.8
+    },
+    "9436": {
+        "Rating": 1.14,
+        "kills_per_round": 0.73,
+        "headshots": 47.6,
+        "maps_played": 46.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 72.1
+    },
+    "11777": {
+        "Rating": 0.96,
+        "kills_per_round": 0.62,
+        "headshots": 46.1,
+        "maps_played": 46.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 69.0
+    },
+    "16080": {
+        "Rating": 1.06,
+        "kills_per_round": 0.68,
+        "headshots": 48.3,
+        "maps_played": 46.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 68.6
+    },
+    "19164": {
+        "Rating": 1.13,
+        "kills_per_round": 0.7,
+        "headshots": 26.3,
+        "maps_played": 46.0,
+        "deaths_per_round": 0.57,
+        "rounds_contributed": 73.0
+    },
+    "3741": {
+        "Rating": 1.2,
+        "kills_per_round": 0.75,
+        "headshots": 54.2,
+        "maps_played": 34.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 72.2
+    },
+    "3972": {
+        "Rating": 1.08,
+        "kills_per_round": 0.7,
+        "headshots": 48.5,
+        "maps_played": 34.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 72.1
+    },
+    "4679": {
+        "Rating": 1.07,
+        "kills_per_round": 0.65,
+        "headshots": 56.4,
+        "maps_played": 34.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 74.9
+    },
+    "10096": {
+        "Rating": 0.86,
+        "kills_per_round": 0.51,
+        "headshots": 52.6,
+        "maps_played": 34.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 66.1
+    },
+    "19230": {
+        "Rating": 1.22,
+        "kills_per_round": 0.78,
+        "headshots": 40.1,
+        "maps_played": 34.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 74.6
+    },
+    "8528": {
+        "Rating": 1.11,
+        "kills_per_round": 0.68,
+        "headshots": 49.9,
+        "maps_played": 76.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 71.4
+    },
+    "11942": {
+        "Rating": 0.97,
+        "kills_per_round": 0.58,
+        "headshots": 46.0,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 70.3
+    },
+    "16555": {
+        "Rating": 1.17,
+        "kills_per_round": 0.74,
+        "headshots": 46.5,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 72.7
+    },
+    "16920": {
+        "Rating": 1.23,
+        "kills_per_round": 0.78,
+        "headshots": 30.4,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.56,
+        "rounds_contributed": 75.7
+    },
+    "16921": {
+        "Rating": 0.9,
+        "kills_per_round": 0.56,
+        "headshots": 50.1,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 66.9
+    },
+    "7998": {
+        "Rating": 1.17,
+        "kills_per_round": 0.75,
+        "headshots": 34.9,
+        "maps_played": 19.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 72.6
+    },
+    "8918": {
+        "Rating": 1.11,
+        "kills_per_round": 0.72,
+        "headshots": 48.5,
+        "maps_played": 19.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 70.0
+    },
+    "16947": {
+        "Rating": 1.09,
+        "kills_per_round": 0.68,
+        "headshots": 44.1,
+        "maps_played": 19.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 76.1
+    },
+    "18987": {
+        "Rating": 1.02,
+        "kills_per_round": 0.64,
+        "headshots": 69.9,
+        "maps_played": 19.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 71.5
+    },
+    "21708": {
+        "Rating": 0.93,
+        "kills_per_round": 0.59,
+        "headshots": 50.3,
+        "maps_played": 19.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 66.3
+    },
+    "10330": {
+        "Rating": 1.06,
+        "kills_per_round": 0.68,
+        "headshots": 32.0,
+        "maps_played": 39.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 69.5
+    },
+    "14759": {
+        "Rating": 1.19,
+        "kills_per_round": 0.78,
+        "headshots": 43.7,
+        "maps_played": 44.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 70.8
+    },
+    "15117": {
+        "Rating": 0.91,
+        "kills_per_round": 0.57,
+        "headshots": 60.7,
+        "maps_played": 37.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 65.2
+    },
+    "16820": {
+        "Rating": 1.05,
+        "kills_per_round": 0.67,
+        "headshots": 49.9,
+        "maps_played": 37.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 69.5
+    },
+    "17937": {
+        "Rating": 0.96,
+        "kills_per_round": 0.59,
+        "headshots": 50.7,
+        "maps_played": 37.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 70.2
+    },
+    "8520": {
+        "Rating": 1.15,
+        "kills_per_round": 0.68,
+        "headshots": 40.3,
+        "maps_played": 36.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 75.5
+    },
+    "8738": {
+        "Rating": 1.09,
+        "kills_per_round": 0.67,
+        "headshots": 51.5,
+        "maps_played": 36.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 71.4
+    },
+    "13249": {
+        "Rating": 1.1,
+        "kills_per_round": 0.7,
+        "headshots": 29.2,
+        "maps_played": 36.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 73.6
+    },
+    "13915": {
+        "Rating": 1.16,
+        "kills_per_round": 0.73,
+        "headshots": 55.6,
+        "maps_played": 36.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 69.7
+    },
+    "6904": {
+        "Rating": 0.99,
+        "kills_per_round": 0.62,
+        "headshots": 58.4,
+        "maps_played": 88.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 69.0
+    },
+    "8248": {
+        "Rating": 1.13,
+        "kills_per_round": 0.75,
+        "headshots": 52.9,
+        "maps_played": 88.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 70.0
+    },
+    "13670": {
+        "Rating": 1.15,
+        "kills_per_round": 0.73,
+        "headshots": 34.6,
+        "maps_played": 88.0,
+        "deaths_per_round": 0.55,
+        "rounds_contributed": 75.0
+    },
+    "19206": {
+        "Rating": 1.12,
+        "kills_per_round": 0.75,
+        "headshots": 54.3,
+        "maps_played": 88.0,
+        "deaths_per_round": 0.7,
+        "rounds_contributed": 70.3
+    },
+    "19677": {
+        "Rating": 1.0,
+        "kills_per_round": 0.62,
+        "headshots": 51.4,
+        "maps_played": 85.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 71.0
+    },
+    "9115": {
+        "Rating": 0.89,
+        "kills_per_round": 0.58,
+        "headshots": 49.8,
+        "maps_played": 38.0,
+        "deaths_per_round": 0.72,
+        "rounds_contributed": 65.1
+    },
+    "9960": {
+        "Rating": 1.22,
+        "kills_per_round": 0.77,
+        "headshots": 45.9,
+        "maps_played": 38.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 74.6
+    },
+    "14929": {
+        "Rating": 0.97,
+        "kills_per_round": 0.61,
+        "headshots": 50.5,
+        "maps_played": 38.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 68.1
+    },
+    "18072": {
+        "Rating": 1.02,
+        "kills_per_round": 0.63,
+        "headshots": 29.9,
+        "maps_played": 38.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 70.7
+    },
+    "20312": {
+        "Rating": 1.12,
+        "kills_per_round": 0.72,
+        "headshots": 55.0,
+        "maps_played": 38.0,
+        "deaths_per_round": 0.7,
+        "rounds_contributed": 71.9
+    },
+    "12731": {
+        "Rating": 1.12,
+        "kills_per_round": 0.71,
+        "headshots": 46.8,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 73.5
+    },
+    "16885": {
+        "Rating": 1.12,
+        "kills_per_round": 0.73,
+        "headshots": 33.8,
+        "maps_played": 78.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 70.5
+    },
+    "19733": {
+        "Rating": 1.09,
+        "kills_per_round": 0.67,
+        "headshots": 53.9,
+        "maps_played": 78.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 73.0
+    },
+    "19763": {
+        "Rating": 1.19,
+        "kills_per_round": 0.81,
+        "headshots": 62.4,
+        "maps_played": 78.0,
+        "deaths_per_round": 0.75,
+        "rounds_contributed": 69.9
+    },
+    "20282": {
+        "Rating": 1.01,
+        "kills_per_round": 0.65,
+        "headshots": 46.0,
+        "maps_played": 78.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 70.0
+    },
+    "12521": {
+        "Rating": 0.98,
+        "kills_per_round": 0.62,
+        "headshots": 44.4,
+        "maps_played": 29.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 65.7
+    },
+    "12553": {
+        "Rating": 1.12,
+        "kills_per_round": 0.71,
+        "headshots": 44.3,
+        "maps_played": 29.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 70.5
+    },
+    "15631": {
+        "Rating": 1.19,
+        "kills_per_round": 0.71,
+        "headshots": 47.3,
+        "maps_played": 29.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 75.6
+    },
+    "18835": {
+        "Rating": 0.97,
+        "kills_per_round": 0.61,
+        "headshots": 25.5,
+        "maps_played": 29.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 68.0
+    },
+    "19750": {
+        "Rating": 0.91,
+        "kills_per_round": 0.55,
+        "headshots": 50.0,
+        "maps_played": 35.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 69.5
+    },
+    "9078": {
+        "Rating": 1.08,
+        "kills_per_round": 0.7,
+        "headshots": 58.8,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 69.5
+    },
+    "9278": {
+        "Rating": 1.09,
+        "kills_per_round": 0.68,
+        "headshots": 51.1,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 72.4
+    },
+    "9816": {
+        "Rating": 0.95,
+        "kills_per_round": 0.56,
+        "headshots": 42.6,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 70.2
+    },
+    "13666": {
+        "Rating": 1.07,
+        "kills_per_round": 0.66,
+        "headshots": 54.3,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 68.7
+    },
+    "19592": {
+        "Rating": 1.12,
+        "kills_per_round": 0.71,
+        "headshots": 29.1,
+        "maps_played": 62.0,
+        "deaths_per_round": 0.57,
+        "rounds_contributed": 73.8
+    },
+    "10264": {
+        "Rating": 0.98,
+        "kills_per_round": 0.61,
+        "headshots": 51.3,
+        "maps_played": 65.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 70.4
+    },
+    "15821": {
+        "Rating": 0.97,
+        "kills_per_round": 0.61,
+        "headshots": 54.5,
+        "maps_played": 64.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 67.4
+    },
+    "16693": {
+        "Rating": 1.12,
+        "kills_per_round": 0.7,
+        "headshots": 51.9,
+        "maps_played": 65.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 73.2
+    },
+    "17306": {
+        "Rating": 1.17,
+        "kills_per_round": 0.75,
+        "headshots": 34.3,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.59,
+        "rounds_contributed": 74.2
+    },
+    "19044": {
+        "Rating": 0.98,
+        "kills_per_round": 0.61,
+        "headshots": 56.0,
+        "maps_played": 65.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 70.2
+    },
+    "7528": {
+        "Rating": 1.04,
+        "kills_per_round": 0.68,
+        "headshots": 47.6,
+        "maps_played": 39.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 69.0
+    },
+    "11954": {
+        "Rating": 1.0,
+        "kills_per_round": 0.63,
+        "headshots": 49.3,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 71.0
+    },
+    "13602": {
+        "Rating": 1.05,
+        "kills_per_round": 0.66,
+        "headshots": 35.7,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 70.8
+    },
+    "14419": {
+        "Rating": 1.01,
+        "kills_per_round": 0.65,
+        "headshots": 52.8,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 67.9
+    },
+    "18462": {
+        "Rating": 1.08,
+        "kills_per_round": 0.69,
+        "headshots": 51.8,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 71.3
+    },
+    "7412": {
+        "Rating": 0.96,
+        "kills_per_round": 0.58,
+        "headshots": 48.1,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 70.9
+    },
+    "7592": {
+        "Rating": 1.23,
+        "kills_per_round": 0.79,
+        "headshots": 34.0,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 73.2
+    },
+    "15165": {
+        "Rating": 1.22,
+        "kills_per_round": 0.75,
+        "headshots": 38.3,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 74.9
+    },
+    "16705": {
+        "Rating": 1.01,
+        "kills_per_round": 0.64,
+        "headshots": 53.1,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 69.7
+    },
+    "20941": {
+        "Rating": 1.0,
+        "kills_per_round": 0.62,
+        "headshots": 48.7,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 70.8
+    },
+    "5794": {
+        "Rating": 1.09,
+        "kills_per_round": 0.67,
+        "headshots": 53.8,
+        "maps_played": 76.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 70.8
+    },
+    "12781": {
+        "Rating": 1.02,
+        "kills_per_round": 0.65,
+        "headshots": 60.7,
+        "maps_played": 76.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 68.5
+    },
+    "14932": {
+        "Rating": 1.05,
+        "kills_per_round": 0.69,
+        "headshots": 60.4,
+        "maps_played": 60.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 71.7
+    },
+    "19899": {
+        "Rating": 1.15,
+        "kills_per_round": 0.71,
+        "headshots": 49.8,
+        "maps_played": 79.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 74.1
+    },
+    "21468": {
+        "Rating": 0.99,
+        "kills_per_round": 0.62,
+        "headshots": 26.7,
+        "maps_played": 76.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 69.9
+    },
+    "5388": {
+        "Rating": 1.1,
+        "kills_per_round": 0.7,
+        "headshots": 45.8,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 72.0
+    },
+    "7996": {
+        "Rating": 1.09,
+        "kills_per_round": 0.68,
+        "headshots": 29.5,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.59,
+        "rounds_contributed": 72.0
+    },
+    "13018": {
+        "Rating": 1.0,
+        "kills_per_round": 0.65,
+        "headshots": 40.8,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 70.7
+    },
+    "18571": {
+        "Rating": 1.08,
+        "kills_per_round": 0.69,
+        "headshots": 53.6,
+        "maps_played": 56.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 70.3
+    },
+    "20358": {
+        "Rating": 1.1,
+        "kills_per_round": 0.68,
+        "headshots": 50.3,
+        "maps_played": 57.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 73.9
+    },
+    "12027": {
+        "Rating": 1.02,
+        "kills_per_round": 0.63,
+        "headshots": 49.2,
+        "maps_played": 63.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 69.3
+    },
+    "13157": {
+        "Rating": 0.98,
+        "kills_per_round": 0.61,
+        "headshots": 45.2,
+        "maps_played": 63.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 70.2
+    },
+    "15662": {
+        "Rating": 1.14,
+        "kills_per_round": 0.72,
+        "headshots": 34.1,
+        "maps_played": 63.0,
+        "deaths_per_round": 0.56,
+        "rounds_contributed": 73.7
+    },
+    "17011": {
+        "Rating": 1.1,
+        "kills_per_round": 0.69,
+        "headshots": 46.8,
+        "maps_played": 63.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 72.8
+    },
+    "20709": {
+        "Rating": 1.05,
+        "kills_per_round": 0.69,
+        "headshots": 57.8,
+        "maps_played": 63.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 69.4
+    },
+    "4829": {
+        "Rating": 0.9,
+        "kills_per_round": 0.56,
+        "headshots": 41.4,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.7,
+        "rounds_contributed": 65.7
+    },
+    "15428": {
+        "Rating": 1.04,
+        "kills_per_round": 0.68,
+        "headshots": 37.5,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 71.0
+    },
+    "16848": {
+        "Rating": 1.12,
+        "kills_per_round": 0.73,
+        "headshots": 27.5,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 71.0
+    },
+    "17504": {
+        "Rating": 1.06,
+        "kills_per_round": 0.7,
+        "headshots": 40.4,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.72,
+        "rounds_contributed": 68.7
+    },
+    "19114": {
+        "Rating": 1.0,
+        "kills_per_round": 0.64,
+        "headshots": 56.9,
+        "maps_played": 74.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 69.2
+    },
+    "12732": {
+        "Rating": 1.14,
+        "kills_per_round": 0.71,
+        "headshots": 50.5,
+        "maps_played": 16.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 68.5
+    },
+    "13239": {
+        "Rating": 1.01,
+        "kills_per_round": 0.58,
+        "headshots": 57.6,
+        "maps_played": 16.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 70.7
+    },
+    "13776": {
+        "Rating": 1.16,
+        "kills_per_round": 0.7,
+        "headshots": 26.1,
+        "maps_played": 16.0,
+        "deaths_per_round": 0.52,
+        "rounds_contributed": 75.1
+    },
+    "20101": {
+        "Rating": 1.02,
+        "kills_per_round": 0.64,
+        "headshots": 57.3,
+        "maps_played": 16.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 71.6
+    },
+    "9482": {
+        "Rating": 1.03,
+        "kills_per_round": 0.66,
+        "headshots": 45.1,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 69.6
+    },
+    "16817": {
+        "Rating": 1.02,
+        "kills_per_round": 0.63,
+        "headshots": 46.4,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 71.9
+    },
+    "18141": {
+        "Rating": 1.14,
+        "kills_per_round": 0.73,
+        "headshots": 49.9,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 72.4
+    },
+    "18676": {
+        "Rating": 1.15,
+        "kills_per_round": 0.71,
+        "headshots": 54.4,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.6,
+        "rounds_contributed": 74.3
+    },
+    "19692": {
+        "Rating": 1.09,
+        "kills_per_round": 0.7,
+        "headshots": 34.6,
+        "maps_played": 77.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 71.3
+    },
+    "12708": {
+        "Rating": 1.04,
+        "kills_per_round": 0.71,
+        "headshots": 56.7,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.74,
+        "rounds_contributed": 67.9
+    },
+    "15778": {
+        "Rating": 0.92,
+        "kills_per_round": 0.55,
+        "headshots": 51.3,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 67.0
+    },
+    "17147": {
+        "Rating": 1.15,
+        "kills_per_round": 0.78,
+        "headshots": 55.8,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 70.5
+    },
+    "18120": {
+        "Rating": 0.99,
+        "kills_per_round": 0.67,
+        "headshots": 57.6,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.73,
+        "rounds_contributed": 66.9
+    },
+    "19725": {
+        "Rating": 1.06,
+        "kills_per_round": 0.69,
+        "headshots": 30.4,
+        "maps_played": 51.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 69.4
+    },
+    "11630": {
+        "Rating": 0.89,
+        "kills_per_round": 0.56,
+        "headshots": 54.7,
+        "maps_played": 33.0,
+        "deaths_per_round": 0.72,
+        "rounds_contributed": 64.9
+    },
+    "12713": {
+        "Rating": 0.99,
+        "kills_per_round": 0.61,
+        "headshots": 46.4,
+        "maps_played": 33.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 69.7
+    },
+    "12840": {
+        "Rating": 1.01,
+        "kills_per_round": 0.65,
+        "headshots": 36.8,
+        "maps_played": 20.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 67.3
+    },
+    "13578": {
+        "Rating": 1.0,
+        "kills_per_round": 0.67,
+        "headshots": 52.9,
+        "maps_played": 33.0,
+        "deaths_per_round": 0.7,
+        "rounds_contributed": 69.3
+    },
+    "17372": {
+        "Rating": 0.97,
+        "kills_per_round": 0.63,
+        "headshots": 52.2,
+        "maps_played": 33.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 69.1
+    },
+    "9102": {
+        "Rating": 0.97,
+        "kills_per_round": 0.61,
+        "headshots": 42.3,
+        "maps_played": 35.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 69.5
+    },
+    "10588": {
+        "Rating": 1.1,
+        "kills_per_round": 0.67,
+        "headshots": 42.9,
+        "maps_played": 35.0,
+        "deaths_per_round": 0.63,
+        "rounds_contributed": 73.9
+    },
+    "11139": {
+        "Rating": 1.0,
+        "kills_per_round": 0.62,
+        "headshots": 29.9,
+        "maps_played": 29.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 67.6
+    },
+    "11140": {
+        "Rating": 1.21,
+        "kills_per_round": 0.76,
+        "headshots": 51.5,
+        "maps_played": 35.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 72.0
+    },
+    "17384": {
+        "Rating": 1.15,
+        "kills_per_round": 0.76,
+        "headshots": 56.8,
+        "maps_played": 35.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 73.1
+    },
+    "7716": {
+        "Rating": 0.94,
+        "kills_per_round": 0.59,
+        "headshots": 59.6,
+        "maps_played": 9.0,
+        "deaths_per_round": 0.7,
+        "rounds_contributed": 67.9
+    },
+    "18317": {
+        "Rating": 0.99,
+        "kills_per_round": 0.63,
+        "headshots": 49.3,
+        "maps_played": 9.0,
+        "deaths_per_round": 0.62,
+        "rounds_contributed": 68.8
+    },
+    "18506": {
+        "Rating": 0.99,
+        "kills_per_round": 0.68,
+        "headshots": 61.1,
+        "maps_played": 9.0,
+        "deaths_per_round": 0.71,
+        "rounds_contributed": 68.8
+    },
+    "19673": {
+        "Rating": 0.87,
+        "kills_per_round": 0.64,
+        "headshots": 44.6,
+        "maps_played": 11.0,
+        "deaths_per_round": 0.79,
+        "rounds_contributed": 60.6
+    },
+    "20127": {
+        "Rating": 0.86,
+        "kills_per_round": 0.54,
+        "headshots": 35.4,
+        "maps_played": 9.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 66.2
+    },
+    "8371": {
+        "Rating": 1.12,
+        "kills_per_round": 0.7,
+        "headshots": 44.9,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.64,
+        "rounds_contributed": 72.7
+    },
+    "9254": {
+        "Rating": 1.05,
+        "kills_per_round": 0.67,
+        "headshots": 52.4,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 70.5
+    },
+    "18749": {
+        "Rating": 0.96,
+        "kills_per_round": 0.6,
+        "headshots": 53.0,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.65,
+        "rounds_contributed": 67.2
+    },
+    "19509": {
+        "Rating": 0.99,
+        "kills_per_round": 0.61,
+        "headshots": 45.9,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 69.6
+    },
+    "21239": {
+        "Rating": 1.12,
+        "kills_per_round": 0.7,
+        "headshots": 27.3,
+        "maps_played": 43.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 71.5
+    },
+    "12092": {
+        "Rating": 0.98,
+        "kills_per_round": 0.59,
+        "headshots": 43.3,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 69.5
+    },
+    "14736": {
+        "Rating": 1.13,
+        "kills_per_round": 0.73,
+        "headshots": 49.0,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 72.3
+    },
+    "18865": {
+        "Rating": 1.14,
+        "kills_per_round": 0.76,
+        "headshots": 48.6,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.69,
+        "rounds_contributed": 70.3
+    },
+    "19869": {
+        "Rating": 1.16,
+        "kills_per_round": 0.76,
+        "headshots": 33.9,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.61,
+        "rounds_contributed": 71.9
+    },
+    "20607": {
+        "Rating": 0.95,
+        "kills_per_round": 0.59,
+        "headshots": 50.1,
+        "maps_played": 50.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 69.1
+    },
+    "8891": {
+        "Rating": 1.08,
+        "kills_per_round": 0.68,
+        "headshots": 58.0,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.67,
+        "rounds_contributed": 71.8
+    },
+    "13749": {
+        "Rating": 1.03,
+        "kills_per_round": 0.64,
+        "headshots": 56.5,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.66,
+        "rounds_contributed": 72.1
+    },
+    "15349": {
+        "Rating": 0.99,
+        "kills_per_round": 0.63,
+        "headshots": 52.4,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.73,
+        "rounds_contributed": 69.5
+    },
+    "20300": {
+        "Rating": 1.07,
+        "kills_per_round": 0.7,
+        "headshots": 47.2,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.68,
+        "rounds_contributed": 71.7
+    },
+    "21379": {
+        "Rating": 1.04,
+        "kills_per_round": 0.65,
+        "headshots": 28.8,
+        "maps_played": 49.0,
+        "deaths_per_round": 0.58,
+        "rounds_contributed": 73.0
+    }
+}

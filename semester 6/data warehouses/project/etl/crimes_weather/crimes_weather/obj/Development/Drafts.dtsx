@@ -1,0 +1,2109 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/1/2024 10:57:54 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{81BA0C9E-830C-4960-BCDD-96CC5548647C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="153"
+  DTS:VersionGUID="{C541A229-B00D-4F18-A4CD-B3DD2D72D37F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[data]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D1B12279-87FC-4D1A-8119-53E7148557AC}"
+      DTS:ObjectName="data">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\PWR\semester_6\data warehouses\project\data\crimes_weather.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE OCC"
+              DTS:DTSID="{D51944A0-A9F8-4364-A745-F67C2EEF71FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AREA"
+              DTS:DTSID="{5E33AA11-E537-4E9C-A2DF-0078E4A68ED1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AREA NAME"
+              DTS:DTSID="{AD467279-8F14-46B9-993A-7A5E85CB1548}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Crm Cd"
+              DTS:DTSID="{60B18563-6DC4-4AE3-AD88-4BA7E3388AA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Crm Cd Desc"
+              DTS:DTSID="{6114F98A-E784-4AD9-9958-9934B4427862}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Age"
+              DTS:DTSID="{356A7E94-CD67-4D70-8F64-7AE5CB6CBC98}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Sex"
+              DTS:DTSID="{552DED7A-1D77-4850-8178-68DD156110CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Descent"
+              DTS:DTSID="{32F22690-5875-4CA6-A446-BB1E0514960D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premis Cd"
+              DTS:DTSID="{94ADFF3D-E20E-44E8-BA1A-6C4F671D1168}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premis Desc"
+              DTS:DTSID="{7D2C06BB-16F1-400F-960C-69D97E10D699}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weapon Used Cd"
+              DTS:DTSID="{0BBDD55A-7CA2-4F60-A17F-696014F01317}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weapon Desc"
+              DTS:DTSID="{8942E251-13A0-4CFF-A70C-1F1976C18520}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOCATION"
+              DTS:DTSID="{788784E8-511D-4F4E-AE3E-F9C274AEA2B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAT"
+              DTS:DTSID="{5F2BBF44-CFFC-40C3-A979-F58E703DD1BB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LON"
+              DTS:DTSID="{8323A34E-E65F-4DB9-968A-B7935EFFBFB2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp"
+              DTS:DTSID="{6F5197DE-0252-457A-BEC5-28783241615B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature(F)"
+              DTS:DTSID="{1E15926A-7624-4730-A712-8FDA789DE375}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Chill(F)"
+              DTS:DTSID="{18A451EE-5F24-4333-9747-E83EA08A3926}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Humidity(%)"
+              DTS:DTSID="{ABDA831F-75F0-4AA5-94B7-953246DD26EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pressure(in)"
+              DTS:DTSID="{1669BA83-8722-4445-A156-C94EE8DA4A4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Visibility(mi)"
+              DTS:DTSID="{14E05E51-167E-46AA-BB73-20237C3CC338}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Direction"
+              DTS:DTSID="{AE3F1C35-216C-482F-9174-824B1B659639}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Speed(mph)"
+              DTS:DTSID="{BD0B9C5B-C9CF-427C-A677-DD42C37B15F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precipitation(in)"
+              DTS:DTSID="{532221E2-A0B3-4387-8E15-E540D79C0DEF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Condition"
+              DTS:DTSID="{D1C48713-6F57-4850-8B44-3D60D6DB16E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sunrise_Sunset"
+              DTS:DTSID="{9900122B-B528-4E59-8F9A-B5EC5CB3F8D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Civil_Twilight"
+              DTS:DTSID="{5AA833EE-4535-44BA-9192-C56754598026}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nautical_Twilight"
+              DTS:DTSID="{E3C63827-DE5D-4A62-8F40-1B0D53D1D5C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Astronomical_Twilight"
+              DTS:DTSID="{BFB64BD0-17E2-4BB7-B2E3-BA6CFAFA0B68}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{12AFEB46-B19A-46FF-9FB5-82277DAA810A}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create copy table for preprocessing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used for testing of preprocessing"
+      DTS:Disabled="True"
+      DTS:DTSID="{99FE3C51-F92E-4E66-ABA9-104DFA272D36}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create copy table for preprocessing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="CREATE TABLE Crimes_Weather.PreprocessingTable (&#xA;    date_occ DATETIME,&#xA;    area SMALLINT,&#xA;    area_name VARCHAR(50),&#xA;    crm_cd SMALLINT,&#xA;    crm_cd_desc VARCHAR(MAX),&#xA;    vict_age SMALLINT,&#xA;    vict_sex varchar(1),&#xA;&#x9;vict_descent varchar(1),&#xA;    premis_cd FLOAT,&#xA;    premis_desc VARCHAR(MAX),&#xA;    weapon_used_cd FLOAT,&#xA;    weapon_desc VARCHAR(MAX),&#xA;    location VARCHAR(50),&#xA;    lat FLOAT,&#xA;    lon FLOAT,&#xA;    weather_timestamp DATETIME,&#xA;    temperature FLOAT,&#xA;    wind_chill FLOAT,&#xA;    humidity FLOAT,&#xA;    pressure FLOAT,&#xA;    visibility FLOAT,&#xA;    wind_direction VARCHAR(10),&#xA;    wind_speed FLOAT,&#xA;    precipitation FLOAT,&#xA;    weather_condition VARCHAR(MAX),&#xA;    sunrise_sunset VARCHAR(10),&#xA;    civil_twilight VARCHAR(10),&#xA;    nautical_twilight VARCHAR(10),&#xA;    astronomical_twilight VARCHAR(10)&#xA;);&#xA;&#xA;INSERT INTO Crimes_Weather.PreprocessingTable&#xA;SELECT *&#xA;FROM Crimes_Weather.TempTable;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create schema"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BEA7DF25-EC9B-40E6-962B-2D339432C898}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create schema"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="CREATE SCHEMA Crimes_Weather; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Schema Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Create Schema for the project"
+      DTS:DTSID="{4ED97BAA-2654-47EA-82F2-37C8B41076EB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Schema Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="CREATE TABLE Crimes_Weather.Helper_Month (&#xA;    month_number SMALLINT PRIMARY KEY,&#xA;    month_name VARCHAR(100) &#xA;);&#xA;&#xA;&#xA;INSERT INTO Crimes_Weather.Helper_Month (month_number, month_name)&#xA;VALUES&#xA;    (1, 'January'),&#xA;    (2, 'February'),&#xA;    (3, 'March'),&#xA;    (4, 'April'),&#xA;    (5, 'May'),&#xA;    (6, 'June'),&#xA;    (7, 'July'),&#xA;    (8, 'August'),&#xA;    (9, 'September'),&#xA;    (10, 'October'),&#xA;    (11, 'November'),&#xA;    (12, 'December');&#xA;&#xA;-- Helper_Weekday&#xA;CREATE TABLE  Crimes_Weather.Helper_Weekday (&#xA;    weekday_number SMALLINT PRIMARY KEY,&#xA;    weekday_name VARCHAR(100)&#xA;);&#xA;&#xA;&#xA;INSERT INTO Crimes_Weather.Helper_Weekday (weekday_number, weekday_name)&#xA;VALUES&#xA;    (1, 'Sunday'),&#xA;    (2, 'Monday'),&#xA;    (3, 'Tuesday'),&#xA;    (4, 'Wednesday'),&#xA;    (5, 'Thursday'),&#xA;    (6, 'Friday'),&#xA;    (7, 'Saturday');&#xA;&#xA;-- Helper_Season&#xA;-- Using season for hierarchy&#xA;&#xA;CREATE TABLE  Crimes_Weather.Helper_Season (&#xA;    season_number SMALLINT PRIMARY KEY,&#xA;    season_name VARCHAR(100)&#xA;);&#xA;&#xA;INSERT INTO Crimes_Weather.Helper_Season (season_number, season_name)&#xA;VALUES&#xA;    (1, 'Winter'),&#xA;&#x9;(2, 'Spring'),&#xA;&#x9;(3, 'Summer'),&#xA;&#x9;(4, 'Autumn')&#xA;&#xA;CREATE TABLE Crimes_Weather.DIM_Sunrise_Sunset (&#xA;    id CHAR PRIMARY KEY,&#xA;    name VARCHAR(100) &#xA;);&#xA;&#xA;INSERT INTO Crimes_Weather.DIM_Sunrise_Sunset(id, name)&#xA;VALUES&#xA;    ('D','Day'),&#xA;&#x9;('N','Night')&#xA;&#xA;-- Descent&#xA;CREATE TABLE  Crimes_Weather.DIM_Descent (&#xA;    descent CHAR PRIMARY KEY,&#xA;    descent_description VARCHAR(100)&#xA;);&#xA;&#xA;INSERT INTO Crimes_Weather.DIM_Descent (descent, descent_description)&#xA;VALUES&#xA;    ('A', 'Other Asian'),&#xA;    ('B', 'Black'),&#xA;    ('C', 'Chinese'),&#xA;    ('D', 'Cambodian'),&#xA;    ('F', 'Filipino'),&#xA;    ('G', 'Guamanian'),&#xA;    ('H', 'Hispanic/Latin/Mexican'),&#xA;    ('I', 'American Indian/Alaskan Native'),&#xA;    ('J', 'Japanese'),&#xA;    ('K', 'Korean'),&#xA;    ('L', 'Laotian'),&#xA;    ('O', 'Other'),&#xA;    ('P', 'Pacific Islander'),&#xA;    ('S', 'Samoan'),&#xA;    ('U', 'Hawaiian'),&#xA;    ('V', 'Vietnamese'),&#xA;    ('W', 'White'),&#xA;    ('Z', 'Asian Indian');&#xA;&#xA;&#xA;-- Sex&#xA;CREATE TABLE  Crimes_Weather.DIM_Sex (&#xA;    sex CHAR PRIMARY KEY,&#xA;    sex_descirption VARCHAR(100)&#xA;);&#xA;&#xA;INSERT INTO Crimes_Weather.DIM_Sex(sex, sex_descirption)&#xA;VALUES&#xA;    ('M','Male'),&#xA;&#x9;('F','Female')&#xA;&#xA;-- Weapon Used&#xA;CREATE TABLE Crimes_Weather.DIM_Weapon_Used (&#xA;    weapon_code SMALLINT PRIMARY KEY,&#xA;    weapon_description VARCHAR(100)&#xA;);&#xA;&#xA;&#xA;-- Premise&#xA;CREATE TABLE  Crimes_Weather.DIM_Premise (&#xA;    premise_id SMALLINT PRIMARY KEY,&#xA;&#x9;premise_description VARCHAR(100)&#xA;);&#xA;&#xA;-- Area&#xA;CREATE TABLE  Crimes_Weather.DIM_Area (&#xA;    area_id SMALLINT PRIMARY KEY,&#xA;&#x9;area_name VARCHAR(100)&#xA;);&#xA;&#xA;&#xA;-- Weather Condition&#xA;CREATE TABLE  Crimes_Weather.DIM_Weather_Condition (&#xA;    weather_condition_id SMALLINT PRIMARY KEY,&#xA;&#x9;weather_condition VARCHAR(100)&#xA;);&#xA;&#xA;&#xA;&#xA;CREATE TABLE Crimes_Weather.DIM_Time(&#xA;&#x9;PK_TIME BIGINT PRIMARY KEY,&#xA;    year INT,&#xA;    month SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.Helper_Month(month_number),&#xA;    weekday SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.Helper_Weekday(weekday_number),&#xA;    day_of_month SMALLINT,&#xA;&#x9;hour SMALLINT,&#xA;&#x9;season SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.Helper_Season(season_number),&#xA;);&#xA;&#xA;-- Crime&#xA;CREATE TABLE Crimes_Weather.DIM_Crime(&#xA;&#x9;crime_code SMALLINT PRIMARY KEY,&#xA;&#x9;crime_description VARCHAR(100)&#xA;);&#xA;&#xA;&#xA;CREATE TABLE Crimes_Weather.FACT_Crimes(&#xA;&#x9;crime_id INT IDENTITY(1,1) PRIMARY KEY,&#xA;&#x9;pressure SMALLINT,&#xA;&#x9;humidity SMALLINT,&#xA;&#x9;wind_speed FLOAT, -- user FLOAT because we change it into kmh&#xA;&#x9;visibility SMALLINT,&#xA;&#x9;weather_condition SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Weather_Condition(weather_condition_id),&#xA;&#x9;sunrise_sunset CHAR FOREIGN KEY REFERENCES Crimes_Weather.DIM_Sunrise_Sunset(id),&#xA;&#x9;area SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Area(area_id),&#xA;&#x9;premise  SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Premise(premise_id),&#xA;&#x9;crime SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Crime(crime_code),&#xA;&#x9;date_occured BIGINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Time(PK_TIME),&#xA;&#x9;victim_descent CHAR FOREIGN KEY REFERENCES Crimes_Weather.DIM_Descent(descent),&#xA;&#x9;victim_sex CHAR FOREIGN KEY REFERENCES Crimes_Weather.DIM_Sex(sex),&#xA;&#x9;victim_age SMALLINT,&#xA;&#x9;weapon_code SMALLINT FOREIGN KEY REFERENCES Crimes_Weather.DIM_Weapon_Used(weapon_code)&#xA;&#xA;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Temp Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AFC5FC17-5B57-410D-9635-DA90DDDE6E22}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Temp Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="CREATE TABLE Crimes_Weather.TempTable (&#xA;    date_occ DATETIME,&#xA;    area SMALLINT,&#xA;    area_name VARCHAR(50),&#xA;    crm_cd SMALLINT,&#xA;    crm_cd_desc VARCHAR(MAX),&#xA;    vict_age SMALLINT,&#xA;    vict_sex varchar(1),&#xA;    vict_descent varchar(1),&#xA;    premis_cd FLOAT,&#xA;    premis_desc VARCHAR(MAX),&#xA;    weapon_used_cd FLOAT,&#xA;    weapon_desc VARCHAR(MAX),&#xA;    location VARCHAR(50),&#xA;    lat FLOAT,&#xA;    lon FLOAT,&#xA;    weather_timestamp DATETIME,&#xA;    temperature FLOAT,&#xA;    wind_chill FLOAT,&#xA;    humidity FLOAT,&#xA;    pressure FLOAT,&#xA;    visibility FLOAT,&#xA;    wind_direction VARCHAR(10),&#xA;    wind_speed FLOAT,&#xA;    precipitation FLOAT,&#xA;    weather_condition VARCHAR(MAX),&#xA;    sunrise_sunset VARCHAR(10),&#xA;    civil_twilight VARCHAR(10),&#xA;    nautical_twilight VARCHAR(10),&#xA;    astronomical_twilight VARCHAR(10)&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data preprocessing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Preprocessing of data in temp table"
+      DTS:DTSID="{FE392FC5-FE6D-49E2-A262-1166C5360306}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data preprocessing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="-- AFTER THIS COMMAND THERE WILL BE ALMOST 700000 of clean records&#xA;DELETE FROM Crimes_Weather.TempTable&#xA;WHERE NOT (&#xA;    vict_sex IN ('M', 'F')&#xA;    AND vict_descent IN ('A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'O', 'P', 'S', 'U', 'V', 'W', 'Z')&#xA;    AND vict_age &gt; 0&#xA;);&#xA;&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET temperature = (temperature - 32) * 5.0 / 9.0&#xA;&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET wind_chill = (wind_chill - 32) * 5.0 / 9.0&#xA;&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET wind_speed = wind_speed * 1.609344&#xA;&#xA;-- Pressure in hPa=Pressure in inHg×33.8639&#xA;-- so now pressure in hPa&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET pressure = pressure * 33.8639&#xA;&#xA;-- now visibility in km&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET visibility = visibility * 1.60934&#xA;&#xA;-- Precipitation in millimeters&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET precipitation = precipitation * 25.4&#xA;&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET weapon_desc = 'Unknown'&#xA;WHERE weapon_desc IS NULL OR weapon_desc = ''&#xA;&#xA;UPDATE Crimes_Weather.TempTable&#xA;SET wind_direction = 'CALM'&#xA;WHERE wind_speed = 0&#xA;&#xA;&#xA;DELETE FROM Crimes_Weather.TempTable&#xA;WHERE premis_desc IS NULL OR premis_desc = ''&#xA;&#xA;&#xA;DELETE FROM Crimes_Weather.TempTable&#xA;WHERE weather_condition IS NULL OR weather_condition = ''&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Schema"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Drops schema if it already exists"
+      DTS:DTSID="{AD356511-8336-4977-8B1D-AC83F6C2F5AB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Schema"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="-- REMOVE ALREADY EXISTING SCHEMA&#xA;IF EXISTS (SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'Crimes_Weather')&#xA;BEGIN&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'FACT_Crimes')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.FACT_Crimes;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Time')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Time;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Descent')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Descent;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Sex')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Sex;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Sunrise_Sunset')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Sunrise_Sunset;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Weapon_Used')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Weapon_Used;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Premise')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Premise;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Crime')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Crime;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Area')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Area;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'DIM_Weather_Condition')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.DIM_Weather_Condition;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'Helper_Month')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.Helper_Month;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'Helper_Weekday')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.Helper_Weekday;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'Helper_Season')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.Helper_Season;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'FACT_Crimes')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.FACT_Crimes;&#xA;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'TempTable')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.TempTable;&#xA;&#x9;IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'Crimes_Weather' AND TABLE_NAME = 'PreprocessingTable')&#xA;&#x9;&#x9;DROP TABLE Crimes_Weather.PreprocessingTable;&#xA;&#xA;&#x9;DROP SCHEMA Crimes_Weather;&#xA;&#xA;&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute Process Task"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{3A1AC1C6-2DD1-4B93-923F-7F5370126999}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Process Task"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="python.exe"
+          Arguments="main.py"
+          WorkingDirectory="D:\PWR\semester_6\data warehouses\project" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Data"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Insert data from temp table into db schema"
+      DTS:DTSID="{62B2AEB5-6D37-40CF-A0A7-6E948C155BF7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Data"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{12AFEB46-B19A-46FF-9FB5-82277DAA810A}"
+          SQLTask:SqlStatementSource="-- Insert into DIM_Area&#xA;INSERT INTO Crimes_Weather.DIM_Area (area_id, area_name)&#xA;SELECT DISTINCT&#xA;    area,&#xA;    area_name&#xA;FROM Crimes_Weather.TempTable;&#xA;&#xA;-- Insert into DIM_Weather_Condition with unique weather conditions&#xA;INSERT INTO Crimes_Weather.DIM_Weather_Condition (weather_condition_id, weather_condition)&#xA;SELECT&#xA;    ROW_NUMBER() OVER (ORDER BY weather_condition) AS weather_condition_id,&#xA;    weather_condition&#xA;FROM (&#xA;    SELECT DISTINCT&#xA;        weather_condition&#xA;    FROM Crimes_Weather.TempTable&#xA;) AS distinct_conditions;&#xA;&#xA;&#xA;-- Insert into DIM_Premise&#xA;INSERT INTO Crimes_Weather.DIM_Premise (premise_id, premise_description)&#xA;SELECT DISTINCT&#xA;    premis_cd,&#xA;    premis_desc&#xA;FROM Crimes_Weather.TempTable;&#xA;&#xA;&#xA;-- Insert into DIM_Crime&#xA;INSERT INTO Crimes_Weather.DIM_Crime (crime_code, crime_description)&#xA;SELECT DISTINCT&#xA;    crm_cd,&#xA;    crm_cd_desc&#xA;FROM Crimes_Weather.TempTable;&#xA;&#xA;&#xA;-- Insert into DIM_Weapon_Used&#xA;INSERT INTO Crimes_Weather.DIM_Weapon_Used (weapon_code, weapon_description)&#xA;SELECT DISTINCT&#xA;    weapon_used_cd,&#xA;    weapon_desc&#xA;FROM Crimes_Weather.TempTable;&#xA;&#xA;&#xA;-- Insert into DIM_Time&#xA;INSERT INTO Crimes_Weather.DIM_Time (PK_TIME, year, month, weekday, day_of_month, hour, season)&#xA;SELECT &#xA;    CAST(FORMAT(date_occ, 'yyyyMMddHHmm') AS BIGINT) AS PK_TIME,&#xA;    YEAR(date_occ) AS year,&#xA;    MONTH(date_occ) AS month,&#xA;    DATEPART(WEEKDAY, date_occ) AS weekday,&#xA;    DAY(date_occ) AS day_of_month,&#xA;    DATEPART(HOUR, date_occ) AS hour,&#xA;    CASE&#xA;        WHEN MONTH(date_occ) IN (12, 1, 2) THEN 1&#xA;        WHEN MONTH(date_occ) IN (3, 4, 5) THEN 2&#xA;        WHEN MONTH(date_occ) IN (6, 7, 8) THEN 3&#xA;        WHEN MONTH(date_occ) IN (9, 10, 11) THEN 4&#xA;    END AS season&#xA;FROM (&#xA;    SELECT DISTINCT date_occ&#xA;    FROM Crimes_Weather.TempTable&#xA;) AS distinct_dates;&#xA;&#xA;&#xA;-- INSERT INTO FACT_Crimes&#xA;INSERT INTO Crimes_Weather.FACT_Crimes (&#xA;    pressure,&#xA;    humidity,&#xA;    wind_speed,&#xA;    visibility,&#xA;    weather_condition,&#xA;    sunrise_sunset,&#xA;    area,&#xA;    premise,&#xA;&#x9;crime,&#xA;    date_occured,&#xA;    victim_descent,&#xA;    victim_sex,&#xA;    victim_age,&#xA;    weapon_code&#xA;)&#xA;SELECT &#xA;    CAST(tt.pressure AS SMALLINT),&#xA;    CAST(tt.humidity AS SMALLINT),&#xA;    tt.wind_speed,&#xA;    CAST(tt.visibility AS SMALLINT),&#xA;    wc.weather_condition_id,&#xA;    ss.id,&#xA;    a.area_id,&#xA;    p.premise_id,&#xA;&#x9;c.crime_code,&#xA;    CAST(FORMAT(tt.date_occ, 'yyyyMMddHHmm') AS BIGINT) AS date_occured,&#xA;    d.descent,&#xA;    s.sex,&#xA;    tt.vict_age,&#xA;    w.weapon_code&#xA;FROM Crimes_Weather.TempTable tt&#xA;INNER JOIN Crimes_Weather.DIM_Weather_Condition wc ON tt.weather_condition = wc.weather_condition&#xA;INNER JOIN Crimes_Weather.DIM_Sunrise_Sunset ss ON tt.sunrise_sunset = ss.name&#xA;INNER JOIN Crimes_Weather.DIM_Area a ON tt.area_name = a.area_name&#xA;INNER JOIN Crimes_Weather.DIM_Premise p ON tt.premis_cd = p.premise_id&#xA;INNER JOIN Crimes_Weather.DIM_Descent d ON tt.vict_descent = d.descent&#xA;INNER JOIN Crimes_Weather.DIM_Sex s ON tt.vict_sex = s.sex&#xA;INNER JOIN Crimes_Weather.DIM_Weapon_Used w ON tt.weapon_used_cd = w.weapon_code&#xA;INNER JOIN Crimes_Weather.DIM_Crime c ON tt.crm_cd = c.crime_code;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert in Temp Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{9386C625-F402-40D3-9034-D1B071C2D46C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert in Temp Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert in Temp Table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert in Temp Table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[data]"
+                  connectionManagerRefId="Package.ConnectionManagers[data]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATE OCC]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]"
+                      name="DATE OCC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]"
+                      name="AREA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA NAME]"
+                      length="11"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]"
+                      name="AREA NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]"
+                      name="Crm Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd Desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]"
+                      name="Crm Cd Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Age]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]"
+                      name="Vict Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Sex]"
+                      length="1"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]"
+                      name="Vict Sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]"
+                      name="Premis Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]"
+                      name="Premis Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Used Cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]"
+                      name="Weapon Used Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]"
+                      name="Weapon Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LOCATION]"
+                      length="40"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]"
+                      name="LOCATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      name="LAT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      name="LON"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Timestamp]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]"
+                      name="Weather_Timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature(F)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]"
+                      name="Temperature(F)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Chill(F)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]"
+                      name="Wind_Chill(F)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Humidity(%)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]"
+                      name="Humidity(%)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pressure(in)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]"
+                      name="Pressure(in)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Visibility(mi)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]"
+                      name="Visibility(mi)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Direction]"
+                      length="4"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]"
+                      name="Wind_Direction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Speed(mph)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]"
+                      name="Wind_Speed(mph)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Precipitation(in)]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]"
+                      name="Precipitation(in)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Condition]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]"
+                      name="Weather_Condition"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunrise_Sunset]"
+                      length="5"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]"
+                      name="Sunrise_Sunset"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Civil_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]"
+                      name="Civil_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nautical_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]"
+                      name="Nautical_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Astronomical_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]"
+                      name="Astronomical_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Descent]"
+                      length="50"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]"
+                      name="Vict Descent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATE OCC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE OCC" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AREA NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Crm Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Crm Cd Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Age" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Premis Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Premis Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Used Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Weapon Used Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Weapon Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LON" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Weather_Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature(F)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Temperature(F)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Chill(F)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Chill(F)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Humidity(%)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Humidity(%)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pressure(in)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pressure(in)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Visibility(mi)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Visibility(mi)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Direction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Speed(mph)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Speed(mph)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Precipitation(in)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Precipitation(in)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Weather_Condition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sunrise_Sunset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Civil_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nautical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Astronomical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Descent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Descent" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert in Temp Table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Crimes_Weather].[TempTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert in Temp Table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AREA]"
+                      cachedDataType="i1"
+                      cachedName="AREA"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="LOCATION"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LAT]"
+                      cachedDataType="r4"
+                      cachedName="LAT"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LON]"
+                      cachedDataType="r4"
+                      cachedName="LON"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weather_Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Weather_Timestamp"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_timestamp]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Direction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Wind_Direction"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_direction]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weather_Condition]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Weather_Condition"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_condition]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sunrise_Sunset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Sunrise_Sunset"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sunrise_sunset]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Civil_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Civil_Twilight"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[civil_twilight]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nautical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Nautical_Twilight"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nautical_twilight]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Astronomical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Astronomical_Twilight"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[astronomical_twilight]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATE OCC]"
+                      cachedDataType="date"
+                      cachedName="DATE OCC"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_occ]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AREA NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="AREA NAME"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area_name]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Crm Cd]"
+                      cachedDataType="i2"
+                      cachedName="Crm Cd"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Crm Cd Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Crm Cd Desc"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd_desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Age]"
+                      cachedDataType="i1"
+                      cachedName="Vict Age"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_age]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vict Sex"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_sex]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Descent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vict Descent"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_descent]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Premis Cd]"
+                      cachedDataType="r4"
+                      cachedName="Premis Cd"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Premis Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Premis Desc"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weapon Used Cd]"
+                      cachedDataType="r4"
+                      cachedName="Weapon Used Cd"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_used_cd]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weapon Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Weapon Desc"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_desc]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Temperature(F)]"
+                      cachedDataType="r4"
+                      cachedName="Temperature(F)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[temperature]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Chill(F)]"
+                      cachedDataType="r4"
+                      cachedName="Wind_Chill(F)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_chill]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Humidity(%)]"
+                      cachedDataType="r4"
+                      cachedName="Humidity(%)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[humidity]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pressure(in)]"
+                      cachedDataType="r4"
+                      cachedName="Pressure(in)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pressure]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Visibility(mi)]"
+                      cachedDataType="r4"
+                      cachedName="Visibility(mi)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[visibility]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Speed(mph)]"
+                      cachedDataType="r4"
+                      cachedName="Wind_Speed(mph)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_speed]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]" />
+                    <inputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precipitation(in)]"
+                      cachedDataType="r4"
+                      cachedName="Precipitation(in)"
+                      externalMetadataColumnId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precipitation]"
+                      lineageId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_occ]"
+                      dataType="dbTimeStamp"
+                      name="date_occ" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      dataType="i2"
+                      name="area" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="area_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd]"
+                      dataType="i2"
+                      name="crm_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="crm_cd_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_age]"
+                      dataType="i2"
+                      name="vict_age" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="vict_sex" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_descent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="vict_descent" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_cd]"
+                      dataType="r8"
+                      name="premis_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="premis_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_used_cd]"
+                      dataType="r8"
+                      name="weapon_used_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="weapon_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      dataType="r8"
+                      name="lat" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      dataType="r8"
+                      name="lon" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="weather_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[temperature]"
+                      dataType="r8"
+                      name="temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_chill]"
+                      dataType="r8"
+                      name="wind_chill" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[humidity]"
+                      dataType="r8"
+                      name="humidity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pressure]"
+                      dataType="r8"
+                      name="pressure" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[visibility]"
+                      dataType="r8"
+                      name="visibility" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="wind_direction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_speed]"
+                      dataType="r8"
+                      name="wind_speed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precipitation]"
+                      dataType="r8"
+                      name="precipitation" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_condition]"
+                      codePage="1252"
+                      dataType="text"
+                      name="weather_condition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sunrise_sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="sunrise_sunset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[civil_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="civil_twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nautical_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="nautical_twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[astronomical_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="astronomical_twilight" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert in Temp Table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert in Temp Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert in Temp Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert in Temp Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert in Temp Table.Paths[Flat File Source Output]"
+              endId="Package\Insert in Temp Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert in Temp Table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CA293C5A-F505-4DF8-A2F5-853F07DCC284}"
+      DTS:From="Package\Execute Process Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert in Temp Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E99C6D9-C662-4EE2-A784-8D3C02D34831}"
+      DTS:From="Package\Create schema"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Create Schema Tables" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{4247A97F-238F-47A2-B05D-10427B630B0C}"
+      DTS:From="Package\Create Schema Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Create Temp Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A51E678F-9BD3-4212-9F9E-C9DAB5F59FC4}"
+      DTS:From="Package\Drop Schema"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Create schema" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{E83DAAE7-9146-437E-84A6-5F00C6658A04}"
+      DTS:From="Package\Create Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Execute Process Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{81FA9B07-409A-4114-8AF1-2CDD84FAA014}"
+      DTS:From="Package\Insert in Temp Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Create copy table for preprocessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{1A956C67-BBB1-4474-AE85-0F802CAB7999}"
+      DTS:From="Package\Create copy table for preprocessing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Data preprocessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{B9BD8849-2AC5-4FAD-9CD9-A70D9324ABAD}"
+      DTS:From="Package\Data preprocessing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Insert Data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Create copy table for preprocessing"
+          TopLeft="240.000000510897,473.279411595289" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Create schema"
+          TopLeft="238.571429079284,90.8088234498148" />
+        <NodeLayout
+          Size="152,58.4"
+          Id="Package\Create Schema Tables"
+          TopLeft="248.571429100572,168.86764694236" />
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Create Temp Table"
+          TopLeft="235.000000500253,252.820588057164" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Data preprocessing"
+          TopLeft="242.857143374122,548.53991548557" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Drop Schema"
+          TopLeft="250.714286247991,12.600000011395" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Execute Process Task"
+          TopLeft="232.142857637028,330.06764682841" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Insert Data"
+          TopLeft="237.857143363478,633.59999963536" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\Insert in Temp Table"
+          TopLeft="230.714286205416,400.302940866963" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="320.428571921222,371.66764682841">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.635294038553"
+              Start="0,0"
+              End="0,21.135294038553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.135294038553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="322.171429089928,132.408823449815">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.4588234925456"
+              Start="0,0"
+              End="0,28.9588234925456">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9588234925456" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="321.785714800413,227.26764694236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.552941114804"
+              Start="0,0"
+              End="0,18.052941114804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.052941114804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="320.642857663638,54.200000011395">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.6088234384197"
+              Start="0,0"
+              End="0,29.1088234384197">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.1088234384197" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="320.371429068641,294.420588057164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.647058771246"
+              Start="0,0"
+              End="0,28.147058771246">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.147058771246" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="320.157143358156,441.902940866963">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.376470728326"
+              Start="0,0"
+              End="0,23.876470728326">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.876470728326" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="322.628571942509,514.879411595289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.6605038902815"
+              Start="0,0"
+              End="0,26.1605038902815">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.1605038902815" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="324.057143374122,590.13991548557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.600000010644,43.46008414979"
+              Start="0,0"
+              End="-20.600000010644,35.96008414979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.730042074895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.730042074895"
+                    Point2="0,21.730042074895"
+                    Point3="-4,21.730042074895" />
+                  <mssgle:LineSegment
+                    End="-16.600000010644,21.730042074895" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.600000010644,21.730042074895"
+                    Point2="-20.600000010644,21.730042074895"
+                    Point3="-20.600000010644,25.730042074895" />
+                  <mssgle:LineSegment
+                    End="-20.600000010644,35.96008414979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert in Temp Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert in Temp Table\Flat File Source"
+          TopLeft="238.571429079284,21.4117646871141" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Insert in Temp Table\OLE DB Destination"
+          TopLeft="225.714286194772,105.529411672205" />
+        <EdgeLayout
+          Id="Package\Insert in Temp Table.Paths[Flat File Source Output]"
+          TopLeft="312.342857637028,63.0117646871141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176469850911"
+              Start="0,0"
+              End="0,35.0176469850911">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176469850911" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert in Temp Table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

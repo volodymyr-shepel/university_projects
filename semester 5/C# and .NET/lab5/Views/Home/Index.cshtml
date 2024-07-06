@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/styles.css">
+</head>
+<body>
+    <h1>Multiplication Table Generator</h1>
+    <label for="rowCount">Enter the number of rows (5-20): </label>
+    <input type="number" id="rowCount" min="5" max="20" value="13">
+    <button id="generateTable">Generate Table</button>
+    <div id="tableContainer">
+    </div>
+    
+    <script src="~/js/script.js"></script>
+</body>
+</html>
+

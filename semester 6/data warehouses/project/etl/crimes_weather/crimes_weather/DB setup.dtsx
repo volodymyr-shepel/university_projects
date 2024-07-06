@@ -1,0 +1,568 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/12/2024 8:37:15 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{9E2B28C7-DB32-4524-9D27-B5DAF40F2316}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DB setup"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{F7B88F21-6E54-4F91-BEC3-BB3F2CBC96F4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-DB setup-{E60A099F-CBF5-4A0A-9807-495B930A080B}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create History Scheme"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{e12bda64-0bc9-4e8e-b289-905f6b82ac64}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create History Scheme"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>History Tables Creation.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Stored Procedure for insert"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c4f1e476-a24d-485c-9fbf-97a86a4812a9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Stored Procedure for insert"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.LoadStagingTable', 'P') IS NOT NULL&#xA;BEGIN&#xA;    DROP PROCEDURE dbo.LoadStagingTable;&#xA;END;&#xA;GO&#xA;&#xA;CREATE PROCEDURE dbo.LoadStagingTable&#xA;AS&#xA;BEGIN&#xA;    SET NOCOUNT ON;&#xA;&#xA;    DECLARE @lastUpdate DATETIME;&#xA;&#xA;    -- Get the last update time from the ControlTable&#xA;    SELECT @lastUpdate = last_update&#xA;    FROM dbo.ControlTable&#xA;    WHERE table_name = 'SourceTable';&#xA;&#xA;    -- Insert new and updated records into the StagingTable&#xA;    INSERT INTO dbo.StagingTable (&#xA;&#x9;&#x9;crime_id,&#xA;        date_occ, area, area_name, crm_cd, crm_cd_desc, vict_age, vict_sex, vict_descent,&#xA;        premis_cd, premis_desc, weapon_used_cd, weapon_desc, location, lat, lon, weather_timestamp,&#xA;        temperature, wind_chill, humidity, pressure, visibility, wind_direction, wind_speed,&#xA;        precipitation, weather_condition, sunrise_sunset, civil_twilight, nautical_twilight,&#xA;        astronomical_twilight&#xA;    )&#xA;    SELECT&#xA;&#x9;ID,date_occ, area, area_name, crm_cd, crm_cd_desc, vict_age, vict_sex, vict_descent,&#xA;        premis_cd, premis_desc, weapon_used_cd, weapon_desc, location, lat, lon, weather_timestamp,&#xA;        temperature, wind_chill, humidity, pressure, visibility, wind_direction, wind_speed,&#xA;        precipitation, weather_condition, sunrise_sunset, civil_twilight, nautical_twilight,&#xA;        astronomical_twilight&#xA;    FROM dbo.SourceTable&#xA;    WHERE last_update &gt; @lastUpdate;&#xA;&#xA;    -- Update the last update time in the ControlTable&#xA;    UPDATE dbo.ControlTable&#xA;    SET last_update = GETDATE()&#xA;    WHERE table_name = 'SourceTable';&#xA;END;&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop triggers"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0CBD75F7-6522-4F34-9719-A1AC14C2A8C0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop triggers"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF EXISTS (SELECT * FROM sys.triggers WHERE name = 'trg_SourceTable_Update')&#xA;BEGIN&#xA;    DROP TRIGGER trg_SourceTable_Update;&#xA;END&#xA;GO&#xA;&#xA;IF EXISTS (SELECT * FROM sys.triggers WHERE name = 'trg_SourceTable_Insert')&#xA;BEGIN&#xA;    DROP TRIGGER trg_SourceTable_Insert;;&#xA;END&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare Control Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BDD9AD2A-58EC-41A4-872D-95942E0577D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare Control Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES &#xA;               WHERE TABLE_SCHEMA = 'dbo' &#xA;                 AND TABLE_NAME = 'ControlTable')&#xA;BEGIN&#xA;CREATE TABLE dbo.ControlTable (&#xA;    table_name VARCHAR(50),&#xA;    last_update DATETIME,&#xA;    PRIMARY KEY (table_name)&#xA;);&#xA;INSERT INTO dbo.ControlTable (table_name, last_update)&#xA;VALUES ('SourceTable', '1900-01-01');&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare history tables triggers"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{3c493a64-203e-47cf-914b-a635ffbb2b8f}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare history tables triggers"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Prepare History Tables Triggers.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare Invalid Records Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{22e5b9f5-fdee-411d-a038-7dcb3d3d3508}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare Invalid Records Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES &#xA;               WHERE TABLE_SCHEMA = 'dbo' &#xA;                 AND TABLE_NAME = 'InvalidRecords')&#xA;BEGIN&#xA;CREATE TABLE dbo.InvalidRecords (&#xA;crime_id INT,&#xA;        date_occ DATETIME,&#xA;        area SMALLINT,&#xA;        area_name VARCHAR(50),&#xA;        crm_cd SMALLINT,&#xA;        crm_cd_desc VARCHAR(MAX),&#xA;        vict_age SMALLINT,&#xA;        vict_sex VARCHAR(1),&#xA;        vict_descent VARCHAR(1),&#xA;        premis_cd FLOAT,&#xA;        premis_desc VARCHAR(MAX),&#xA;        weapon_used_cd FLOAT,&#xA;        weapon_desc VARCHAR(MAX),&#xA;        location VARCHAR(50),&#xA;        lat FLOAT,&#xA;        lon FLOAT,&#xA;        weather_timestamp DATETIME,&#xA;        temperature FLOAT,&#xA;        wind_chill FLOAT,&#xA;        humidity FLOAT,&#xA;        pressure FLOAT,&#xA;        visibility FLOAT,&#xA;        wind_direction VARCHAR(10),&#xA;        wind_speed FLOAT,&#xA;        precipitation FLOAT,&#xA;        weather_condition VARCHAR(MAX),&#xA;        sunrise_sunset VARCHAR(10),&#xA;        civil_twilight VARCHAR(10),&#xA;        nautical_twilight VARCHAR(10),&#xA;        astronomical_twilight VARCHAR(10)&#xA;    );&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare Source Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Prepare source table where the data from csv files will be stored"
+      DTS:DTSID="{948adfc1-c271-417c-a990-a2d50374b9ad}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare Source Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES &#xA;               WHERE TABLE_SCHEMA = 'dbo' &#xA;                 AND TABLE_NAME = 'SourceTable')&#xA;BEGIN&#xA;    CREATE TABLE dbo.SourceTable (&#xA;ID INT IDENTITY(1,1) PRIMARY KEY,&#xA;        date_occ DATETIME,&#xA;        area SMALLINT,&#xA;        area_name VARCHAR(50),&#xA;        crm_cd SMALLINT,&#xA;        crm_cd_desc VARCHAR(MAX),&#xA;        vict_age SMALLINT,&#xA;        vict_sex VARCHAR(1),&#xA;        vict_descent VARCHAR(1),&#xA;        premis_cd FLOAT,&#xA;        premis_desc VARCHAR(MAX),&#xA;        weapon_used_cd FLOAT,&#xA;        weapon_desc VARCHAR(MAX),&#xA;        location VARCHAR(50),&#xA;        lat FLOAT,&#xA;        lon FLOAT,&#xA;        weather_timestamp DATETIME,&#xA;        temperature FLOAT,&#xA;        wind_chill FLOAT,&#xA;        humidity FLOAT,&#xA;        pressure FLOAT,&#xA;        visibility FLOAT,&#xA;        wind_direction VARCHAR(10),&#xA;        wind_speed FLOAT,&#xA;        precipitation FLOAT,&#xA;        weather_condition VARCHAR(MAX),&#xA;        sunrise_sunset VARCHAR(10),&#xA;        civil_twilight VARCHAR(10),&#xA;        nautical_twilight VARCHAR(10),&#xA;        astronomical_twilight VARCHAR(10),&#xA;        last_update DATETIME -- Column to track the last update time&#xA;    );&#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to create Staging Table if it does not exist and delete all records if it was already used"
+      DTS:DTSID="{518a4809-d6f1-44fb-bad6-71ffbfba0ee1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.StagingTable', 'U') IS NOT NULL&#xA;BEGIN&#xA;    -- The table exists, truncate it&#xA;    TRUNCATE TABLE dbo.StagingTable;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;    -- The table does not exist, create it&#xA;    CREATE TABLE dbo.StagingTable (&#xA;crime_id INT PRIMARY KEY,&#xA;        date_occ DATETIME,&#xA;        area SMALLINT,&#xA;        area_name VARCHAR(50),&#xA;        crm_cd SMALLINT,&#xA;        crm_cd_desc VARCHAR(MAX),&#xA;        vict_age SMALLINT,&#xA;        vict_sex VARCHAR(1),&#xA;        vict_descent VARCHAR(1),&#xA;        premis_cd FLOAT,&#xA;        premis_desc VARCHAR(MAX),&#xA;        weapon_used_cd FLOAT,&#xA;        weapon_desc VARCHAR(MAX),&#xA;        location VARCHAR(50),&#xA;        lat FLOAT,&#xA;        lon FLOAT,&#xA;        weather_timestamp DATETIME,&#xA;        temperature FLOAT,&#xA;        wind_chill FLOAT,&#xA;        humidity FLOAT,&#xA;        pressure FLOAT,&#xA;        visibility FLOAT,&#xA;        wind_direction VARCHAR(10),&#xA;        wind_speed FLOAT,&#xA;        precipitation FLOAT,&#xA;        weather_condition VARCHAR(MAX),&#xA;        sunrise_sunset VARCHAR(10),&#xA;        civil_twilight VARCHAR(10),&#xA;        nautical_twilight VARCHAR(10),&#xA;        astronomical_twilight VARCHAR(10)&#xA;    );&#xA;END;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Schema creation"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to create database schema"
+      DTS:DTSID="{a66480da-310c-4ced-82ec-88cac8f207bb}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Schema creation"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Schema creation.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update source table trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8ecabd66-4cab-4a7e-a360-cfff28932ad1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update source table trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E60A099F-CBF5-4A0A-9807-495B930A080B}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_SourceTable_Update&#xA;ON dbo.SourceTable&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    SET NOCOUNT ON;&#xA;&#xA;    UPDATE dbo.SourceTable&#xA;    SET last_update = GETDATE()&#xA;    FROM dbo.SourceTable st&#xA;    INNER JOIN inserted i ON st.ID = i.ID;&#xA;END&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1a71260a-26f1-4397-b6c0-eae88d48613c}"
+      DTS:From="Package\Schema creation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create History Scheme" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BAE30999-6A61-4C70-A24E-1EB700216AC9}"
+      DTS:From="Package\Prepare Source Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Update source table trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9EFB35F2-C698-47D1-BC51-4F892482BA32}"
+      DTS:From="Package\Prepare Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Drop triggers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD613CE5-9DEA-4A27-B7F7-A75DA98EA899}"
+      DTS:From="Package\Prepare Control Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Prepare Invalid Records Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{9D556421-DA75-46C5-9970-06A9F62648CC}"
+      DTS:From="Package\Prepare Invalid Records Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Prepare Staging Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{968b481e-ce26-4b0e-aeed-099f67b5992c}"
+      DTS:From="Package\Create History Scheme"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Prepare history tables triggers" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD6FCBD1-F909-4D02-B1FE-A8ED7896FB65}"
+      DTS:From="Package\Update source table trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Schema creation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{E567B680-D369-4DC3-BABB-0BA9C78723E9}"
+      DTS:From="Package\Prepare history tables triggers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Create Stored Procedure for insert" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{9AF0D39E-8A14-48A1-B061-126CCA4C6B91}"
+      DTS:From="Package\Drop triggers"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Prepare Source Table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Create History Scheme"
+          TopLeft="288.244444443262,538.255555163695" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\Create Stored Procedure for insert"
+          TopLeft="260.387301526819,694.973202251341" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Drop triggers"
+          TopLeft="298.333333968406,221.849673008154" />
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Prepare Control Table"
+          TopLeft="277.563492642644,3.9705882366347" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Prepare history tables triggers"
+          TopLeft="284.673015864231,607.843790396816" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Prepare Source Table"
+          TopLeft="290.986652728361,307.190849367474" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Prepare Staging Table"
+          TopLeft="286.428571910579,151.509803841357" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Schema creation"
+          TopLeft="296.101587317131,469.814378753097" />
+        <NodeLayout
+          Size="207.2,41.6"
+          Id="Package\Update source table trigger"
+          TopLeft="274.673015842943,385.208496563373" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="377.773015880196,511.414378753097">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.8411764105979"
+              Start="0,0"
+              End="0,19.3411764105979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3411764105979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="375.229834285652,348.790849367474">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.4176471958992"
+              Start="0,0"
+              End="0,28.9176471958992">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.9176471958992" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="377.628571910579,193.109803841357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.29523794217249,28.7398691667975"
+              Start="0,0"
+              End="-9.29523794217249,21.2398691667975">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.3699345833987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.3699345833987"
+                    Point2="0,14.3699345833987"
+                    Point3="-4,14.3699345833987" />
+                  <mssgle:LineSegment
+                    End="-5.29523794217249,14.3699345833987" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.29523794217249,14.3699345833987"
+                    Point2="-9.29523794217249,14.3699345833987"
+                    Point3="-9.29523794217249,18.3699345833987" />
+                  <mssgle:LineSegment
+                    End="-9.29523794217249,21.2398691667975" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="378.458730153746,579.855555163696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9882352331201"
+              Start="0,0"
+              End="0,20.4882352331201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4882352331201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="376.387301580037,426.808496563373">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.0058821897236"
+              Start="0,0"
+              End="0,35.5058821897236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5058821897236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="377.930158695525,649.443790396816">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5294118545251"
+              Start="0,0"
+              End="0,38.0294118545251">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0294118545251" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="370.259993348384,263.449673008154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.7411763593199"
+              Start="0,0"
+              End="0,36.2411763593199">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.2411763593199" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\Prepare Invalid Records Table"
+          TopLeft="277.530158706169,75.443791012146" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="367.963492642644,45.5705882366347">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.166666063525,29.8732027755113"
+              Start="0,0"
+              End="19.166666063525,22.3732027755113">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9366013877556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9366013877556"
+                    Point2="0,14.9366013877556"
+                    Point3="4,14.9366013877556" />
+                  <mssgle:LineSegment
+                    End="15.166666063525,14.9366013877556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.166666063525,14.9366013877556"
+                    Point2="19.166666063525,14.9366013877556"
+                    Point3="19.166666063525,18.9366013877556" />
+                  <mssgle:LineSegment
+                    End="19.166666063525,22.3732027755113" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="387.130158706169,117.043791012146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.50158679559036,34.4660128292107"
+              Start="0,0"
+              End="-9.50158679559036,26.9660128292107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.2330064146054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.2330064146054"
+                    Point2="0,17.2330064146054"
+                    Point3="-4,17.2330064146054" />
+                  <mssgle:LineSegment
+                    End="-5.50158679559036,17.2330064146054" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.50158679559036,17.2330064146054"
+                    Point2="-9.50158679559036,17.2330064146054"
+                    Point3="-9.50158679559036,21.2330064146054" />
+                  <mssgle:LineSegment
+                    End="-9.50158679559036,26.9660128292107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,29 @@
+/* Class Selector */
+.highlight {
+    color: red;
+}
+
+/* ID Selector */
+#unique {
+    background-color: yellow;
+}
+
+/* Descendant Selector (Nesting) */
+.container p {
+    border: 1px solid #ccc;
+}
+
+/* Child Selector */
+.container > ul {
+    list-style-type: circle;
+}
+
+/* Attribute Selector */
+input[type="text"] {
+    border: 1px solid #888;
+}
+
+a:visited{
+    color: blue;
+
+}

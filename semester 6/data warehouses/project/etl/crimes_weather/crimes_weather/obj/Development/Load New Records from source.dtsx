@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/13/2024 1:47:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{050D1EB7-066A-4E24-AD93-9125C02DEA44}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{895AD14D-84E9-443D-A0AE-F4E4B59861F8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0BD56455-8A16-4B7C-A29C-3C5E09608C5C}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0BD56455-8A16-4B7C-A29C-3C5E09608C5C}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D4F38DA6-E096-43D0-8FC2-788DC531D8E1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="isExecuteDBSetup">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check condition for DB setup"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{537fa50e-2876-4862-b32a-09874d43e40d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check condition for DB setup"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0BD56455-8A16-4B7C-A29C-3C5E09608C5C}"
+          SQLTask:SqlStatementSource="DECLARE @CrimesWeatherExists BIT;&#xA;DECLARE @HistoryCrimesWeatherExists BIT;&#xA;DECLARE @SourceTableExists BIT;&#xA;&#xA;-- Check if the Crimes_Weather schema exists&#xA;SELECT @CrimesWeatherExists = CASE &#xA;                                 WHEN EXISTS (SELECT * &#xA;                                              FROM INFORMATION_SCHEMA.SCHEMATA &#xA;                                              WHERE SCHEMA_NAME = 'Crimes_Weather') &#xA;                                 THEN 1 &#xA;                                 ELSE 0 &#xA;                              END;&#xA;&#xA;-- Check if the History_Crimes_Weather schema exists&#xA;SELECT @HistoryCrimesWeatherExists = CASE &#xA;                                        WHEN EXISTS (SELECT * &#xA;                                                     FROM INFORMATION_SCHEMA.SCHEMATA &#xA;                                                     WHERE SCHEMA_NAME = 'History_Crimes_Weather') &#xA;                                        THEN 1 &#xA;                                        ELSE 0 &#xA;                                     END;&#xA;&#xA;-- Check if the source table exists&#xA;-- Replace 'YourSourceTableName' and 'YourSourceSchema' with your actual table and schema names&#xA;SELECT @SourceTableExists = CASE &#xA;                               WHEN EXISTS (SELECT * &#xA;                                            FROM INFORMATION_SCHEMA.TABLES &#xA;                                            WHERE TABLE_NAME = 'SourceTable' &#xA;                                              AND TABLE_SCHEMA = 'dbo') &#xA;                               THEN 1 &#xA;                               ELSE 0 &#xA;                            END;&#xA;&#xA;-- Determine if the DB setup task should run&#xA;-- If any of the schemas or the source table do not exist, set ExecuteDBSetup to 1 (True)&#xA;SELECT CASE &#xA;         WHEN @CrimesWeatherExists = 0 OR @HistoryCrimesWeatherExists = 0 OR @SourceTableExists = 0 &#xA;         THEN 1 &#xA;         ELSE 0 &#xA;       END AS ExecuteDBSetup;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ExecuteDBSetup"
+            SQLTask:DtsVariableName="User::isExecuteDBSetup" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data preprocessing"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to process data before inserting it into the database"
+      DTS:DTSID="{70ead644-7138-4149-836c-ee4dcf98d9f1}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data preprocessing"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Data Preprocessing.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert From Staging table into db"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to insert data from staging table into db"
+      DTS:DTSID="{590f6470-6272-481e-997a-70f5122f86fa}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert From Staging table into db"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Insert From Staging Table.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load records into staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c09f9a3a-a9f9-45b3-a23d-10866c368070}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load records into staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0BD56455-8A16-4B7C-A29C-3C5E09608C5C}"
+          SQLTask:SqlStatementSource="EXEC dbo.LoadStagingTable;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Prepare Staging Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to create Staging Table if it does not exist and delete all records if it was already used"
+      DTS:DTSID="{bb33e7a2-ca60-4d2f-b243-59d7c6131128}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Prepare Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0BD56455-8A16-4B7C-A29C-3C5E09608C5C}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.StagingTable', 'U') IS NOT NULL&#xA;BEGIN&#xA;    -- The table exists, truncate it&#xA;    TRUNCATE TABLE dbo.StagingTable;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;    -- The table does not exist, create it&#xA;    CREATE TABLE dbo.StagingTable (&#xA;crime_id INT PRIMARY KEY,&#xA;        date_occ DATETIME,&#xA;        area SMALLINT,&#xA;        area_name VARCHAR(50),&#xA;        crm_cd SMALLINT,&#xA;        crm_cd_desc VARCHAR(MAX),&#xA;        vict_age SMALLINT,&#xA;        vict_sex VARCHAR(1),&#xA;        vict_descent VARCHAR(1),&#xA;        premis_cd FLOAT,&#xA;        premis_desc VARCHAR(MAX),&#xA;        weapon_used_cd FLOAT,&#xA;        weapon_desc VARCHAR(MAX),&#xA;        location VARCHAR(50),&#xA;        lat FLOAT,&#xA;        lon FLOAT,&#xA;        weather_timestamp DATETIME,&#xA;        temperature FLOAT,&#xA;        wind_chill FLOAT,&#xA;        humidity FLOAT,&#xA;        pressure FLOAT,&#xA;        visibility FLOAT,&#xA;        wind_direction VARCHAR(10),&#xA;        wind_speed FLOAT,&#xA;        precipitation FLOAT,&#xA;        weather_condition VARCHAR(MAX),&#xA;        sunrise_sunset VARCHAR(10),&#xA;        civil_twilight VARCHAR(10),&#xA;        nautical_twilight VARCHAR(10),&#xA;        astronomical_twilight VARCHAR(10)&#xA;    );&#xA;END;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{ADEA8CA8-E631-4062-84D5-9A4709A1DB5A}"
+      DTS:From="Package\Prepare Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load records into staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7ae89a93-ae03-4fc6-bbf8-a533d0b7ed17}"
+      DTS:From="Package\Load records into staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data preprocessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{333C1AF8-2948-4DAA-9F62-03E47F42D8FF}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::isExecuteDBSetup] == False"
+      DTS:From="Package\Check condition for DB setup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Prepare Staging Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{7b7e9f92-53e2-45a1-9ecd-6208315d6f98}"
+      DTS:From="Package\Data preprocessing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Insert From Staging table into db" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Check condition for DB setup"
+          TopLeft="330.612245474021,51.6225449305534" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data preprocessing"
+          TopLeft="350.136055039393,320.519276663111" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Insert From Staging table into db"
+          TopLeft="337.755102632084,412.741498867605" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load records into staging table"
+          TopLeft="350.929705834733,224.694677734579" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Prepare Staging Table"
+          TopLeft="359.183674106271,155.694440358444" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="443.583674106271,197.294440358444">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.4539682715383,27.4002373761346"
+              Start="0,0"
+              End="-11.4539682715383,19.9002373761346">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.70011868806731" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.70011868806731"
+                    Point2="0,13.7001186880673"
+                    Point3="-4,13.7001186880673" />
+                  <mssgle:LineSegment
+                    End="-7.45396827153832,13.7001186880673" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.45396827153832,13.7001186880673"
+                    Point2="-11.4539682715383,13.7001186880673"
+                    Point3="-11.4539682715383,17.7001186880673" />
+                  <mssgle:LineSegment
+                    End="-11.4539682715383,19.9002373761346" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="433.332880437063,266.294677734579">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.2245989285316"
+              Start="0,0"
+              End="0,46.7245989285316">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.7245989285316" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="440.897959790146,93.2225449305534">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.4718954278907"
+              Start="0,0"
+              End="0,54.9718954278907">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.9718954278907" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,19.4859477139454,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="431.745578835739,362.119276663111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.6222222044953"
+              Start="0,0"
+              End="0,43.1222222044953">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.1222222044953" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

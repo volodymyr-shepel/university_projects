@@ -1,0 +1,125 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/11/2024 1:50:06 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{5A9A3847-093B-42BC-B055-F7412FD0DCFF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Insert From Staging Table"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{5414F446-7ABF-4C59-866E-CB26B795CB6F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{35909EC6-032F-4DC2-BDD1-B6597C85A8AE}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Insert From Staging Table-{35909EC6-032F-4DC2-BDD1-B6597C85A8AE}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insert Data into Fact table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to insert data from staging table into fact table"
+      DTS:DTSID="{a05572a0-40a9-42bf-88bf-123cc14a3221}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Data into Fact table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{35909EC6-032F-4DC2-BDD1-B6597C85A8AE}"
+          SQLTask:SqlStatementSource="MERGE INTO Crimes_Weather.FACT_Crimes AS target&#xA;USING (&#xA;    SELECT &#xA;        tt.crime_id,&#xA;        CAST(tt.pressure AS SMALLINT) AS pressure,&#xA;        CAST(tt.humidity AS SMALLINT) AS humidity,&#xA;        tt.wind_speed,&#xA;        CAST(tt.visibility AS SMALLINT) AS visibility,&#xA;        wc.weather_condition_id,&#xA;        ss.id AS sunrise_sunset_id,&#xA;        a.area_id,&#xA;        p.premise_id,&#xA;        c.crime_code,&#xA;        CAST(FORMAT(tt.date_occ, 'yyyyMMddHHmm') AS BIGINT) AS date_occured,&#xA;        d.descent,&#xA;        s.sex,&#xA;        tt.vict_age,&#xA;        w.weapon_code&#xA;    FROM StagingTable tt&#xA;    INNER JOIN Crimes_Weather.DIM_Weather_Condition wc ON tt.weather_condition = wc.weather_condition&#xA;    INNER JOIN Crimes_Weather.DIM_Sunrise_Sunset ss ON tt.sunrise_sunset = ss.name&#xA;    INNER JOIN Crimes_Weather.DIM_Area a ON tt.area_name = a.area_name&#xA;    INNER JOIN Crimes_Weather.DIM_Premise p ON tt.premis_cd = p.premise_id&#xA;    INNER JOIN Crimes_Weather.DIM_Descent d ON tt.vict_descent = d.descent&#xA;    INNER JOIN Crimes_Weather.DIM_Sex s ON tt.vict_sex = s.sex&#xA;    INNER JOIN Crimes_Weather.DIM_Weapon_Used w ON tt.weapon_used_cd = w.weapon_code&#xA;    INNER JOIN Crimes_Weather.DIM_Crime c ON tt.crm_cd = c.crime_code&#xA;) AS source&#xA;ON target.crime_id = source.crime_id&#xA;WHEN MATCHED THEN&#xA;    UPDATE SET&#xA;        pressure = source.pressure,&#xA;        humidity = source.humidity,&#xA;        wind_speed = source.wind_speed,&#xA;        visibility = source.visibility,&#xA;        weather_condition = source.weather_condition_id,&#xA;        sunrise_sunset = source.sunrise_sunset_id,&#xA;        area = source.area_id,&#xA;        premise = source.premise_id,&#xA;        crime = source.crime_code,&#xA;        date_occured = source.date_occured,&#xA;        victim_descent = source.descent,&#xA;        victim_sex = source.sex,&#xA;        victim_age = source.vict_age,&#xA;        weapon_code = source.weapon_code&#xA;WHEN NOT MATCHED THEN&#xA;    INSERT (&#xA;        crime_id,&#xA;        pressure,&#xA;        humidity,&#xA;        wind_speed,&#xA;        visibility,&#xA;        weather_condition,&#xA;        sunrise_sunset,&#xA;        area,&#xA;        premise,&#xA;        crime,&#xA;        date_occured,&#xA;        victim_descent,&#xA;        victim_sex,&#xA;        victim_age,&#xA;        weapon_code&#xA;    )&#xA;    VALUES (&#xA;        source.crime_id,&#xA;        source.pressure,&#xA;        source.humidity,&#xA;        source.wind_speed,&#xA;        source.visibility,&#xA;        source.weather_condition_id,&#xA;        source.sunrise_sunset_id,&#xA;        source.area_id,&#xA;        source.premise_id,&#xA;        source.crime_code,&#xA;        source.date_occured,&#xA;        source.descent,&#xA;        source.sex,&#xA;        source.vict_age,&#xA;        source.weapon_code&#xA;    );&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert into DIM_Time"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5723F35C-0BDE-464C-B2FF-69BB5EAC25E6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert into DIM_Time"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{35909EC6-032F-4DC2-BDD1-B6597C85A8AE}"
+          SQLTask:SqlStatementSource="INSERT INTO Crimes_Weather.DIM_Time (PK_TIME, year, month, weekday, day_of_month, hour, season)&#xA;SELECT &#xA;    CAST(FORMAT(date_occ, 'yyyyMMddHHmm') AS BIGINT) AS PK_TIME,&#xA;    YEAR(date_occ) AS year,&#xA;    MONTH(date_occ) AS month,&#xA;    DATEPART(WEEKDAY, date_occ) AS weekday,&#xA;    DAY(date_occ) AS day_of_month,&#xA;    DATEPART(HOUR, date_occ) AS hour,&#xA;    CASE&#xA;        WHEN MONTH(date_occ) IN (12, 1, 2) THEN 1&#xA;        WHEN MONTH(date_occ) IN (3, 4, 5) THEN 2&#xA;        WHEN MONTH(date_occ) IN (6, 7, 8) THEN 3&#xA;        WHEN MONTH(date_occ) IN (9, 10, 11) THEN 4&#xA;    END AS season&#xA;FROM (&#xA;    SELECT DISTINCT date_occ&#xA;    FROM StagingTable&#xA;) AS distinct_dates&#xA;LEFT JOIN Crimes_Weather.DIM_Time t&#xA;    ON CAST(FORMAT(distinct_dates.date_occ, 'yyyyMMddHHmm') AS BIGINT) = t.PK_TIME&#xA;WHERE t.PK_TIME IS NULL;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D45AE53-95A9-47D5-9385-18C8C7018A71}"
+      DTS:From="Package\Insert into DIM_Time"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Insert Data into Fact table" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166.4,68"
+          Id="Package\Insert Data into Fact table"
+          TopLeft="345.00000060669,139.60000011395" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Insert into DIM_Time"
+          TopLeft="345.71428645022,54.1882354724162" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="427.557143528455,95.7882354724162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.811764641534"
+              Start="0,0"
+              End="0,36.311764641534">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.311764641534" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

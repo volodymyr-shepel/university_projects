@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type = "text/css" href="form_style.css">
+    <title>Form</title>
+</head>
+<body>
+    <main>
+       
+        <h1>Cyberpunk Character Creation</h1>
+        <form action="process_character.php" method="POST">
+            <fieldset>
+                <legend>Account Information</legend>
+                <label for="email"><strong>Email:</strong></label>
+                <input type="email" id="email" name="email" required><br>
+    
+                <label for="password"><strong>Password:</strong></label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="date_of_birth"><strong>Date of Birth:</strong></label>
+                <input type="date" id="date_of_birth" name="date_of_birth"><br>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Character Creation</legend>
+                <label for="character_name"><strong>Character Name:</strong></label>
+                <input type="text" id="character_name" name="character_name" required><br>
+    
+                <label><strong>Character Class:</strong></label><br>
+                <input type="radio" id="class_runner" name="character_class" value="Runner">
+                <label for="class_runner">Runner</label><br>
+    
+                <input type="radio" id="class_hacker" name="character_class" value="Hacker">
+                <label for="class_hacker">Hacker</label><br>
+    
+                <input type="radio" id="class_fixer" name="character_class" value="Fixer">
+                <label for="class_fixer">Fixer</label><br>
+    
+                <label><strong>Character Stats:</strong></label><br>
+                <label for="strength">Strength:</label>
+                <input type="number" id="strength" name="strength" min="1" max="10" step="1"><br>
+
+                <label for="agility">Agility:</label>
+                <input type="number" id="agility" name="agility" min="1" max="10" step="1"><br>
+
+                <label for="intelligence">Intelligence:</label>
+                <input type="number" id="intelligence" name="intelligence" min="1" max="10" step="1"><br>
+
+                <label for="charisma">Charisma:</label>
+                <input type="number" id="charisma" name="charisma" min="1" max="10" step="1"><br>
+
+                <label for="slider"><strong>Experience Level:</strong></label>
+                <input type="range" id="slider" name="experience_level" min="1" max="5" step="1">
+                <br>
+
+                <label for="companion"><strong>Choose a Companion:</strong></label>
+                <select id="companion" name="companion">
+                    <option value="Johnny Silverhand">Johnny Silverhand</option>
+                    <option value="Rogue">Rogue</option>
+                    <option value="Panam">Panam</option>
+                </select><br>
+
+                <label><strong>Gang color:</strong></label>
+                <input id="idColor" name="Color" type="color" value="#711c91"><br>
+    
+                <label for="about_me"><strong>About Me:</strong></label><br>
+                <textarea id="about_me" name="about_me" rows="4" cols="50"></textarea><br>
+            </fieldset>
+    
+            <input type="submit" value="Create Character">
+            <input type="reset" value="Clear">
+        </form>
+    </main>
+</body>
+</html>

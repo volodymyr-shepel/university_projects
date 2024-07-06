@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My ASP.NET Core MVC Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .no-solutions {
+            color: red;
+            font-weight: bold;
+        }
+
+        .one-solution {
+            color: green;
+            font-weight: bold;
+        }
+
+        .infinite-solutions {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .two-solutions {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .equation-values {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <p>This is my solve web page</p>
+
+    
+        
+    <div class="equation-values">
+        <p>a = @ViewData["a"]</p>
+        <p>b = @ViewData["b"]</p>
+        <p>c = @ViewData["c"]</p>
+    </div>
+    
+    <p class="@ViewData["solutionClass"]">@ViewData["solutionText"]</p>
+   
+
+</body>
+</html>

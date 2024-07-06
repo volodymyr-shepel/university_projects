@@ -1,0 +1,18 @@
+Candidate keys:
+	Book : ISBN (has specific lenghth and consists of 13 numbers)
+	Person: person_id (email,not null,unique)
+	Category: category_name
+	Author: author_id(email)
+	genre: genre_id(genre name)
+	publisher : Publisher_ID(publisher_name)
+
+
+There is many-to-many realtionship between book and person entities,so I am using intermediate table to handle this)
+There is one to many relationship between category and book tables
+There is many-to-many realtionship between book and Author entities(since one author can have write multiple books),so I am using intermediate table to handle this)
+There is many to many realtionship between genre and Book,so I am using intermediate table Book/Genere to handle this
+There is many to one relationship beetween book and publisher,since piblisher can publish multiple books,but book can have only one publisher
+
+I have created two enumerators(Grade,Status)
+
+

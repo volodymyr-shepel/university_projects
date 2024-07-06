@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+  servlet:
+    context-path: /
+
+aws:
+  lambda :
+    process-game-results-url : ${PROCESS_GAME_RESULTS_URL}
+  region : ${AMAZON_REGION}
+  access :
+    key : ${AWS_ACCESS_KEY}
+  secret :
+    key : ${AWS_SECRET_KEY}
+  session:
+    token : ${AWS_SESSION_TOKEN}
+  s3:
+    bucket : ${AWS_S3_BUCKET}

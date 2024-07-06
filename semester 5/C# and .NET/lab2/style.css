@@ -1,0 +1,24 @@
+html {
+    scroll-behavior: smooth;
+    background-color: white;
+}
+a {
+    text-decoration: none;
+    color: blue;
+}
+table {
+
+    border: 1px solid #000;
+}
+
+/* Visited link styles */
+a:visited {
+    color: blue; /* You can set the color you prefer */
+}
+
+.character {
+    list-style-type: circle;
+}
+.character-list{
+    list-style-type:disc;
+}

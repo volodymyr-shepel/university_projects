@@ -1,0 +1,49 @@
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+
+# Crash log files
+crash.log
+
+# .terraform directories
+.terraform/
+.terraform/*
+
+# Ignore override files as they are usually used to override resources for testing or temporary purposes
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore variable definitions files that can contain sensitive data
+*.auto.tfvars
+
+# Terraform plan files
+*.tfplan
+
+# Ignore any CLI configuration files
+.terraformrc
+terraform.rc
+
+# Ignore local lock files
+.terraform.lock.hcl
+
+# Ignore .DS_Store (MacOS specific files)
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Ignore binaries
+*.exe
+*.dll
+*.so
+*.dylib

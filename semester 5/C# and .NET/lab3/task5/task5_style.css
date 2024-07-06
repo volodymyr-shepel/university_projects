@@ -1,0 +1,77 @@
+/* Reset some default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply styles to the boxes */
+.box {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.box h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Apply different colors to the boxes based on their position */
+.box-static {
+    background-color: #FFC0CB; /* Pink */
+    position: static;
+    left: 50px;
+    top: 50px;
+}
+
+.box-relative {
+    background-color: #87CEEB; /* Light Sky Blue */
+    position: relative;
+    left: 450px;
+    top: 150px;
+}
+
+.box-absolute {
+    background-color: #90EE90; /* Light Green */
+    position: absolute;
+    left: 450px;
+    top: 150px;
+}
+
+.box-fixed {
+    background-color: #FFD700; /* Gold */
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+
+/* Apply styles to the float boxes */
+.float-box {
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    text-align: center;
+}
+
+.float-box h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Apply float to the float boxes */
+.float-left {
+    background-color: #ADD8E6; /* Light Blue */
+    float: left;
+    margin-left: 20px;
+}
+
+.float-right {
+    background-color: #FFA07A; /* Light Salmon */
+    float: right;
+    margin-right: 20px;
+}

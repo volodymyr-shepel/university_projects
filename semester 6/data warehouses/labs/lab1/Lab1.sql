@@ -1,0 +1,61 @@
+-- LAB 1 Basic Environment Preparation
+
+-- TASKS 1,2,3 are done
+-- TASK 4
+
+-- List all tables in the AdventureWorks2022 database
+USE AdventureWorks2022;
+GO
+
+-- GET ALL TABLES
+SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE';
+
+
+-- GET SCHEMA NAME
+SELECT TABLE_SCHEMA
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_NAME = 'Product';
+
+-- GET COLUMN NAMES
+SELECT COLUMN_NAME, DATA_TYPE
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Product';
+
+-- Sample data
+SELECT TOP 10 *
+FROM Production.Product;
+
+-- TASK 5
+
+-- a
+SELECT Name,ListPrice FROM Production.Product
+WHERE ListPrice > 2500;
+
+-- b,c done
+
+USE AdventureWorks2022;
+GO
+
+-- GET LIST OF ALL SCHEMAS
+USE AdventureWorks2022; -- Replace with the actual database name
+GO
+
+SELECT SCHEMA_NAME
+FROM INFORMATION_SCHEMA.SCHEMATA;
+
+/*
+MAIN SHEMAS 
+	HumanResources
+	People
+	Production
+	Purchase
+	Sale
+*/
+
+-- LIST OF TABLES BASED ON SCHEMA NAME
+SELECT TABLE_NAME
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_TYPE = 'BASE TABLE'
+      AND TABLE_SCHEMA = 'Person';

@@ -1,0 +1,2177 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/10/2024 7:15:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{BB1916FB-22E9-4C38-B7E5-947D55B123A4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Full Load"
+  DTS:PackageType="5"
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{5C1CD65E-4BE5-46F0-9AD6-A39727BEFAF9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Crimes Weather CSV]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D1B12279-87FC-4D1A-8119-53E7148557AC}"
+      DTS:ObjectName="Crimes Weather CSV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\PWR\semester_6\data warehouses\project\data\crimes_weather.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATE OCC"
+              DTS:DTSID="{B8F98FFA-8EE8-48E1-8DC0-E8BC6252CBD4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AREA"
+              DTS:DTSID="{8A1BB3FB-746A-4EAC-B01C-951C295F5918}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AREA NAME"
+              DTS:DTSID="{9BDFDF66-5ACF-40C9-AB03-7F8EB6F85959}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Crm Cd"
+              DTS:DTSID="{7F34BB4C-F053-4CB4-B7E2-A91DFA8252E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Crm Cd Desc"
+              DTS:DTSID="{EE8C48E0-746A-425B-A3FF-0DA33EACAE68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Age"
+              DTS:DTSID="{65DB2FCF-C85F-4948-A724-6D02DBCCE221}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Sex"
+              DTS:DTSID="{E0D56412-A966-42B6-AAF4-EE8F547285F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vict Descent"
+              DTS:DTSID="{08B372F1-635A-49ED-8D36-9E751A2110F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premis Cd"
+              DTS:DTSID="{C58F7886-7203-491C-9CE2-25BA7A3A1825}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Premis Desc"
+              DTS:DTSID="{A772DF63-846D-4C9C-AF9A-7E57666003B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weapon Used Cd"
+              DTS:DTSID="{58644F74-A4AB-4E7F-B98D-AE5E2BE4F1FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weapon Desc"
+              DTS:DTSID="{9A4B0E45-56C7-4B73-B92C-3ED7A7D7946A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LOCATION"
+              DTS:DTSID="{28FD9CFC-DD1F-4537-AB01-D01D88CCE9CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LAT"
+              DTS:DTSID="{C8AB02CC-EB73-4100-9974-D01D3DB849E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LON"
+              DTS:DTSID="{32A7B1E9-1C50-4227-BDA4-33C4D8D24278}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Timestamp"
+              DTS:DTSID="{1EEE717D-1FE6-4512-A530-86FECF8201AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Temperature(F)"
+              DTS:DTSID="{6006FD4C-48FD-46A2-AA69-44EE9B98347B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Chill(F)"
+              DTS:DTSID="{D672C78A-A531-4E28-8C50-983C3B7E3FCB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Humidity(%)"
+              DTS:DTSID="{EBBE6BF8-1743-4EF9-9B5D-1BA5E01D1C16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pressure(in)"
+              DTS:DTSID="{9D9F578E-AAB4-4B47-AB3E-1ACDBDEDF0C3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Visibility(mi)"
+              DTS:DTSID="{21680BD0-9046-4624-9387-66E106727CDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Direction"
+              DTS:DTSID="{414A7161-F58C-4A89-A16F-45B83D3175AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Wind_Speed(mph)"
+              DTS:DTSID="{86C1C958-E6E0-4222-98CC-402FC0E353A9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precipitation(in)"
+              DTS:DTSID="{616BAABB-805D-4FC1-8857-E6EE7F984029}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="302"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Weather_Condition"
+              DTS:DTSID="{7418233D-0E38-435E-BF20-DD9CE6EB8472}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sunrise_Sunset"
+              DTS:DTSID="{11DDCBB4-4FDF-4CF3-89C5-126DABDB7B9F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Civil_Twilight"
+              DTS:DTSID="{7F087553-9462-405C-A2A1-163A10D77011}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nautical_Twilight"
+              DTS:DTSID="{E52E0AD3-D55C-4272-AA06-D8AEB82A5EA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Astronomical_Twilight"
+              DTS:DTSID="{C19185D5-169E-41A7-9586-41CA21DE32B1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D57E1DA6-8A1B-4E20-B9E0-4FC390525997}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Main-{D57E1DA6-8A1B-4E20-B9E0-4FC390525997}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B5F9EE34-432D-4738-B543-11DEE63A60C4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="isExecuteDBSetup">
+      <DTS:VariableValue
+        DTS:DataType="11">-1</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check condition for DB setup"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{39051819-377F-4923-B36D-6E1504046983}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check condition for DB setup"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D57E1DA6-8A1B-4E20-B9E0-4FC390525997}"
+          SQLTask:SqlStatementSource="DECLARE @CrimesWeatherExists BIT;&#xA;DECLARE @HistoryCrimesWeatherExists BIT;&#xA;DECLARE @SourceTableExists BIT;&#xA;&#xA;-- Check if the Crimes_Weather schema exists&#xA;SELECT @CrimesWeatherExists = CASE &#xA;                                 WHEN EXISTS (SELECT * &#xA;                                              FROM INFORMATION_SCHEMA.SCHEMATA &#xA;                                              WHERE SCHEMA_NAME = 'Crimes_Weather') &#xA;                                 THEN 1 &#xA;                                 ELSE 0 &#xA;                              END;&#xA;&#xA;-- Check if the History_Crimes_Weather schema exists&#xA;SELECT @HistoryCrimesWeatherExists = CASE &#xA;                                        WHEN EXISTS (SELECT * &#xA;                                                     FROM INFORMATION_SCHEMA.SCHEMATA &#xA;                                                     WHERE SCHEMA_NAME = 'History_Crimes_Weather') &#xA;                                        THEN 1 &#xA;                                        ELSE 0 &#xA;                                     END;&#xA;&#xA;-- Check if the source table exists&#xA;-- Replace 'YourSourceTableName' and 'YourSourceSchema' with your actual table and schema names&#xA;SELECT @SourceTableExists = CASE &#xA;                               WHEN EXISTS (SELECT * &#xA;                                            FROM INFORMATION_SCHEMA.TABLES &#xA;                                            WHERE TABLE_NAME = 'SourceTable' &#xA;                                              AND TABLE_SCHEMA = 'dbo') &#xA;                               THEN 1 &#xA;                               ELSE 0 &#xA;                            END;&#xA;&#xA;-- Determine if the DB setup task should run&#xA;-- If any of the schemas or the source table do not exist, set ExecuteDBSetup to 1 (True)&#xA;SELECT CASE &#xA;         WHEN @CrimesWeatherExists = 0 OR @HistoryCrimesWeatherExists = 0 OR @SourceTableExists = 0 &#xA;         THEN 1 &#xA;         ELSE 0 &#xA;       END AS ExecuteDBSetup;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="ExecuteDBSetup"
+            SQLTask:DtsVariableName="User::isExecuteDBSetup" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="NewParameterName"
+            SQLTask:DtsVariableName="User::isExecuteDBSetup"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data preprocessing"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to process data before inserting it into the database"
+      DTS:DTSID="{12006A04-7DEA-47AC-ACB0-CD9ABFF4975D}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data preprocessing"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Data Preprocessing.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DB setup"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to prepare database structure"
+      DTS:DTSID="{FC610968-ADF0-4821-9968-2A4A1A4DFBA0}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DB setup"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>DB setup.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert From Staging table into db"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Used to insert data from staging table into db"
+      DTS:DTSID="{30B8A2DD-B435-4D33-B5C5-3E946D83B34F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert From Staging table into db"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Insert From Staging Table.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert in source table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{340f88f8-6164-4d39-9bd1-76e2eb8d784e}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert in source table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert in source table\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert in source table\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert in source table\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert in source table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in source table\Derived Column.Outputs[Derived Column Output].Columns[last_update]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert in source table\Derived Column.Outputs[Derived Column Output].Columns[last_update]"
+                      name="last_update"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert in source table\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert in source table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in source table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert in source table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert in source table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert in source table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Crimes Weather CSV]"
+                  connectionManagerRefId="Package.ConnectionManagers[Crimes Weather CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATE OCC]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]"
+                      name="DATE OCC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]"
+                      name="AREA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA NAME]"
+                      length="11"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]"
+                      name="AREA NAME"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]"
+                      name="Crm Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd Desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]"
+                      name="Crm Cd Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Age]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]"
+                      name="Vict Age"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Sex]"
+                      length="1"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]"
+                      name="Vict Sex"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]"
+                      name="Premis Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]"
+                      name="Premis Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Used Cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]"
+                      name="Weapon Used Cd"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]"
+                      name="Weapon Desc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LOCATION]"
+                      length="40"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]"
+                      name="LOCATION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]"
+                      name="LAT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]"
+                      name="LON"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Timestamp]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]"
+                      name="Weather_Timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature(F)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]"
+                      name="Temperature(F)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Chill(F)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]"
+                      name="Wind_Chill(F)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Humidity(%)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]"
+                      name="Humidity(%)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pressure(in)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]"
+                      name="Pressure(in)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Visibility(mi)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]"
+                      name="Visibility(mi)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Direction]"
+                      length="4"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]"
+                      name="Wind_Direction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Speed(mph)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]"
+                      name="Wind_Speed(mph)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Precipitation(in)]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]"
+                      name="Precipitation(in)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Condition]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]"
+                      name="Weather_Condition"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunrise_Sunset]"
+                      length="5"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]"
+                      name="Sunrise_Sunset"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Civil_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]"
+                      name="Civil_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nautical_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]"
+                      name="Nautical_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Astronomical_Twilight]"
+                      length="5"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]"
+                      name="Astronomical_Twilight"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Descent]"
+                      length="50"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]"
+                      name="Vict Descent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[DATE OCC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATE OCC" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AREA" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AREA NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="AREA NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Crm Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Crm Cd Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Crm Cd Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Age]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Age" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Sex" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Premis Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Premis Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Premis Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Used Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Weapon Used Cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weapon Desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Weapon Desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LOCATION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LOCATION" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LAT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LAT" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LON]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LON" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Weather_Timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Temperature(F)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Temperature(F)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Chill(F)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Chill(F)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Humidity(%)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Humidity(%)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pressure(in)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Pressure(in)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Visibility(mi)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Visibility(mi)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Direction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Wind_Speed(mph)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Wind_Speed(mph)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Precipitation(in)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Precipitation(in)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Weather_Condition]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Weather_Condition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sunrise_Sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sunrise_Sunset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Civil_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Civil_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Nautical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Nautical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Astronomical_Twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Astronomical_Twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vict Descent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vict Descent" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert in source table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SourceTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert in source table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AREA]"
+                      cachedDataType="i1"
+                      cachedName="AREA"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LOCATION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="LOCATION"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LOCATION]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LAT]"
+                      cachedDataType="r4"
+                      cachedName="LAT"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LAT]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LON]"
+                      cachedDataType="r4"
+                      cachedName="LON"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[LON]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weather_Timestamp]"
+                      cachedDataType="date"
+                      cachedName="Weather_Timestamp"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_timestamp]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Timestamp]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Direction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Wind_Direction"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_direction]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Direction]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weather_Condition]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Weather_Condition"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_condition]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weather_Condition]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sunrise_Sunset]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Sunrise_Sunset"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sunrise_sunset]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Sunrise_Sunset]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Civil_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Civil_Twilight"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[civil_twilight]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Civil_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nautical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Nautical_Twilight"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nautical_twilight]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Nautical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Astronomical_Twilight]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Astronomical_Twilight"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[astronomical_twilight]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Astronomical_Twilight]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DATE OCC]"
+                      cachedDataType="date"
+                      cachedName="DATE OCC"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_occ]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[DATE OCC]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AREA NAME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="AREA NAME"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area_name]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[AREA NAME]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Crm Cd]"
+                      cachedDataType="i2"
+                      cachedName="Crm Cd"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Crm Cd Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Crm Cd Desc"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd_desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Crm Cd Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Age]"
+                      cachedDataType="i1"
+                      cachedName="Vict Age"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_age]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Age]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Sex]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Vict Sex"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_sex]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Sex]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vict Descent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vict Descent"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_descent]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Vict Descent]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Premis Cd]"
+                      cachedDataType="r4"
+                      cachedName="Premis Cd"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Premis Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Premis Desc"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Premis Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weapon Used Cd]"
+                      cachedDataType="r4"
+                      cachedName="Weapon Used Cd"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_used_cd]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Used Cd]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Weapon Desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Weapon Desc"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_desc]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Weapon Desc]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Temperature(F)]"
+                      cachedDataType="r4"
+                      cachedName="Temperature(F)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[temperature]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Temperature(F)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Chill(F)]"
+                      cachedDataType="r4"
+                      cachedName="Wind_Chill(F)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_chill]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Chill(F)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Humidity(%)]"
+                      cachedDataType="r4"
+                      cachedName="Humidity(%)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[humidity]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Humidity(%)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Pressure(in)]"
+                      cachedDataType="r4"
+                      cachedName="Pressure(in)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pressure]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Pressure(in)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Visibility(mi)]"
+                      cachedDataType="r4"
+                      cachedName="Visibility(mi)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[visibility]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Visibility(mi)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Wind_Speed(mph)]"
+                      cachedDataType="r4"
+                      cachedName="Wind_Speed(mph)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_speed]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Wind_Speed(mph)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precipitation(in)]"
+                      cachedDataType="r4"
+                      cachedName="Precipitation(in)"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precipitation]"
+                      lineageId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output].Columns[Precipitation(in)]" />
+                    <inputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_update]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="last_update"
+                      externalMetadataColumnId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_update]"
+                      lineageId="Package\Insert in source table\Derived Column.Outputs[Derived Column Output].Columns[last_update]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_occ]"
+                      dataType="dbTimeStamp"
+                      name="date_occ" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area]"
+                      dataType="i2"
+                      name="area" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[area_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="area_name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd]"
+                      dataType="i2"
+                      name="crm_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[crm_cd_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="crm_cd_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_age]"
+                      dataType="i2"
+                      name="vict_age" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_sex]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="vict_sex" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[vict_descent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="vict_descent" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_cd]"
+                      dataType="r8"
+                      name="premis_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[premis_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="premis_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_used_cd]"
+                      dataType="r8"
+                      name="weapon_used_cd" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weapon_desc]"
+                      codePage="1252"
+                      dataType="text"
+                      name="weapon_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="location" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                      dataType="r8"
+                      name="lat" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[lon]"
+                      dataType="r8"
+                      name="lon" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="weather_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[temperature]"
+                      dataType="r8"
+                      name="temperature" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_chill]"
+                      dataType="r8"
+                      name="wind_chill" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[humidity]"
+                      dataType="r8"
+                      name="humidity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[pressure]"
+                      dataType="r8"
+                      name="pressure" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[visibility]"
+                      dataType="r8"
+                      name="visibility" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_direction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="wind_direction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[wind_speed]"
+                      dataType="r8"
+                      name="wind_speed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precipitation]"
+                      dataType="r8"
+                      name="precipitation" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[weather_condition]"
+                      codePage="1252"
+                      dataType="text"
+                      name="weather_condition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[sunrise_sunset]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="sunrise_sunset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[civil_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="civil_twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nautical_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="nautical_twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[astronomical_twilight]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="astronomical_twilight" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_update]"
+                      dataType="dbTimeStamp"
+                      name="last_update" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert in source table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert in source table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert in source table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert in source table.Paths[Derived Column Output]"
+              endId="Package\Insert in source table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert in source table\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert in source table.Paths[Flat File Source Output]"
+              endId="Package\Insert in source table\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert in source table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load records into staging table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{95F80D63-5E4D-44B4-8750-CC038642708F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load records into staging table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D57E1DA6-8A1B-4E20-B9E0-4FC390525997}"
+          SQLTask:SqlStatementSource="EXEC dbo.LoadStagingTable;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Perform merge of data"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Used to merge two datasets using python script and create csv file"
+      DTS:Disabled="True"
+      DTS:DTSID="{0dde1354-1397-4f1e-af49-595fcd789f8c}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Perform merge of data"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="python.exe"
+          Arguments="main.py"
+          WorkingDirectory="D:\PWR\semester_6\data warehouses\project" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{061D2BA4-CE5A-4D14-9828-D2E87A8C2873}"
+      DTS:From="Package\DB setup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Perform merge of data" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{367D36C5-8A2B-4998-93B3-9611596934BE}"
+      DTS:From="Package\Load records into staging table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data preprocessing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{0F0387C5-A724-43A5-94DE-0BC0B9149353}"
+      DTS:From="Package\Perform merge of data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Insert in source table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9FB37647-C3A0-47A3-98FA-655051169D57}"
+      DTS:From="Package\Insert in source table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Load records into staging table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{ED55B28D-090A-46C6-9623-17FB953D214B}"
+      DTS:From="Package\Data preprocessing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Insert From Staging table into db" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{43921274-D842-480E-BCD5-CDCF70213E90}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::isExecuteDBSetup] == True"
+      DTS:From="Package\Check condition for DB setup"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\DB setup" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Check condition for DB setup"
+          TopLeft="211.428571878647,86.411764630139" />
+        <NodeLayout
+          Size="168.8,41.6"
+          Id="Package\Data preprocessing"
+          TopLeft="228.492063978463,518.942245651537" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\DB setup"
+          TopLeft="257.380952928848,176.647058668691" />
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\Insert From Staging table into db"
+          TopLeft="229.682540171473,624.92917372632" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Insert in source table"
+          TopLeft="230.238095728211,340.858585717586" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Load records into staging table"
+          TopLeft="240.000000510897,421.58823495964" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Perform merge of data"
+          TopLeft="230.238095728211,260.29191905282" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="320.409524328529,218.247058668691">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.044860384129"
+              Start="0,0"
+              End="0,34.544860384129">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.544860384129" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="321.200000510897,463.18823495964">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.30793653243376,55.7540106918963"
+              Start="0,0"
+              End="-8.30793653243376,48.2540106918963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8770053459481" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8770053459481"
+                    Point2="0,27.8770053459481"
+                    Point3="-4,27.8770053459481" />
+                  <mssgle:LineSegment
+                    End="-4.30793653243376,27.8770053459481" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.30793653243376,27.8770053459481"
+                    Point2="-8.30793653243376,27.8770053459481"
+                    Point3="-8.30793653243376,31.8770053459481" />
+                  <mssgle:LineSegment
+                    End="-8.30793653243376,48.2540106918963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="321.238095728211,301.89191905282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.966666664766"
+              Start="0,0"
+              End="0,31.466666664766">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.466666664766" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="320.319048119554,382.458585717586">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.1296492420544"
+              Start="0,0"
+              End="0,31.6296492420544">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.6296492420544" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="316.887302074968,560.542245651537">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.3869280747838"
+              Start="0,0"
+              End="0,56.8869280747838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.8869280747838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="318.404762403747,128.011764630139">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.635294038552"
+              Start="0,0"
+              End="0,41.135294038552">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.135294038552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,12.567647019276,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert in source table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert in source table\Flat File Source"
+          TopLeft="238.571429079284,21.4117646871141" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Insert in source table\OLE DB Destination"
+          TopLeft="234.714286060661,171.529410688728" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Insert in source table\Derived Column"
+          TopLeft="488.999992713332,95.9999985694886" />
+        <EdgeLayout
+          Id="Package\Insert in source table.Paths[Flat File Source Output]"
+          TopLeft="313.771429079284,63.0117646871141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="251.628563634048,32.9882338823745"
+              Start="0,0"
+              End="251.628563634048,25.4882338823745">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4941169411872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4941169411872"
+                    Point2="0,16.4941169411872"
+                    Point3="4,16.4941169411872" />
+                  <mssgle:LineSegment
+                    End="247.628563634048,16.4941169411872" />
+                  <mssgle:CubicBezierSegment
+                    Point1="247.628563634048,16.4941169411872"
+                    Point2="251.628563634048,16.4941169411872"
+                    Point3="251.628563634048,20.4941169411872" />
+                  <mssgle:LineSegment
+                    End="251.628563634048,25.4882338823745" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert in source table.Paths[Derived Column Output]"
+          TopLeft="565.399992713332,137.599998569489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-245.485706652671,33.9294121192398"
+              Start="0,0"
+              End="-245.485706652671,26.4294121192398">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.9647060596199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.9647060596199"
+                    Point2="0,16.9647060596199"
+                    Point3="-4,16.9647060596199" />
+                  <mssgle:LineSegment
+                    End="-241.485706652671,16.9647060596199" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-241.485706652671,16.9647060596199"
+                    Point2="-245.485706652671,16.9647060596199"
+                    Point3="-245.485706652671,20.9647060596199" />
+                  <mssgle:LineSegment
+                    End="-245.485706652671,26.4294121192398" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert in source table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

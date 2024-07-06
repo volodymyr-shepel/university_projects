@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My ASP.NET Core MVC Application</title>
+    <style>
+        .guess-result {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: green;
+        }
+
+        .random-value {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Welcome to My ASP.NET Core MVC Application</h1>
+
+    <p>Hello</p>
+
+   
+    
+     <p class="random-value">Random value: @TempData["RandomValue"]</p>
+
+   
+     <p>Number of tries: @ViewBag.count</p>
+
+    <p>This is the game page content</p>
+    <!-- Display the random number -->
+    
+
+    <!-- Display the guess result -->
+    
+    
+    <p class="guess-result">Guess Result: @TempData["GuessResult"]</p>
+
+    
+
+    <!-- Form for setting the range -->
+
+    @* <form action="/Game/Set" method="post">
+        <label for="newN">Set Range:</label>
+        <input type="number" id="newN" name="newN" required>
+        <button type="submit">Set Range</button>
+    </form>
+
+    <!-- Form for triggering the "Draw" action -->
+    <form action="/Game/Draw" method="post">
+        <button type="submit">Draw Number</button>
+    </form>
+
+    <!-- Form for guessing a number -->
+    <form action="/Game/Guess" method="post">
+        <label for="userGuess">Guess a Number:</label>
+        <input type="number" id="userGuess" name="userGuess" required>
+        <button type="submit">Submit Guess</button>
+    </form> *@
+
+</body>
+</html>

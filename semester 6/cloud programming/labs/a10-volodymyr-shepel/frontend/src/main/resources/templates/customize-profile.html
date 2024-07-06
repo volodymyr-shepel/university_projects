@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customize Profile</title>
+    <link th:href="@{/css/profile.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+    <h1>Profile</h1>
+    <div class="image-section">
+        <h2>Current Image</h2>
+        <img src="" alt="Current Profile Image" id="currentImage" class="profile-image"/>
+        <button id="editImageButton" class="edit-button">Edit Image</button>
+        <form id="imageForm" style="display: none;">
+            <input type="file" name="file" id="imageInput" accept="image/*"/>
+            <button type="submit" class="submit-button">Submit Changes</button>
+            <button type="button" id="cancelButton" class="cancel-button">Cancel</button>
+        </form>
+        <img id="imagePreview" src="" alt="Image Preview" class="profile-image" style="display: none;"/>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    var ipAddress = /*[[${ipAddress}]]*/ '127.0.0.1';
+    var s3Bucket = /*[[${s3Bucket}]]*/ 'your-s3-bucket';
+    var userId = /*[[${userId}]]*/ 'default-user';
+</script>
+<script src="/js/hash.js"></script>
+<script src="/js/imageUpload.js"></script>
+</body>
+</html>

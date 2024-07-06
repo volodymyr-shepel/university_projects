@@ -1,0 +1,9 @@
+The user agent string you provided, "Chrome/52.0.2743.116 Safari/537.36", actually only identifies one browser - Google Chrome.
+
+The reason for including "Safari" in the user agent string is that Chrome and Safari both use the same rendering engine called WebKit. In fact, Chrome is based on an open-source version of
+ WebKit, and Safari is the proprietary browser developed by Apple that also uses WebKit.
+
+By including "Safari" in the user agent string, Chrome is indicating that it is compatible with the WebKit rendering engine used by Safari. This is because some websites may use features that
+ are specific to WebKit and may not be supported by other rendering engines.
+
+So while the user agent string includes both "Chrome" and "Safari", it actually refers to a single browser, Google Chrome, that is compatible with the WebKit rendering engine used by Safari.

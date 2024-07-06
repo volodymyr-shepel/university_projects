@@ -1,0 +1,60 @@
+// /*
+// JavaScript event listener that is used to execute a function when the DOM (Document Object Model) has been fully loaded and parsed by the web browser. 
+// In other words, it waits for the HTML structure of the webpage to be constructed before running the specified function.
+// */
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const tableContainer = document.getElementById('tableContainer');
+//     const generateTableButton = document.getElementById('generateTable');
+
+//     generateTableButton.addEventListener('click', function () {
+//         const rowCountInput = document.getElementById('rowCount');
+//         const rowCount = parseInt(rowCountInput.value);
+
+//         if (rowCount >= 5 && rowCount <= 20) {
+//             // Valid input
+//             tableContainer.innerHTML = generateRandomMultiplicationTable(rowCount);
+//         } else {
+//             // Invalid input, use a default value
+//             tableContainer.innerHTML = "Invalid input. Using n=13.";
+//             rowCountInput.value = 13;
+//             tableContainer.innerHTML = generateRandomMultiplicationTable(13);
+//         }
+//     });
+    
+//     function generateRandomMultiplicationTable(n) {
+//         const randomValues = [];
+
+//         // Generate n random values
+//         for (let i = 0; i <= n; i++) {
+//             randomValues.push(Math.floor(Math.random() * 99) + 1);
+//         }
+
+//         let tableHTML = '<table>';
+//         for (let i = 0; i <= n; i++) {
+//             tableHTML += '<tr>';
+//             for (let j = 0; j <= n; j++) {
+//                 // Top left should be empty
+//                 if (i === 0 && j === 0) {
+//                     tableHTML += '<th></th>';
+//                 } 
+//                 // first row should be headers(values from which table consist)
+//                 else if (i === 0) {
+//                     tableHTML += `<th>${randomValues[j]}</th>`;
+//                 } 
+//                 // first column also should be headers(values from which table consist)
+//                 else if (j === 0) {
+//                     tableHTML += `<th>${randomValues[i]}</th>`;
+//                 // if it is not header, we should put the result of multiplication, and set it class based on result(even or odd)
+//                 } else {
+//                     const result = randomValues[i] * randomValues[j];
+//                     const cellClass = result % 2 === 0 ? 'even' : 'odd';
+//                     tableHTML += `<td class="${cellClass}">${result}</td>`;
+//                 }
+//             }
+//             tableHTML += '</tr>';
+//         }
+//         tableHTML += '</table>';
+//         return tableHTML;
+//     }
+// });

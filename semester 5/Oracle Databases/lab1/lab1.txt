@@ -1,0 +1,145 @@
+ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+-- TASK 1
+SELECT enemy_name "Enemy",incident_desc as "Fault description" FROM Incidents
+WHERE incident_date >= '2009-JAN-01' AND incident_date < '2010-JAN-01'
+
+-- TASK 2
+SELECT name AS "Name",function AS "Function",in_herd_since as "WITH AS FROM"
+FROM Cats
+WHERE gender = 'W' AND (in_herd_since >= '2005-JAN-01' AND in_herd_since < '2007-JUL-31')
+
+-- TASK 3
+
+SELECT enemy_name AS ENEMY,species AS SPECIES,hostility_degree AS "HOSTILITY DEGREE"
+FROM Enemies
+WHERE bride IS NULL
+ORDER BY hostility_degree
+
+-- TASK 4
+SELECT name || ' called ' || nickname || ' (fun.' || function || ') ' 
+    || 'has been catching mice in band ' || band_no || ' since ' || in_herd_since "ALL_ABOUT_MALE_CATS"
+    FROM Cats
+    WHERE gender = 'M'
+    ORDER BY in_herd_since DESC;
+
+-- TASK 5
+SELECT nickname AS "Nickname",
+       REGEXP_REPLACE(REGEXP_REPLACE(nickname, 'A', '#', 1, 1), 'L', '%', 1, 1) AS "After replacing A and L"
+FROM Cats
+WHERE nickname LIKE '%A%' AND nickname LIKE '%L%';
+
+-- TASK 6
+SELECT name "NAME",in_herd_since "In herd",CEIL(mice_ration*0.9) "ATE",ADD_MONTHS(in_herd_since,6) "Increase",mice_ration "Eat"
+FROM Cats
+WHERE MONTHS_BETWEEN('2020-04-04', in_herd_since) / 12 >= 11
+AND EXTRACT(MONTH FROM in_herd_since) BETWEEN 3 AND 9
+ORDER BY mice_ration DESC;
+
+--TASK 7
+SELECT name "NAME",NVL(mice_ration,0) * 3 "MICE QARTERLY",NVL(mice_extra,0) * 3 "EXTRA QARTERLY"
+FROM Cats
+WHERE mice_ration > 55 AND mice_ration > 2*NVL(mice_extra,0)
+ORDER BY mice_ration DESC,name; 
+
+-- TASK 8
+
+SELECT name "NAME",
+CASE
+	WHEN (NVL(mice_ration,0)+NVL(mice_extra,0))*12 = 660 THEN 'limit'
+	WHEN (NVL(mice_ration,0)+NVL(mice_extra,0))*12 < 660 THEN 'Below 660'
+	ELSE TO_CHAR((NVL(mice_ration,0)+NVL(mice_extra,0))*12)
+END "Eats annually"
+FROM Cats
+ORDER BY name;
+
+--TASK 9
+
+SELECT nickname,in_herd_since "IN HERD",
+	CASE
+        WHEN NEXT_DAY(LAST_DAY('2020-10-27')-7,'WEDNESDAY') >= '2020-10-27' THEN  -- USED to check if there is a wednesday after provided date in the provided month
+			CASE  
+                WHEN EXTRACT(day FROM in_herd_since)<=15 THEN NEXT_DAY(LAST_DAY('2020-10-27')-7,'WEDNESDAY')
+                ELSE NEXT_DAY(LAST_DAY(ADD_MONTHS('2020-10-27',1))-7,'WEDNESDAY')
+       	 	END
+    ELSE NEXT_DAY(LAST_DAY(ADD_MONTHS('2020-10-27',1))-7,'WEDNESDAY')
+    END "PAYMENT"
+FROM Cats
+ORDER BY in_herd_since;
+
+
+-- TASK 10
+
+SELECT 
+	CASE COUNT(nickname)
+		WHEN 1 THEN nickname || ' - unique'
+		ELSE nickname || ' - non-unique'
+	END "The uniqueness of the nickname"
+FROM Cats
+GROUP BY nickname
+ORDER BY nickname;
+
+SELECT 
+	CASE COUNT(chief)
+		WHEN 1 THEN chief || ' - unique'
+		ELSE chief || ' - non-unique'
+	END "The uniqueness of the nickname"
+FROM Cats
+    WHERE chief IS NOT NULL
+GROUP BY chief
+ORDER BY chief;
+
+-- TASK 11
+
+SELECT nickname "Nickname", COUNT(enemy_name) "Number of enemies"
+FROM Incidents
+GROUP BY nickname
+HAVING COUNT(enemy_name) >= 2;
+
+
+-- TASK 12
+SELECT 'Number of cats= ' || COUNT(name) || ' hunts as ' || function || ' and eats max. ' || MAX(NVL(mice_ration,0) + NVL(mice_extra,0)) || ' mice per month' " "
+FROM Cats
+WHERE gender <> 'M'
+AND function <> 'BOSS'
+GROUP BY function
+HAVING AVG(NVL(mice_ration,0) + NVL(mice_extra,0)) > 50
+ORDER BY COUNT(name);
+
+-- TASK 13
+
+SELECT band_no "Band No",gender,MIN(NVL(mice_ration,0)) "Minimum ration"
+FROM Cats
+GROUP BY band_no,gender;
+
+--TASK 14
+
+SELECT 
+    LEVEL "Level"
+    ,nickname "NICKNAME"
+    ,function "Function",
+    band_no "Band No"
+FROM Cats
+WHERE gender = 'M'
+CONNECT BY prior nickname = chief
+START WITH function = 'THUG';
+
+--TASK 15
+SELECT LPAD((LEVEL-1),(LEVEL-1)*4+1,'===>') || '            ' || name "Hierarchy", 
+    NVL(chief,'Master yourself') "Nickname of the Chief",
+	function "Function"
+FROM Cats	
+WHERE mice_extra IS NOT NULL
+START WITH chief IS NULL
+CONNECT BY prior nickname = chief;
+
+--TASK 16
+
+SELECT LPAD(' ',4*(LEVEL-1)) || nickname "Path of chiefs"
+FROM Cats
+START WITH MONTHS_BETWEEN('2020-06-04', in_herd_since) / 12 >= 11
+AND gender = 'M'
+AND mice_extra IS NULL
+CONNECT BY nickname = PRIOR chief;
+
+

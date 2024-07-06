@@ -1,0 +1,576 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/11/2024 1:36:49 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{5BDE022F-A2FF-4E58-9AF8-80CFA5029C71}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Data Preprocessing"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{0A7FBF12-A939-472E-AAB9-DBFAB45FE76C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Data Preprocessing-{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Convert Precipitation to Millimeters"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{499f07c1-941c-4285-a9b8-f9b867456421}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Precipitation to Millimeters"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET precipitation = precipitation * 25.4;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Convert Pressure to hPa"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{ea7e11a9-dc3e-4fb7-a3b9-38dfccd5f44c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Pressure to hPa"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET pressure = pressure * 33.8639;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Convert Temperature to Celsius"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to convert temperature to celsius"
+      DTS:DTSID="{69EF2765-8049-49DC-A5C2-B37D69F5CEDA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Temperature to Celsius"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET temperature = (temperature - 32) * 5.0 / 9.0;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Convert Visibility to Km"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{494fa956-5ff7-49f1-84cf-cccd8de4ee2c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Visibility to Km"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET visibility = visibility * 1.60934;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Convert Wind Chill To Celsius"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to convert wind chill to celsius"
+      DTS:DTSID="{31d85801-136e-49df-a0ee-731783caec23}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Wind Chill To Celsius"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET wind_chill = (wind_chill - 32) * 5.0 / 9.0;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Convert Wind Speed to km"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{20b113ca-76eb-44bb-9740-ec67ff480879}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Convert Wind Speed to km"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET wind_speed = wind_speed * 1.609344;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Invalid Records Age, Descent, Gender"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Used to delete invalid records from staging table"
+      DTS:DTSID="{A2668A96-D013-40FD-9D41-2CE5BE2682E7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Invalid Records Age, Descent, Gender"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="INSERT INTO dbo.InvalidRecords&#xA;SELECT *&#xA;FROM StagingTable&#xA;WHERE NOT (&#xA;    vict_sex IN ('M', 'F')&#xA;    AND vict_descent IN ('A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'O', 'P', 'S', 'U', 'V', 'W', 'Z')&#xA;    AND vict_age &gt; 0&#xA;);&#xA;&#xA;DELETE FROM StagingTable&#xA;WHERE NOT (&#xA;    vict_sex IN ('M', 'F')&#xA;    AND vict_descent IN ('A', 'B', 'C', 'D', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'O', 'P', 'S', 'U', 'V', 'W', 'Z')&#xA;    AND vict_age &gt; 0&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Records with Null or Empty premis_desc"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{72192c3a-ee81-478e-a6e8-4ac17a202bd6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Records with Null or Empty premis_desc"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="INSERT INTO dbo.InvaludRecords&#xA;SELECT * FROM StagingTable&#xA;WHERE premis_desc IS NULL OR premis_desc = '';&#xA;&#xA;DELETE FROM StagingTable&#xA;WHERE premis_desc IS NULL OR premis_desc = '';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Records with Null or Empty weather_condition"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{13d40ebf-4580-4e00-8aa8-bd519c7a171c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Records with Null or Empty weather_condition"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="INSERT INTO  dbo.InvalidRecords&#xA;SELECT * FROM StagingTable&#xA;WHERE weather_condition IS NULL OR weather_condition = '';&#xA;&#xA;DELETE FROM StagingTable&#xA;WHERE weather_condition IS NULL OR weather_condition = '';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Unknown Weapon Description"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{188e0788-c289-4c7a-bc79-4291cfe549f0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Unknown Weapon Description"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET weapon_desc = 'UNKNOWN WEAPON/OTHER WEAPON',&#xA;    weapon_used_cd = 500&#xA;WHERE weapon_desc IS NULL OR weapon_desc = '';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Wind Direction to 'CALM' if Wind Speed is 0"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{18aca919-1bdc-4816-9a29-b141dfc8580a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Wind Direction to 'CALM' if Wind Speed is 0"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FFD60041-6F21-47D7-A44D-ABCCB97F4B85}"
+          SQLTask:SqlStatementSource="UPDATE StagingTable&#xA;SET wind_direction = 'CALM'&#xA;WHERE wind_speed = 0;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{25AE2DD4-8889-4C68-BA3F-51AA3D7C88DD}"
+      DTS:From="Package\Delete Records with Null or Empty weather_condition"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Convert Temperature to Celsius" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2C8125FE-FBAD-479D-9FC6-7A6FACB99677}"
+      DTS:From="Package\Convert Temperature to Celsius"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Convert Wind Chill To Celsius" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BF9583F0-E781-4369-942D-E4ED3BAB29D2}"
+      DTS:From="Package\Convert Wind Chill To Celsius"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Convert Wind Speed to km" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{25B19EC5-6513-4DD0-B638-378901349CEC}"
+      DTS:From="Package\Convert Wind Speed to km"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Convert Pressure to hPa" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{76CFA93C-CFD4-4929-AF23-FF84D3BF45D0}"
+      DTS:From="Package\Convert Pressure to hPa"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Convert Visibility to Km" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{5C31DA60-C3E1-40C8-99F9-3F8B97B2A4A6}"
+      DTS:From="Package\Convert Visibility to Km"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Convert Precipitation to Millimeters" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{ECB0F2D0-D43F-4B12-A4F6-50D00376686B}"
+      DTS:From="Package\Convert Precipitation to Millimeters"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Set Unknown Weapon Description" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{78375F6A-676E-41DC-9C8B-80C16E318E9A}"
+      DTS:From="Package\Set Unknown Weapon Description"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Set Wind Direction to 'CALM' if Wind Speed is 0" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{6507F47F-9739-4CB7-A1B2-1606FAA75B39}"
+      DTS:From="Package\Delete Records with Null or Empty premis_desc"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Delete Records with Null or Empty weather_condition" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{57EBB970-B1A9-45F2-8B05-0C01C7CA2813}"
+      DTS:From="Package\Delete Invalid Records Age, Descent, Gender"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Delete Records with Null or Empty premis_desc" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\Convert Precipitation to Millimeters"
+          TopLeft="229.880952870308,730.656862549931" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Convert Pressure to hPa"
+          TopLeft="228.988095725551,527.456862549931" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Convert Temperature to Celsius"
+          TopLeft="222.738095712246,220.745097845724" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Convert Visibility to Km"
+          TopLeft="232.559524304582,628.100980197828" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Convert Wind Chill To Celsius"
+          TopLeft="224.523810001762,323.300980197827" />
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\Convert Wind Speed to km"
+          TopLeft="221.845238567488,425.856862549931" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Delete Invalid Records Age, Descent, Gender"
+          TopLeft="235.952381454661,5.35294117177851" />
+        <NodeLayout
+          Size="301.6,41.6"
+          Id="Package\Delete Records with Null or Empty premis_desc"
+          TopLeft="183.750000391155,76.3823537156997" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Delete Records with Null or Empty weather_condition"
+          TopLeft="221.845238567488,149.527451629794" />
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\Set Unknown Weapon Description"
+          TopLeft="232.559524304582,831.300980197827" />
+        <NodeLayout
+          Size="300.8,41.6"
+          Id="Package\Set Wind Direction to 'CALM' if Wind Speed is 0"
+          TopLeft="203.988095672332,929.077450789414" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="332.891667139867,191.127451629794">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6176462159303"
+              Start="0,0"
+              End="0,22.1176462159303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1176462159303" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="337.230952857004,262.345097845724">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.9558823521033"
+              Start="0,0"
+              End="0,53.4558823521033">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4558823521033" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="336.784524284625,364.900980197827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.9558823521033"
+              Start="0,0"
+              End="0,53.4558823521033">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4558823521033" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="339.016667146519,467.456862549931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="344.373810015066,569.056862549931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.0441176478968"
+              Start="0,0"
+              End="0,51.5441176478968">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5441176478968" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="348.620238587445,669.700980197828">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.9558823521032"
+              Start="0,0"
+              End="0,53.4558823521032">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4558823521032" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="351.420238587445,772.256862549931">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.0441176478967"
+              Start="0,0"
+              End="0,51.5441176478967">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.5441176478967" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="353.073809988457,872.900980197827">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.1764705915872"
+              Start="0,0"
+              End="0,48.6764705915872">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.6764705915872" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="331.997619479322,117.9823537157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.545097914094"
+              Start="0,0"
+              End="0,24.045097914094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.045097914094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="331.251190922908,46.9529411717785">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4294125439211"
+              Start="0,0"
+              End="0,21.9294125439211">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9294125439211" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

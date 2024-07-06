@@ -1,0 +1,938 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/12/2024 11:05:03 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L4MV6S80"
+  DTS:CreatorName="LAPTOP-L4MV6S80\vshep"
+  DTS:DTSID="{C61B4F42-C838-45F9-9264-EE3FBFE032C4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{CBCD5591-A314-49C7-B2FD-0BB198FEE264}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAPTOP-L4MV6S80.WH_Project]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+      DTS:ObjectName="LAPTOP-L4MV6S80.WH_Project">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=LAPTOP-L4MV6S80;Initial Catalog=WH_Project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}LAPTOP-L4MV6S80.WH_Project;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Area Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1c4a44b3-de1e-4e22-b098-5aa100d542f1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Area Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Area&#xA;ON Crimes_Weather.DIM_Area&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Area&#xA;    (area_id, area_name, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.area_id, &#xA;        i.area_name, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Area Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{050f23db-cbfa-4677-b287-997bc9d34c28}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Area Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Area&#xA;ON Crimes_Weather.DIM_Area&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Area&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Area h&#xA;    INNER JOIN deleted d ON h.area_id = d.area_id&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Area&#xA;    (area_id, area_name, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.area_id, &#xA;        i.area_name, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Descent Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5153d9e0-ee60-448c-96e3-f9663866436b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Descent Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Descent&#xA;ON Crimes_Weather.DIM_Descent&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Descent&#xA;    (descent, descent_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.descent, &#xA;        i.descent_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Descent Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1be8f940-c166-443a-b1f9-c467d24c34c1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Descent Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Descent&#xA;ON Crimes_Weather.DIM_Descent&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Descent&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Descent h&#xA;    INNER JOIN deleted d ON h.descent = d.descent&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Descent&#xA;    (descent, descent_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.descent, &#xA;        i.descent_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Premise Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{781b2c67-9b42-4228-9eb5-24b86886882b}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Premise Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Premise&#xA;ON Crimes_Weather.DIM_Premise&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Premise&#xA;    (premise_id, premise_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.premise_id, &#xA;        i.premise_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Premise Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0feab183-bc65-45a6-b076-5ce777d3eaae}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Premise Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Premise&#xA;ON Crimes_Weather.DIM_Premise&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Premise&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Premise h&#xA;    INNER JOIN deleted d ON h.premise_id = d.premise_id&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Premise&#xA;    (premise_id, premise_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.premise_id, &#xA;        i.premise_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Sex Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1737a8fe-89d5-4777-abc3-c69f0d4c5fd2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Sex Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Sex&#xA;ON Crimes_Weather.DIM_Sex&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Sex&#xA;    (sex, sex_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.sex, &#xA;        i.sex_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Sex Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{02a317fb-5d04-47eb-92fc-454c1798dadd}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Sex Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Sex&#xA;ON Crimes_Weather.DIM_Sex&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Sex&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Sex h&#xA;    INNER JOIN deleted d ON h.sex = d.sex&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Sex&#xA;    (sex, sex_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.sex, &#xA;        i.sex_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Sunrise_Sunset Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{713d9968-1931-40d1-972e-a4454d1861a8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Sunrise_Sunset Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Sunrise_Sunset&#xA;ON Crimes_Weather.DIM_Sunrise_Sunset&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Sunrise_Sunset&#xA;    (id, name, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.id, &#xA;        i.name, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Sunrise_Sunset Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e27846ae-3ba9-4eaf-8ce7-f209bab31978}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Sunrise_Sunset Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Sunrise_Sunset&#xA;ON Crimes_Weather.DIM_Sunrise_Sunset&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Sunrise_Sunset&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Sunrise_Sunset h&#xA;    INNER JOIN deleted d ON h.id = d.id&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Sunrise_Sunset&#xA;    (id, name, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.id, &#xA;        i.name, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Weapon_Used Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5E6CE6E7-B9B0-419A-8D27-F2209D65C69B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Weapon_Used Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Weapon_Used&#xA;ON Crimes_Weather.DIM_Weapon_Used&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Weapon_Used&#xA;    (weapon_code, weapon_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.weapon_code, &#xA;        i.weapon_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Weapon_Used Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{10A0F4D8-54D6-41A8-AFB8-EE35630824FB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Weapon_Used Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Weapon_Used&#xA;ON Crimes_Weather.DIM_Weapon_Used&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Weapon_Used&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Weapon_Used h&#xA;    INNER JOIN deleted d ON h.weapon_code = d.weapon_code&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Weapon_Used&#xA;    (weapon_code, weapon_description, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.weapon_code, &#xA;        i.weapon_description, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Weather_Condition Insert Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1fe9af8f-8d05-4ecd-a7fb-a461bde6368a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Weather_Condition Insert Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Insert_DIM_Weather_Condition&#xA;ON Crimes_Weather.DIM_Weather_Condition&#xA;AFTER INSERT&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Weather_Condition&#xA;    (weather_condition_id, weather_condition, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.weather_condition_id, &#xA;        i.weather_condition, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\DIM_Weather_Condition Update Table Trigger"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2b2bd08d-80d7-42d1-a563-14b3424d73d8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DIM_Weather_Condition Update Table Trigger"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{76D60CFB-C0ED-4AC5-B1B9-D32C2A9244A4}"
+          SQLTask:SqlStatementSource="CREATE TRIGGER trg_Update_DIM_Weather_Condition&#xA;ON Crimes_Weather.DIM_Weather_Condition&#xA;AFTER UPDATE&#xA;AS&#xA;BEGIN&#xA;    DECLARE @currentDatetime DATETIME = GETDATE();&#xA;&#xA;    -- Update the end date of the current record in the history table&#xA;    UPDATE History_Crimes_Weather.HIST_DIM_Weather_Condition&#xA;    SET end_datetime = @currentDatetime&#xA;    FROM History_Crimes_Weather.HIST_DIM_Weather_Condition h&#xA;    INNER JOIN deleted d ON h.weather_condition_id = d.weather_condition_id&#xA;    WHERE h.end_datetime IS NULL;&#xA;&#xA;    -- Insert the updated record as a new entry in the history table&#xA;    INSERT INTO History_Crimes_Weather.HIST_DIM_Weather_Condition&#xA;    (weather_condition_id, weather_condition, start_datetime, end_datetime)&#xA;    SELECT &#xA;        i.weather_condition_id, &#xA;        i.weather_condition, &#xA;        @currentDatetime, &#xA;        NULL&#xA;    FROM inserted i;&#xA;END;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4A04AE8E-65D1-451D-9383-6D2AD93DC242}"
+      DTS:From="Package\DIM_Weapon_Used Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\DIM_Weapon_Used Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E0DD7D8-9DEC-48BD-BB36-0B3CE0139CC5}"
+      DTS:From="Package\DIM_Descent Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DIM_Descent Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9a5d0e45-9921-4563-aa0f-8e2e79ac0c3f}"
+      DTS:From="Package\DIM_Premise Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1"
+      DTS:To="Package\DIM_Premise Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9e329e45-0ebf-4cf9-8a0c-cc7fd126e4f8}"
+      DTS:From="Package\DIM_Area Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1 1"
+      DTS:To="Package\DIM_Area Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8befe868-3a5a-4f4b-b389-919054bb0461}"
+      DTS:From="Package\DIM_Weather_Condition Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1 1 1"
+      DTS:To="Package\DIM_Weather_Condition Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{f855833b-65a2-4f3c-a834-7fd5f54db3bb}"
+      DTS:From="Package\DIM_Sex Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1 1 1 1"
+      DTS:To="Package\DIM_Sex Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1 1 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{04d71d16-5c3d-42f6-8e40-d397ae970bca}"
+      DTS:From="Package\DIM_Sunrise_Sunset Insert Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1 1 1 1 1 1"
+      DTS:To="Package\DIM_Sunrise_Sunset Update Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{195979D8-4122-4F44-AB1C-59977CC39231}"
+      DTS:From="Package\DIM_Weapon_Used Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\DIM_Descent Insert Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{2615548A-15FC-4E75-B993-67181C20597D}"
+      DTS:From="Package\DIM_Descent Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\DIM_Premise Insert Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B69E6D8-7AA6-4548-B2E1-C04BC622F797}"
+      DTS:From="Package\DIM_Premise Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\DIM_Area Insert Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{29442791-B233-45F2-B064-937804E472F9}"
+      DTS:From="Package\DIM_Area Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\DIM_Weather_Condition Insert Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{9355C38B-597F-4A5E-BC6A-A5694DCD8B03}"
+      DTS:From="Package\DIM_Weather_Condition Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\DIM_Sex Insert Table Trigger" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{4A19EF70-C25E-41A9-9369-EBA4463E1644}"
+      DTS:From="Package\DIM_Sex Update Table Trigger"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\DIM_Sunrise_Sunset Insert Table Trigger" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="512,172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.4,-42.4"
+              Start="0,0"
+              End="42.9,-42.4">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.2,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.2,0"
+                    Point2="25.2,0"
+                    Point3="25.2,-4" />
+                  <mssgle:LineSegment
+                    End="25.2,-38.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.2,-38.4"
+                    Point2="25.2,-42.4"
+                    Point3="29.2,-42.4" />
+                  <mssgle:LineSegment
+                    End="42.9,-42.4" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="681.2,248.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-307.6,51.2"
+              Start="0,0"
+              End="-307.6,43.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.6"
+                    Point2="0,25.6"
+                    Point3="-4,25.6" />
+                  <mssgle:LineSegment
+                    End="-303.6,25.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-303.6,25.6"
+                    Point2="-307.6,25.6"
+                    Point3="-307.6,29.6" />
+                  <mssgle:LineSegment
+                    End="-307.6,43.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="510.4,419.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.6,-29.6"
+              Start="0,0"
+              End="46.1,-29.6">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="22.8,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.8,0"
+                    Point2="26.8,0"
+                    Point3="26.8,-4" />
+                  <mssgle:LineSegment
+                    End="26.8,-25.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.8,-25.6"
+                    Point2="26.8,-29.6"
+                    Point3="30.8,-29.6" />
+                  <mssgle:LineSegment
+                    End="46.1,-29.6" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="682.8,508.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-315.6,37.6"
+              Start="0,0"
+              End="-315.6,30.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.8"
+                    Point2="0,18.8"
+                    Point3="-4,18.8" />
+                  <mssgle:LineSegment
+                    End="-311.6,18.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-311.6,18.8"
+                    Point2="-315.6,18.8"
+                    Point3="-315.6,22.8" />
+                  <mssgle:LineSegment
+                    End="-315.6,30.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="504,665.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.0000000000001,10.4000000000001"
+              Start="0,0"
+              End="64.5000000000001,10.4000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32,0"
+                    Point2="36,0"
+                    Point3="36,4" />
+                  <mssgle:LineSegment
+                    End="36,6.40000000000009" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36,6.40000000000009"
+                    Point2="36,10.4000000000001"
+                    Point3="40,10.4000000000001" />
+                  <mssgle:LineSegment
+                    End="64.5000000000001,10.4000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="557.6,774.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-41.5999999999999,52.8"
+              Start="0,0"
+              End="-34.0999999999999,52.8">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-16.8,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.8,0"
+                    Point2="-20.8,0"
+                    Point3="-20.8,4" />
+                  <mssgle:LineSegment
+                    End="-20.8,48.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.8,48.8"
+                    Point2="-20.8,52.8"
+                    Point3="-24.8,52.8" />
+                  <mssgle:LineSegment
+                    End="-34.0999999999999,52.8" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="268.8,41.6"
+          Id="Package\DIM_Weapon_Used Insert Table Trigger"
+          TopLeft="13.5714286003188,5.5" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Weapon_Used Update Table Trigger"
+          TopLeft="5.5,102.764705801918" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="145.335714300159,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.6647058019176"
+              Start="0,0"
+              End="0,48.1647058019176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.1647058019176" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="Dim Weapon Used Triggers"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="287.2,199.2"
+          Size="287.2,242.4"
+          Id="01bdc3de-2346-46f3-af47-919fcf0e6654"
+          TopLeft="232.142857637028,5.5">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\DIM_Weapon_Used Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Weapon_Used Update Table Trigger</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="142.837755127347,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.6478990783673"
+              Start="0,0"
+              End="0,49.1478990783673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.1478990783673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\DIM_Descent Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Descent Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <GroupLayout
+          Text="Dim Descent Triggers"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="284.8,199.2"
+          Size="284.8,242.4"
+          Id="c277a6ef-7ab0-4487-9b7c-8d534aade608"
+          TopLeft="538.581633811268,63.3411765986146">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package.PrecedenceConstraints[Constraint 1]</s:String>
+            <s:String>Package\DIM_Descent Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Descent Update Table Trigger</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="142.837755127347,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.6478990783673"
+              Start="0,0"
+              End="0,49.1478990783673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.1478990783673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\DIM_Premise Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Premise Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <GroupLayout
+          Text="Dim Premise"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="284.8,199.2"
+          Size="284.8,242.4"
+          Id="73643d98-406a-4c14-809d-a4377c073c3b"
+          TopLeft="230.612245388872,254.411764512934">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package.PrecedenceConstraints[Constraint 1 1]</s:String>
+            <s:String>Package\DIM_Premise Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Premise Update Table Trigger</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
+          TopLeft="142.837755127347,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.6478990783673"
+              Start="0,0"
+              End="0,49.1478990783673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.1478990783673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\DIM_Area Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Area Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <GroupLayout
+          Text="DIM Area"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="284.8,199.2"
+          Size="284.8,242.4"
+          Id="3b2b6669-c9c4-4a6b-b8ae-048ed932be2a"
+          TopLeft="539.965987544003,322.967786869151">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package.PrecedenceConstraints[Constraint 1 1 1]</s:String>
+            <s:String>Package\DIM_Area Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Area Update Table Trigger</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1 1 1]"
+          TopLeft="142.837755127347,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.6478990783673"
+              Start="0,0"
+              End="0,49.1478990783673">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.1478990783673" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="238.4,41.6"
+          Id="Package\DIM_Weather_Condition Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Weather_Condition Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <GroupLayout
+          Text="DIM_Weather_Condition "
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="284.8,199.2"
+          Size="284.8,242.4"
+          Id="30c5a77a-8589-47bd-8756-307fd5862919"
+          TopLeft="223.979592313528,501.100840177977">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package.PrecedenceConstraints[Constraint 1 1 1 1]</s:String>
+            <s:String>Package\DIM_Weather_Condition Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Weather_Condition Update Table Trigger</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1 1 1 1]"
+          TopLeft="132.575510254694,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.1244897453063,56.6478990783671"
+              Start="0,0"
+              End="10.1244897453063,49.1478990783671">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3239495391835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3239495391835"
+                    Point2="0,28.3239495391835"
+                    Point3="4,28.3239495391835" />
+                  <mssgle:LineSegment
+                    End="6.12448974530628,28.3239495391835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.12448974530628,28.3239495391835"
+                    Point2="10.1244897453063,28.3239495391835"
+                    Point3="10.1244897453063,32.3239495391835" />
+                  <mssgle:LineSegment
+                    End="10.1244897453063,49.1478990783671" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\DIM_Sex Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\DIM_Sex Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <GroupLayout
+          Text="Dim Sex"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="284.8,199.2"
+          Size="284.8,242.4"
+          Id="42748e4d-d45d-4341-8121-9d37649760fa"
+          TopLeft="552.380953556826,609.215685740509">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package.PrecedenceConstraints[Constraint 1 1 1 1 1]</s:String>
+            <s:String>Package\DIM_Sex Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Sex Update Table Trigger</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+        <NodeLayout
+          Size="272.8,41.6"
+          Id="Package\DIM_Sunrise_Sunset Insert Table Trigger"
+          TopLeft="23.7755102546937,2.22268907850292" />
+        <NodeLayout
+          Size="279.2,41.6"
+          Id="Package\DIM_Sunrise_Sunset Update Table Trigger"
+          TopLeft="5.5,100.47058815687" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1 1 1 1 1 1]"
+          TopLeft="160.175510254694,43.8226890785029">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.0755102546937,56.6478990783671"
+              Start="0,0"
+              End="-15.0755102546937,49.1478990783671">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3239495391835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3239495391835"
+                    Point2="0,28.3239495391835"
+                    Point3="-4,28.3239495391835" />
+                  <mssgle:LineSegment
+                    End="-11.0755102546937,28.3239495391835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.0755102546937,28.3239495391835"
+                    Point2="-15.0755102546937,28.3239495391835"
+                    Point3="-15.0755102546937,32.3239495391835" />
+                  <mssgle:LineSegment
+                    End="-15.0755102546937,49.1478990783671" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <GroupLayout
+          Text="DIM_Sunrise_Sunset"
+          ParentId="Package"
+          HeaderHeight="43.2"
+          IsExpanded="True"
+          PanelSize="301.6,199.2"
+          Size="301.6,242.4"
+          Id="ea62cd59-69de-42aa-8823-1b182aa3239a"
+          TopLeft="219.047619513914,761.019607356057">
+          <GroupLayout.ChildrenIds>
+            <s:String>Package\DIM_Sunrise_Sunset Insert Table Trigger</s:String>
+            <s:String>Package\DIM_Sunrise_Sunset Update Table Trigger</s:String>
+            <s:String>Package.PrecedenceConstraints[Constraint 1 1 1 1 1 1]</s:String>
+          </GroupLayout.ChildrenIds>
+        </GroupLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

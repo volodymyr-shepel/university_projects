@@ -1,0 +1,107 @@
+-- TASK 3
+
+SELECT {[Measures].[Customer ID Distinct Count]} ON COLUMNS,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON ROWS
+FROM [Adventure Works2022]
+
+
+
+-- TASK 4
+
+SELECT {[Measures].[Customer ID Distinct Count]} ON COLUMNS,
+{[Order Date].[Year].[2012], [Order Date].[Year].[2013]} ON ROWS,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON PAGES
+FROM [Adventure Works2022]
+
+-- TASK 5
+
+-- V1
+SELECT 
+[Measures].[Total Order Qty] ON COLUMNS,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON ROWS,
+{[DIM PRODUCT].[Category Name].MEMBERS, [DIM PRODUCT].[Category Name].Children} ON PAGES
+FROM [Adventure Works2022]
+
+-- V2
+SELECT 
+[Measures].[Total Order Qty] ON COLUMNS,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON ROWS,
+{[DIM PRODUCT].[Hierarchy].[Category Name].MEMBERS, [DIM PRODUCT].[Hierarchy].[Sub Category Name].MEMBERS} ON PAGES
+FROM [Adventure Works2022]
+
+-- V3
+SELECT 
+[Measures].[Total Order Qty] ON COLUMNS,
+DESCENDANTS({
+[DIM PRODUCT].[Hierarchy].[Category Name].[Accessories],
+[DIM PRODUCT].[Hierarchy].[Category Name].[Bikes],
+[DIM PRODUCT].[Hierarchy].[Category Name].[Clothing],
+[DIM PRODUCT].[Hierarchy].[Category Name].[Components]
+},
+1,
+SELF
+) ON 1,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON PAGES
+FROM [Adventure Works2022]
+
+
+-- V4
+SELECT 
+[Measures].[Total Order Qty] ON COLUMNS,
+{[DIM CUSTOMER].[Country Region Code].MEMBERS} ON ROWS,
+{
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Accessories].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Accessories],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Bikes].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Bikes],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Clothing].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Clothing],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Components].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Components]
+} ON PAGES
+FROM [Adventure Works2022]
+
+
+
+-- TASK 6
+
+SELECT
+[Measures].[Order Qty] ON COLUMNS,
+ORDER(
+FILTER(
+{
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Accessories].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Accessories],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Bikes].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Bikes],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Clothing].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Clothing],
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Components].CHILDREN,
+[DIM PRODUCT].[Hierarchy].[Category Name].&[Components]
+},[Measures].[Order Qty] >= 10),[Measures].[Order Qty], BDESC) ON ROWS
+
+FROM [Adventure Works2022]
+
+
+-- TASK 7
+
+WITH
+MEMBER [Measures].[Moving Average Profit Amount]
+AS Avg(LastPeriods(
+1,
+[Order Date].[Month].CurrentMember
+),
+[Measures].[Line Total]
+)
+
+SELECT
+[Measures].[Moving Average Profit Amount]
+ON 0,
+ORDER(
+{[Order Date].[Hierarchy].[Year],
+[Order Date].[Hierarchy].[Month]},[Measures].[Moving Average Profit Amount],BDESC)
+
+ ON 1
+FROM [Adventure Works2022]
+
+

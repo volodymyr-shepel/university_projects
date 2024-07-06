@@ -1,0 +1,61 @@
+/* TASK 3 */
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg'); /* URL to your background image */
+    background-size: cover; /* Stretch the image to cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fixed background image */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    font-family: Arial, sans-serif; /* Add a font-family for better appearance */
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin for the ul */
+    background-color: #333;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top:0;
+}
+
+.menu li {
+    position: relative;
+    flex: 1;
+    text-align: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 0;
+    display: block;
+}
+
+/* Submenu Styling */
+.submenu-content {
+    display: none;
+    background-color: #444;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+}
+
+.menu li:hover .submenu-content {
+    display: block;
+}
+
+/* Hover Effect */
+.menu li:hover > a {
+    background-color: #666;
+}
+
+ul {
+    list-style-type: none;
+}
