@@ -1,0 +1,1 @@
+This repository contains a collection of projects completed during my studies at Wroclaw University of Science and Technology. Each project showcases different aspects of the curriculum and utilizes various technologies and methodologies.
